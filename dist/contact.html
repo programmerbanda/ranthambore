@@ -14,31 +14,21 @@
             font-family: 'Times New Roman', Times, serif
         }
 
-        @keyframes marquee {
-            0% {
-                transform: translateX(0);
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
             }
 
-            100% {
-                transform: translateX(-100%);
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
-        .animate-marquee {
-            animation: marquee 20s linear infinite;
-            display: flex;
-            width: max-content;
-        }
-
-        /* Hide modern marquee if marquee tag is supported */
-        @supports (-webkit-marquee-repetition: infinite) or (marquee-repetition: infinite) {
-            .animate-marquee {
-                display: none;
-            }
-
-            marquee {
-                display: block !important;
-            }
+        .form-page,
+        .contact-page {
+            animation: fadeIn 0.6s ease-out;
         }
     </style>
 </head>
@@ -84,7 +74,8 @@
 
                 <div class="hidden md:flex items-center space-x-8">
                     <ul class="flex space-x-8 text-lg font-medium items-center">
-                        <li><a href="/dist/index.html" class="text-amber-900 hover:text-amber-600 transition-colors">Home</a></li>
+                        <li><a href="/dist/index.html"
+                                class="text-amber-900 hover:text-amber-600 transition-colors">Home</a></li>
                         <li><a href="#" class="text-amber-900 hover:text-amber-600 transition-colors">Safari</a></li>
                         <li><a href="#" class="text-amber-900 hover:text-amber-600 transition-colors">Chambal Safari</a>
                         </li>
@@ -109,27 +100,6 @@
                 </div>
             </div>
         </div>
-        <!-- Animated Marquee Section -->
-        <div class="bg-[#ff7518] text-white py-0.5 w-full relative overflow-hidden">
-            <div class="whitespace-nowrap flex animate-marquee">
-                <div class="flex-shrink-0 px-4">
-                    Tiger safari will be closed for Tuesday (Zone 6 to Zone 10) and Wednesday (Zone 1 to Zone 5) at
-                    Ranthambore Tiger Reserve.
-                </div>
-                <div class="flex-shrink-0 px-4">
-                    Tiger safari will be closed for Tuesday (Zone 6 to Zone 10) and Wednesday (Zone 1 to Zone 5) at
-                    Ranthambore Tiger Reserve.
-                </div>
-            </div>
-
-            <!-- Fallback for older browsers -->
-            <marquee behavior="scroll" direction="left" class="text-sm absolute top-0 left-0" style="display: none;">
-
-                Tiger safari will be closed for Tuesday (Zone 6 to Zone 10) and Wednesday (Zone 1 to Zone 5) at
-                Ranthambore Tiger Reserve.
-
-            </marquee>
-        </div>
     </nav>
 
     <!-- Main -->
@@ -138,7 +108,8 @@
             <div>
                 <h1 class="text-3xl font-bold text-[#ff7518] mb-6 text-center pt-8">Contact Us</h1>
                 <div class="bg-[#F89880] mx-10 border-[1.5px] p-5 rounded-[12px]">
-                    <h3 class="text-center bg-[#feebeecc] rounded-[4px] font-semibold text-xl py-1 mb-2">Declaration</h3>
+                    <h3 class="text-center bg-[#feebeecc] rounded-[4px] font-semibold text-xl py-1 mb-2">Declaration
+                    </h3>
                     <div>
                         Daily Tour and Travel would like to clarify that we work just as a private travel agency. Our
                         company is not authorized by the Forest Department and also we do not make any claims that we
@@ -164,7 +135,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
                     <!-- Contact Form -->
                     <div class="bg-white p-6 sm:p-8 rounded-xl shadow-md border border-gray-100">
-                        <form class="space-y-5">
+                        <form class="form-page space-y-5">
                             <div>
                                 <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
                                 <input type="text" id="name" placeholder="Enter your name" required
@@ -202,7 +173,7 @@
                     </div>
 
                     <!-- Contact Info -->
-                    <div class="space-y-6">
+                    <div class="contact-page space-y-6">
                         <!-- Email Contact -->
                         <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100">
                             <h3 class="text-xl font-bold text-amber-600 mb-4">Contact By Email</h3>
@@ -246,7 +217,9 @@
                         <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100">
                             <h3 class="text-xl font-bold text-amber-600 mb-4">Visit Us</h3>
                             <div class="space-y-4">
-                                <p class="text-[#000000] shadow-md bg-[#FE8621] rounded-[4px] font-semibold text-center mx-10">Company Name: Daily Tour and Travel Private
+                                <p
+                                    class="text-[#000000] shadow-md bg-[#FE8621] rounded-[4px] font-semibold text-center mx-10">
+                                    Company Name: Daily Tour and Travel Private
                                     Limited</p>
                                 <div class="flex">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 mt-1 text-amber-600"
