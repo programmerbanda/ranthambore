@@ -4,14 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ranthambore Safari Tours</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Ranthambore Safari Tours - Best Wildlife Safari Booking | Tiger Reserve</title>
+    <meta name="description"
+        content="Book your Ranthambore National Park safari tours online. Experience thrilling tiger safaris, wildlife photography, and Chambal river safaris. Best prices guaranteed.">
+    <meta name="keywords"
+        content="Ranthambore safari, tiger safari, wildlife tours, national park booking, Rajasthan safari, tiger reserve, wildlife photography">
+    <meta name="author" content="Daily Tour and Travel">
+    <meta property="og:title" content="Ranthambore Safari Tours - Best Wildlife Safari Booking">
+    <meta property="og:description"
+        content="Experience the thrill of tiger safaris at Ranthambore National Park. Book your wildlife adventure today!">
+    <meta property="og:image" content="/Images/banner.jpg">
+    <meta property="og:url" content="https://ranthambore360.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ranthambore360.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"
+        media="print" onload="this.media='all'">
     <link rel="stylesheet" href="/src/output.css">
     <link rel="shortcut icon" href="/Images/favicon.jpg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
-            font-family: 'Times New Roman', Times, serif
+            font-family: 'Poppins', sans-serif
         }
 
         @keyframes marquee {
@@ -43,11 +58,12 @@
     </style>
 </head>
 
-<body class="bg-gray-50">
-    <!-- Navbar -->
-    <nav class="w-full sticky top-0 z-50 shadow-md">
+<body class="bg-gray-50 overflow-x-hidden">
+<!-- Common Header with Navbar -->
+    <header>
+        <nav class="w-full fixed top-0 left-0 right-0 z-50 shadow-md bg-white">
         <!-- Top Contact Bar -->
-        <div class="w-full bg-amber-900 text-white h-12 sm:h-8 flex items-center">
+        <div class="w-full bg-[#604019] text-white h-12 sm:h-8 flex items-center">
             <div class="container mx-auto px-4">
                 <div class="flex flex-col justify-between items-center px-8 sm:flex-row">
                     <!-- Changed to justify-around -->
@@ -76,30 +92,59 @@
         </div>
 
         <!-- Main Navigation -->
-        <div class="w-full bg-white flex justify-between">
-            <div class="container mx-auto px-4 py-1 lg:px-16 flex md:flex-col lg:flex-row justify-between items-center">
-                <div>
-                    <img class="logo h-16 cursor-pointer" src="/Images/logo.svg" alt="Ranthambore 360 Logo">
+        <div class="w-full bg-white">
+            <div class="container mx-auto px-4 py-3 lg:px-16">
+                <!-- Desktop Layout (1024px+) -->
+                <div class="hidden lg:flex justify-between items-center">
+                    <div>
+                        <img class="logo h-16 cursor-pointer" src="/Images/logo.svg" alt="Ranthambore 360 Logo">
+                    </div>
+                    <div class="hidden md:flex items-center space-x-8">
+                        <ul class="flex space-x-8 text-lg font-medium items-center">
+                            <li><a href="/dist/index.html" id="home-btn"
+                                    class="text-[#604019] hover:text-amber-600 transition-colors">Home</a></li>
+                            <li><a href="#" class="text-[#604019] hover:text-amber-600 transition-colors">Safari</a></li>
+                            <li><a href="#" class="text-[#604019] hover:text-amber-600 transition-colors">Chambal Safari</a></li>
+                            <li><a href="#" class="text-[#604019] hover:text-amber-600 transition-colors">Hotels</a></li>
+                            <li><a href="#" class="text-[#604019] hover:text-amber-600 transition-colors">Packages</a></li>
+                            <li><a href="#" id="contact-btn"
+                                    class="text-[#604019] hover:text-amber-600 transition-colors">Contact</a></li>
+                        </ul>
+                        <button
+                            class="ml-6 bg-amber-700 hover:bg-amber-600 text-white font-medium py-1 px-6 rounded-lg transition-colors shadow-md cursor-pointer">
+                            Book Now
+                        </button>
+                    </div>
                 </div>
 
-                <div class="hidden md:flex items-center space-x-8">
-                    <ul class="flex space-x-8 text-lg font-medium items-center">
-                        <li><a href="/dist/index.html" id="home-btn" class="text-amber-900 hover:text-amber-600 transition-colors">Home</a></li>
-                        <li><a href="#" class="text-amber-900 hover:text-amber-600 transition-colors">Safari</a></li>
-                        <li><a href="#" class="text-amber-900 hover:text-amber-600 transition-colors">Chambal Safari</a>
-                        </li>
-                        <li><a href="#" class="text-amber-900 hover:text-amber-600 transition-colors">Hotels</a></li>
-                        <li><a href="#" class="text-amber-900 hover:text-amber-600 transition-colors">Packages</a></li>
-                        <li><a href="#" id="contact-btn" class="text-amber-900 hover:text-amber-600 transition-colors">Contact</a></li>
-                    </ul>
-                    <button
-                        class="ml-6 bg-amber-700 hover:bg-amber-600 text-white font-medium py-1 px-6 rounded-lg transition-colors shadow-md cursor-pointer">
-                        Book Now
-                    </button>
+                <!-- Tablet Layout (768px to 1023px) -->
+                <div class="hidden md:flex lg:hidden flex-col items-center">
+                    <div class="mb-4">
+                        <img class="logo h-16 cursor-pointer" src="/Images/logo.svg" alt="Ranthambore 360 Logo">
+                    </div>
+                    <div class="flex items-center space-x-6">
+                        <ul class="flex space-x-6 text-[16px] font-medium items-center">
+                            <li><a href="/dist/index.html" id="home-btn"
+                                    class="text-[#604019] hover:text-amber-600 transition-colors">Home</a></li>
+                            <li><a href="#" class="text-[#604019] hover:text-amber-600 transition-colors">Safari</a></li>
+                            <li><a href="#" class="text-[#604019] hover:text-amber-600 transition-colors">Chambal Safari</a></li>
+                            <li><a href="#" class="text-[#604019] hover:text-amber-600 transition-colors">Hotels</a></li>
+                            <li><a href="#" class="text-[#604019] hover:text-amber-600 transition-colors">Packages</a></li>
+                            <li><a href="#" id="contact-btn"
+                                    class="text-[#604019] hover:text-amber-600 transition-colors">Contact</a></li>
+                        </ul>
+                        <button
+                            class="ml-4 bg-amber-700 hover:bg-amber-600 text-white font-medium py-1 px-4 rounded-lg transition-colors shadow-md cursor-pointer">
+                            Book Now
+                        </button>
+                    </div>
                 </div>
 
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
+                <!-- Mobile Layout (below 768px) -->
+                <div class="flex md:hidden justify-between items-center">
+                    <div>
+                        <img class="logo h-12 cursor-pointer" src="/Images/logo.svg" alt="Ranthambore 360 Logo">
+                    </div>
                     <button class="text-amber-900 focus:outline-none cursor-pointer">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -110,33 +155,26 @@
             </div>
         </div>
         <!-- Animated Marquee Section -->
-        <div class="bg-[#ff7518] text-white py-0.5 w-full relative overflow-hidden">
-            <div class="whitespace-nowrap flex animate-marquee">
-                <div class="flex-shrink-0 px-4">
-                    Tiger safari will be closed for Tuesday (Zone 6 to Zone 10) and Wednesday (Zone 1 to Zone 5) at
-                    Ranthambore Tiger Reserve.
+            <div class="bg-[#ff7518] text-white py-0.5 w-full relative overflow-hidden">
+                <div class="whitespace-nowrap flex animate-marquee">
+                    <div class="flex-shrink-0 px-4">
+                        Tiger safari will be closed for Tuesday (Zone 6 to Zone 10) and Wednesday (Zone 1 to Zone 5)
+                        at
+                        Ranthambore Tiger Reserve.
+                    </div>
                 </div>
-                <div class="flex-shrink-0 px-4">
-                    Tiger safari will be closed for Tuesday (Zone 6 to Zone 10) and Wednesday (Zone 1 to Zone 5) at
-                    Ranthambore Tiger Reserve.
-                </div>
-            </div>
-
-            <!-- Fallback for older browsers -->
-            <marquee behavior="scroll" direction="left" class="text-sm absolute top-0 left-0" style="display: none;">
-
-                Tiger safari will be closed for Tuesday (Zone 6 to Zone 10) and Wednesday (Zone 1 to Zone 5) at
-                Ranthambore Tiger Reserve.
-
-            </marquee>
         </div>
     </nav>
+    </header>
 
-    <main class="w-full">
+    <main class="w-full pt-[120px]"> <!-- Added padding-top to compensate for fixed navbar -->
         <!-- Banner Image -->
         <div class="w-full">
-            <img class="w-full h-auto max-h-[500px] object-cover" src="/Images/banner.jpg"
-                alt="Ranthambore National Park">
+            <div class="w-full h-auto max-h-[500px] overflow-hidden">
+                <img class="w-full h-auto max-h-[500px] object-cover transition-transform duration-700 hover:scale-105"
+                    src="/Images/banner.jpg" alt="Ranthambore National Park - Tigers in their natural habitat"
+                    loading="eager" fetchpriority="high">
+            </div>
         </div>
 
         <!-- Services Heading -->
@@ -1102,5 +1140,7 @@
         </div>
     </footer>
     <script src="/JS/app.js"></script>
+    <script src="/JS/mobile-menu.js"></script>
 </body>
+
 </html>
