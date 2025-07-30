@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranthambhore Hotel Booking</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/output.css">
+    <link rel="shortcut icon" href="/Images/favicon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif
+        }
+        .animate-pulse-ring:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="w-full sticky top-0 z-50 shadow-md">
+        <!-- Top Contact Bar -->
+        <div class="w-full bg-amber-900 text-white h-12 sm:h-8 flex items-center">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col justify-between items-center px-8 sm:flex-row">
+                    <!-- Changed to justify-around -->
+                    <div class="flex items-center cursor-pointer">
+                        <div class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            <span>8076438491 | 7982193537</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center cursor-pointer">
+                        <div class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <span>ranthambore360@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <div class="w-full bg-white flex justify-between">
+            <div class="container mx-auto px-4 py-1 lg:px-16 flex md:flex-col lg:flex-row justify-between items-center">
+                <div>
+                    <img class="logo h-16 cursor-pointer" src="/Images/logo.svg" alt="Ranthambore 360 Logo">
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <ul class="flex space-x-8 text-lg font-medium items-center">
+                        <li><a href="/dist/index.html"
+                                class="text-amber-900 hover:text-amber-600 transition-colors">Home</a></li>
+                        <li><a href="#" class="text-amber-900 hover:text-amber-600 transition-colors">Safari</a></li>
+                        <li><a href="#" class="text-amber-900 hover:text-amber-600 transition-colors">Chambal Safari</a>
+                        </li>
+                        <li><a href="#" class="text-amber-600 transition-colors">Hotels</a></li>
+                        <li><a href="#" class="text-amber-900 hover:text-amber-600 transition-colors">Packages</a></li>
+                        <li><a href="#" class="text-amber-900 hover:text-amber-600 transition-colors">Contact</a></li>
+                    </ul>
+                    <button
+                        class="ml-6 bg-amber-700 hover:bg-amber-600 text-white font-medium py-1 px-6 rounded-lg transition-colors shadow-md cursor-pointer">
+                        Book Now
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button class="text-amber-900 focus:outline-none cursor-pointer">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Hotel Search Section -->
+        <div id="search-hotel-btn" class="overflow-hidden z-50 hidden absolute right-16 top-[68px] sm:top-[50px] sm:right-[100px] lg:right-12 lg:top-24">
+            <button id="openSearchModal"
+                class="relative bg-gradient-to-r from-[#604019] to-[#ff7518] text-white font-semibold py-1.5 px-3 rounded-xl transition-all duration-500 cursor-pointer animate-pulse-ring hover:animate-none">
+                <span class="relative z-10 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                    Search Hotels
+                </span>
+                <span
+                    class="absolute -inset-2 rounded-xl bg-blue-400 opacity-0 group-hover:opacity-100 blur-md transition-all duration-300"></span>
+            </button>
+        </div>
+        <div id="hotel-container"
+            class="bg-gradient-to-r from-[#604019] to-[#b87333] py-0.5 px-4 sm:px-6 lg:px-8 absolute w-full rounded-br-[40px] rounded-bl-[40px]">
+            <!-- Cross icon to hide the entire search section -->
+            <div id="hide-search-section" class="absolute top-2 right-2 cursor-pointer text-white text-xl">✖
+            </div>
+
+            <div class="max-w-7xl mx-auto">
+                <form class="rounded-lg p-1" onsubmit="event.preventDefault();">
+                    <!-- Labels Row -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-2 mb-1">
+                        <label class="block text-sm font-medium text-[#fff]">Select Hotel</label>
+                        <label class="block text-sm font-medium text-[#fff]">CHECK-IN / CHECK-OUT</label>
+                        <label class="block text-sm font-medium text-[#fff]">Guest & Rooms</label>
+                    </div>
+
+                    <!-- Inputs Row -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-3 mr-16">
+                        <!-- Hotel Selection -->
+                        <div class="relative">
+                            <select id="hotel-select" name="hotel"
+                                class="bg-[#ffffff] block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md"
+                                required>
+                                <option value="">Search Hotels</option>
+                                <option value="taj">Taj Mahal Palace, Mumbai</option>
+                                <option value="oberoi">Oberoi Udaivilas, Udaipur</option>
+                                <option value="leela">Leela Palace, Bangalore</option>
+                                <option value="itc">ITC Grand Chola, Chennai</option>
+                            </select>
+                        </div>
+
+                        <!-- Date Range -->
+                        <div class="relative">
+                            <input type="text" id="date-range" name="dates" value="2025-07-30 - 2025-07-31"
+                                class="bg-[#ffffff] block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md"
+                                required>
+                        </div>
+
+                        <!-- Guests & Rooms -->
+                        <div class="relative">
+                            <select id="guests-rooms" name="guests"
+                                class="bg-[#ffffff] block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md"
+                                required>
+                                <option value="1room-2guests">1 Room and 2 Guests</option>
+                                <option value="1room-1guest">1 Room and 1 Guest</option>
+                                <option value="2rooms-4guests">2 Rooms and 4 Guests</option>
+                                <option value="3rooms-6guests">3 Rooms and 6 Guests</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex justify-center space-x-4">
+                        <button type="submit"
+                            class="px-6 py-1 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 cursor-pointer">
+                            Search
+                        </button>
+                        <button type="reset"
+                            class="px-6 py-1 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 cursor-pointer">
+                            Reset
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- Main Content Section -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Hero Section -->
+        <section class="hero bg-blue-50 rounded-xl p-8 mb-12">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h1 class="text-4xl font-bold text-gray-800 mb-4">Find Your Perfect Stay</h1>
+                    <p class="text-lg text-gray-600 mb-6">Book hotels, resorts, and apartments at the best prices
+                        worldwide.</p>
+                    <a href="#search"
+                        class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">Book
+                        Now</a>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="Luxury Hotel" class="rounded-xl shadow-lg">
+                </div>
+            </div>
+        </section>
+
+        <!-- Search Section -->
+        <section id="search" class="search-section bg-white p-6 rounded-xl shadow-lg mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Search Hotels</h2>
+            <form class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div>
+                    <label for="destination" class="block text-gray-700 mb-2">Destination</label>
+                    <input type="text" id="destination" placeholder="City or Hotel"
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="check-in" class="block text-gray-700 mb-2">Check-in</label>
+                    <input type="date" id="check-in"
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="check-out" class="block text-gray-700 mb-2">Check-out</label>
+                    <input type="date" id="check-out"
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="guests" class="block text-gray-700 mb-2">Guests</label>
+                    <select id="guests"
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="1">1 Guest</option>
+                        <option value="2">2 Guests</option>
+                        <option value="3">3 Guests</option>
+                        <option value="4">4 Guests</option>
+                        <option value="5+">5+ Guests</option>
+                    </select>
+                </div>
+                <div class="md:col-span-4">
+                    <button type="submit"
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">Search
+                        Hotels</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Featured Hotels -->
+        <section class="featured-hotels mb-12">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800">Featured Hotels</h2>
+                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">View All</a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Hotel Card 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="Luxury Hotel" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Grand Plaza Hotel</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">4.8
+                                ★</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">New York, USA</p>
+                        <div class="flex items-center mb-4">
+                            <span class="text-yellow-400">★★★★★</span>
+                            <span class="text-gray-500 ml-2">(128 reviews)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-gray-800">$199</span>
+                            <span class="text-gray-500 text-sm">per night</span>
+                        </div>
+                        <button
+                            class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300">Book
+                            Now</button>
+                    </div>
+                </div>
+
+                <!-- Hotel Card 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="Beach Resort" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Paradise Beach Resort</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">4.7
+                                ★</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Maldives</p>
+                        <div class="flex items-center mb-4">
+                            <span class="text-yellow-400">★★★★★</span>
+                            <span class="text-gray-500 ml-2">(94 reviews)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-gray-800">$349</span>
+                            <span class="text-gray-500 text-sm">per night</span>
+                        </div>
+                        <button
+                            class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300">Book
+                            Now</button>
+                    </div>
+                </div>
+
+                <!-- Hotel Card 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="Mountain View Hotel" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Alpine Retreat</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">4.9
+                                ★</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Swiss Alps, Switzerland</p>
+                        <div class="flex items-center mb-4">
+                            <span class="text-yellow-400">★★★★★</span>
+                            <span class="text-gray-500 ml-2">(156 reviews)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-gray-800">$279</span>
+                            <span class="text-gray-500 text-sm">per night</span>
+                        </div>
+                        <button
+                            class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300">Book
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="why-choose-us bg-blue-50 rounded-xl p-8 mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">Why Choose Our Booking Service?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Best Price Guarantee</h3>
+                    <p class="text-gray-600">We guarantee the best prices for your stay. Found a better deal? We'll
+                        match it!</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">24/7 Customer Support</h3>
+                    <p class="text-gray-600">Our support team is available round the clock to assist you with any
+                        queries.</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Easy Cancellation</h3>
+                    <p class="text-gray-600">Flexible cancellation options available for most bookings.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">What Our Customers Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson"
+                            class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Sarah Johnson</h4>
+                            <div class="flex">
+                                <span class="text-yellow-400">★★★★★</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"The booking process was so easy and the hotel was exactly as
+                        described. Will definitely use this service again for my next trip!"</p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Michael Chen"
+                            class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Michael Chen</h4>
+                            <div class="flex">
+                                <span class="text-yellow-400">★★★★★</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Great prices and excellent customer service. They helped me change
+                        my reservation last minute with no hassle. Highly recommended!"</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter bg-blue-600 text-white rounded-xl p-8">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-2xl font-bold mb-4">Subscribe to Our Newsletter</h2>
+                <p class="mb-6">Get exclusive deals and discounts straight to your inbox.</p>
+                <form class="flex flex-col sm:flex-row gap-2">
+                    <input type="email" placeholder="Your email address"
+                        class="flex-grow p-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    <button type="submit"
+                        class="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition duration-300">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <!-- Footer Section -->
+    <footer class="bg-[#604019] text-white pt-8 pb-6">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="flex flex-col lg:flex-row justify-between gap-8">
+                <!-- About Section -->
+                <div class="w-full lg:w-1/3 flex flex-col items-center lg:items-start">
+                    <img class="h-16 cursor-pointer mb-4" src="/Images/logo.svg" alt="Ranthambore 360 Logo">
+                    <p class="mb-4 text-sm text-gray-200 font-sans font-medium text-center lg:text-left">
+                        This is not an official website of "Ranthambhore National Park". This is a Registered under the
+                        Private Travel Agency name Daily Tour and Travel. We organize Hotel, Safari and Tour Package
+                        bookings in Ranthambhore National Park.
+                    </p>
+                    <div class="mb-2">
+                        <p class="flex items-center mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-amber-400" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            Phone: 8076438491, 7982193537
+                        </p>
+                        <p class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-amber-400" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            Email: ranthambore360@gmail.com
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Links Sections -->
+                <div class="w-full flex flex-col md:flex-row gap-8">
+                    <!-- Useful Links -->
+                    <div class="w-full md:w-1/3">
+                        <h4 class="text-lg font-semibold mb-4 text-amber-400">Useful Links</h4>
+                        <ul class="space-y-2">
+                            <li>
+                                <a href="/dist/index.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    Home
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    Safari Booking
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    Chambal Safari Booking
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dist/package-booking.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    Package Booking
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dist/contact.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    Contact Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dist/blogs.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    Blogs
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="w-full md:w-1/3">
+                        <h4 class="text-lg font-semibold mb-4 text-amber-400">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li>
+                                <a href="/dist/privacy-policy.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    Privacy Policy
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dist/Cancellatiion-Policy.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    Cancellation Policy
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dist/term-condition.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    Terms & Condition
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dist/how-to-reach.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    How To Reach
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dist/about.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    About Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dist/support.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    Support
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Gallery Section -->
+                    <div class="w-full md:w-1/3">
+                        <h4 class="text-lg font-semibold mb-4 text-amber-400">Our Gallery</h4>
+                        <div class="grid grid-cols-3 gap-2">
+                            <img src="/Images/Sanbar Deer.jpg" alt="Gallery Image 1"
+                                class="rounded-lg h-20 w-full object-cover border-2 border-amber-400 hover:border-amber-500 transition-all cursor-pointer">
+                            <img src="/Images/Black Buck Sighting.jpg" alt="Gallery Image 2"
+                                class="rounded-lg h-20 w-full object-cover border-2 border-amber-400 hover:border-amber-500 transition-all cursor-pointer">
+                            <img src="/Images/Tiger and cub.jpg" alt="Gallery Image 3"
+                                class="rounded-lg h-20 w-full object-cover border-2 border-amber-400 hover:border-amber-500 transition-all cursor-pointer">
+                            <img src="/Images/Crocodile in River.jpg" alt="Gallery Image 4"
+                                class="rounded-lg h-20 w-full object-cover border-2 border-amber-400 hover:border-amber-500 transition-all cursor-pointer">
+                            <img src="/Images/Chambal Boating.jpg" alt="Gallery Image 5"
+                                class="rounded-lg h-20 w-full object-cover border-2 border-amber-400 hover:border-amber-500 transition-all cursor-pointer">
+                            <img src="/Images/Birds Paradise.jpg" alt="Gallery Image 6"
+                                class="rounded-lg h-20 w-full object-cover border-2 border-amber-400 hover:border-amber-500 transition-all cursor-pointer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Address and Copyright -->
+            <div class="mt-8 pt-6 border-t border-[#fff]">
+                <p class="text-center mb-2 text-[#fff]">
+                    <span class="font-bold bg-amber-400 px-2 py-1 text-gray-900 rounded">Daily Tour and Travel Delhi
+                        110092 Address</span> : A-2 Second Floor Ganesh Nagar, Pandav Nagar, Delhi 110092
+                </p>
+                <p class="text-center text-[#fff] text-sm">
+                    © Copyright Ranthambore. All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script src="/JS/app.js"></script>
+    <script src="/JS/hotel.js"></script>
+</body>
+
+</html>
