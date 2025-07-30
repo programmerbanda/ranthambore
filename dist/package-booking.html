@@ -13,13 +13,56 @@
         body {
             font-family: 'Times New Roman', Times, serif
         }
+
         @keyframes fade-in {
-      0% { opacity: 0; transform: translateY(10px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    .animate-fade-in {
-      animation: fade-in 0.5s ease-out forwards;
-    }
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fade-in 0.5s ease-out forwards;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 0.8;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.8;
+            }
+        }
+
+        .animate-pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fade-in 0.5s ease-out forwards;
+        }
     </style>
 </head>
 
@@ -92,33 +135,38 @@
             </div>
         </div>
     </nav>
+    <!-- Main Body -->
     <main>
-        <section class="py-16 bg-gradient-to-br from-amber-50 via-white to-amber-100" role="region"
+        <section class="py-6 bg-gradient-to-br from-amber-50 via-white to-amber-100" role="region"
             aria-labelledby="safari-packages-heading">
             <div class="container mx-auto px-4 max-w-7xl">
+
                 <!-- Section Header -->
-                <div class="text-center mb-12 relative">
-                    <div class="absolute -top-8 left-1/2 transform -translate-x-1/2">
-                        <svg class="h-12 w-12 text-amber-500 animate-pulse" fill="currentColor" viewBox="0 0 20 20"
-                            role="img" aria-label="Decorative tiger icon">
+                <div class="text-center mb-6 relative">
+                    <h1 id="safari-packages-heading"
+                        class="text-3xl font-extrabold text-[#ff7518] mb-2">Ranthambore Safari
+                        Adventures</h1>
+                    <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto font-medium">
+                        Embark on an unforgettable journey with our exclusive tiger safari packages
+                    </p>
+
+                    <!-- Seasonal Info Chip -->
+                    <div
+                        class="mt-4 inline-flex items-center bg-amber-100 border border-amber-300 text-amber-800 px-4 py-1.5 rounded-full text-sm font-medium">
+                        <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 20 20" role="img"
+                            aria-label="Info icon">
                             <path fill-rule="evenodd"
-                                d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
                                 clip-rule="evenodd"></path>
                         </svg>
+                        Best Season: October to April (Tiger Sighting Probability: 80%)
                     </div>
-                    <h1 id="safari-packages-heading"
-                        class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">Ranthambore Safari
-                        Adventures</h1>
-                    <div class="w-32 h-2 bg-gradient-to-r from-amber-500 to-amber-700 mx-auto mb-4 rounded-full"></div>
-                    <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto font-medium">
-                        Embark on an unforgettable journey with our exclusive safari packages
-                    </p>
                 </div>
 
-                <!-- Search and Filter Bar -->
+                <!-- Enhanced Search and Filter Bar -->
                 <div class="bg-white/80 backdrop-blur-md rounded-2xl shadow-lg p-6 mb-10 border border-amber-200/50">
                     <div class="flex flex-col md:flex-row gap-4">
-                        <!-- Destination -->
+                        <!-- Destination with Zone Selector -->
                         <div class="flex-1 min-w-0">
                             <label for="destination"
                                 class="block text-sm font-semibold text-gray-700 mb-2">Destination</label>
@@ -140,9 +188,20 @@
                                 <span id="destination-desc" class="sr-only">Fixed destination: Ranthambore National
                                     Park</span>
                             </div>
+                            <div class="mt-2">
+                                <label for="zone-selector"
+                                    class="block text-xs font-medium text-gray-600 mb-1">Preferred Safari Zone</label>
+                                <select id="zone-selector"
+                                    class="w-full p-2 border border-amber-200 rounded-md text-sm focus:ring-2 focus:ring-amber-500 focus:border-amber-500">
+                                    <option value="">Any Zone</option>
+                                    <option value="1">Zone 1-3 (Premium)</option>
+                                    <option value="2">Zone 4-6 (Standard)</option>
+                                    <option value="3">Zone 7-10 (Budget)</option>
+                                </select>
+                            </div>
                         </div>
 
-                        <!-- Date Picker -->
+                        <!-- Enhanced Date Picker with Safari Timing -->
                         <div class="flex-1 min-w-0">
                             <label for="travel-dates" class="block text-sm font-semibold text-gray-700 mb-2">Travel
                                 Dates</label>
@@ -161,9 +220,26 @@
                                 <span id="travel-dates-desc" class="sr-only">Select your preferred travel dates for the
                                     safari</span>
                             </div>
+                            <div class="mt-2 flex gap-2">
+                                <button
+                                    class="flex-1 text-xs px-2 py-1 border border-amber-300 rounded-md hover:bg-amber-100 transition-colors aria-pressed:bg-amber-200 aria-pressed:border-amber-500"
+                                    aria-pressed="false">
+                                    Morning Safari
+                                </button>
+                                <button
+                                    class="flex-1 text-xs px-2 py-1 border border-amber-300 rounded-md hover:bg-amber-100 transition-colors aria-pressed:bg-amber-200 aria-pressed:border-amber-500"
+                                    aria-pressed="false">
+                                    Evening Safari
+                                </button>
+                                <button
+                                    class="flex-1 text-xs px-2 py-1 border border-amber-300 rounded-md hover:bg-amber-100 transition-colors aria-pressed:bg-amber-200 aria-pressed:border-amber-500"
+                                    aria-pressed="false">
+                                    Full Day
+                                </button>
+                            </div>
                         </div>
 
-                        <!-- Travelers -->
+                        <!-- Enhanced Travelers Input with Vehicle Type -->
                         <div class="flex-1 min-w-0">
                             <label for="travelers"
                                 class="block text-sm font-semibold text-gray-700 mb-2">Travelers</label>
@@ -182,25 +258,36 @@
                                 <span id="travelers-desc" class="sr-only">Enter the number of travelers for the safari
                                     (default: 2)</span>
                             </div>
+                            <div class="mt-2">
+                                <label for="vehicle-type" class="block text-xs font-medium text-gray-600 mb-1">Vehicle
+                                    Preference</label>
+                                <select id="vehicle-type"
+                                    class="w-full p-2 border border-amber-200 rounded-md text-sm focus:ring-2 focus:ring-amber-500 focus:border-amber-500">
+                                    <option value="">Any Vehicle</option>
+                                    <option value="gypsy">Gypsy (6 Seater)</option>
+                                    <option value="canter">Canter (20 Seater)</option>
+                                    <option value="private">Private Vehicle</option>
+                                </select>
+                            </div>
                         </div>
 
-                        <!-- Search Button -->
+                        <!-- Enhanced Search Button -->
                         <div class="flex items-end">
                             <button
-                                class="h-12 px-8 bg-gradient-to-r from-amber-500 to-amber-700 hover:from-amber-600 hover:to-amber-800 text-white rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg hover:shadow-xl focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
+                                class="h-12 px-8 bg-gradient-to-r from-amber-500 to-amber-700 hover:from-amber-600 hover:to-amber-800 text-white rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg hover:shadow-xl focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 flex items-center"
                                 aria-label="Search safari packages">
-                                <svg class="h-6 w-6 mr-2 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                <svg class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                     role="img" aria-label="Search icon">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                                 </svg>
-                                Search
+                                Search Packages
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Filter Chips -->
+                <!-- Enhanced Filter Chips with More Options -->
                 <div class="flex flex-wrap gap-3 mb-8" aria-live="polite">
                     <button
                         class="px-3 py-1.5 bg-amber-50 border border-amber-300 rounded-full text-sm font-semibold text-gray-700 hover:bg-amber-100 hover:border-amber-500 hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 aria-pressed:bg-amber-200 aria-pressed:border-amber-600"
@@ -218,50 +305,84 @@
                         aria-label="Sort by price low to high" aria-pressed="false">Price: Low to High</button>
                     <button
                         class="px-3 py-1.5 bg-amber-50 border border-amber-300 rounded-full text-sm font-semibold text-gray-700 hover:bg-amber-100 hover:border-amber-500 hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 aria-pressed:bg-amber-200 aria-pressed:border-amber-600"
-                        aria-label="Sort by popularity" aria-pressed="false">Popularity</button>
+                        aria-label="Sort by popularity" aria-pressed="true">Popularity</button>
                     <button
                         class="px-3 py-1.5 bg-amber-50 border border-amber-300 rounded-full text-sm font-semibold text-gray-700 hover:bg-amber-100 hover:border-amber-500 hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 aria-pressed:bg-amber-200 aria-pressed:border-amber-600"
                         aria-label="Filter by instant confirmation" aria-pressed="false">Instant Confirmation</button>
                     <button
                         class="px-3 py-1.5 bg-amber-50 border border-amber-300 rounded-full text-sm font-semibold text-gray-700 hover:bg-amber-100 hover:border-amber-500 hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 aria-pressed:bg-amber-200 aria-pressed:border-amber-600"
-                        aria-label="Filter by free cancellation" aria-pressed="false">Free Cancellation</button>
+                        aria-label="Filter by free cancellation" aria-pressed="true">Free Cancellation</button>
                     <button
                         class="px-3 py-1.5 bg-amber-50 border border-amber-300 rounded-full text-sm font-semibold text-gray-700 hover:bg-amber-100 hover:border-amber-500 hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 aria-pressed:bg-amber-200 aria-pressed:border-amber-600"
                         aria-label="Filter by breakfast included" aria-pressed="false">Breakfast Included</button>
+                    <button
+                        class="px-3 py-1.5 bg-amber-50 border border-amber-300 rounded-full text-sm font-semibold text-gray-700 hover:bg-amber-100 hover:border-amber-500 hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 aria-pressed:bg-amber-200 aria-pressed:border-amber-600"
+                        aria-label="Filter by luxury packages" aria-pressed="false">Luxury</button>
+                    <button
+                        class="px-3 py-1.5 bg-amber-50 border border-amber-300 rounded-full text-sm font-semibold text-gray-700 hover:bg-amber-100 hover:border-amber-500 hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 aria-pressed:bg-amber-200 aria-pressed:border-amber-600"
+                        aria-label="Filter by family-friendly packages" aria-pressed="false">Family Friendly</button>
                 </div>
 
-                <!-- Limited Offer Banner -->
+                <!-- Limited Offer Banner with Countdown -->
                 <div
                     class="bg-gradient-to-r from-amber-600 to-amber-800 text-white rounded-lg p-4 mb-8 text-center animate-pulse">
-                    <p class="text-lg font-semibold">Limited-Time Offer: Book by Aug 15 for 10% Off!</p>
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                        <p class="text-lg font-semibold">Limited-Time Offer: Book by Aug 15 for 10% Off!</p>
+                        <div class="flex items-center gap-2 bg-amber-800/50 px-3 py-1 rounded-full">
+                            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" role="img"
+                                aria-label="Clock icon">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span class="font-mono">04d:12h:45m:22s</span>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Packages Grid -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                     <!-- Premium Package Card -->
                     <div
-                        class="relative bg-white rounded-2xl shadow-xl overflow-hidden group border border-amber-100 hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+                        class="relative bg-white rounded-2xl shadow-xl overflow-hidden border border-amber-200 hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 min-h-96 group">
                         <!-- Badge -->
                         <div class="absolute top-4 left-0 z-10">
-                            <div
-                                class="bg-amber-500 text-white text-xs font-semibold px-3 py-1.5 rounded-r-lg shadow-md">
+                            <div class="bg-gradient-to-r from-amber-500 to-amber-700 text-white text-sm font-semibold px-4 py-2 rounded-r-lg shadow-md"
+                                aria-label="Bestseller badge">
                                 BESTSELLER
                             </div>
                         </div>
 
-                        <!-- Image -->
-                        <div class="relative h-52 aspect-[16/9] overflow-hidden">
-                            <!-- TODO: Replace Unsplash URLs with optimized AVIF/WebP images for production -->
+                        <!-- Image with Quick View Button -->
+                        <div class="relative h-48 md:h-56 aspect-[4/3] overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1599427303058-f04cbcf4756f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
                                 srcset="https://images.unsplash.com/photo-1599427303058-f04cbcf4756f?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80 400w,
-                       https://images.unsplash.com/photo-1599427303058-f04cbcf4756f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80 800w"
+                                   https://images.unsplash.com/photo-1599427303058-f04cbcf4756f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80 800w"
                                 sizes="(max-width: 640px) 400px, 800px" alt="Royal Tiger Experience Safari"
-                                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                                 loading="lazy">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent flex flex-col justify-between p-4">
+                                <div class="flex justify-end">
+                                    <button
+                                        class="bg-white/90 text-amber-700 p-2 rounded-full hover:bg-white transition-all"
+                                        aria-label="Add to favorites">
+                                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                            role="img" aria-label="Heart icon">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                                            </path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <button
+                                    class="self-center bg-amber-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-amber-700 transition-all group-hover:opacity-100 opacity-0">
+                                    Quick View
+                                </button>
+                            </div>
                             <button
-                                class="absolute bottom-4 right-4 bg-amber-900/80 backdrop-blur-sm text-white px-3 py-1.5 rounded-full text-sm font-semibold flex items-center hover:bg-amber-900 hover:scale-105 transition-all focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
+                                class="absolute bottom-4 right-4 bg-amber-900/80 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center hover:bg-amber-900 hover:scale-105 transition-all focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
                                 aria-label="View Royal Tiger Experience gallery">
-                                <svg class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                <svg class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                     role="img" aria-label="Gallery icon">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4">
@@ -272,38 +393,38 @@
                         </div>
 
                         <!-- Package Details -->
-                        <div class="p-5 sm:p-6">
+                        <div class="p-6">
                             <!-- Title and Rating -->
-                            <div class="flex justify-between items-start mb-3">
-                                <h3 class="text-xl sm:text-2xl font-bold text-gray-900">Royal Tiger Experience</h3>
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-xl md:text-2xl font-bold text-gray-900">Royal Tiger Experience</h3>
                                 <div class="flex items-center space-x-1">
                                     <span class="text-sm font-semibold text-gray-700">4.9</span>
                                     <div class="flex">
-                                        <svg class="h-4 w-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
+                                        <svg class="h-5 w-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
                                             role="img" aria-label="Star rating">
                                             <path
                                                 d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
                                             </path>
                                         </svg>
-                                        <svg class="h-4 w-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
+                                        <svg class="h-5 w-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
                                             role="img" aria-label="Star rating">
                                             <path
                                                 d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
                                             </path>
                                         </svg>
-                                        <svg class="h-4 w-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
+                                        <svg class="h-5 w-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
                                             role="img" aria-label="Star rating">
                                             <path
                                                 d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
                                             </path>
                                         </svg>
-                                        <svg class="h-4 w-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
+                                        <svg class="h-5 w-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
                                             role="img" aria-label="Star rating">
                                             <path
                                                 d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
                                             </path>
                                         </svg>
-                                        <svg class="h-4 w-4 text-amber-500/50" fill="currentColor" viewBox="0 0 20 20"
+                                        <svg class="h-5 w-5 text-amber-500/50" fill="currentColor" viewBox="0 0 20 20"
                                             role="img" aria-label="Star rating">
                                             <path
                                                 d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
@@ -337,9 +458,11 @@
                                     <span class="font-semibold">2 Nights / 3 Days • 2 Private Gypsy Safaris</span>
                                 </div>
                                 <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
-                                    <li>Luxury Resort Stay</li>
-                                    <li>All Meals Included</li>
-                                    <li>Expert Wildlife Guide</li>
+                                    <li>Luxury Resort Stay with Pool</li>
+                                    <li>All Meals Included (Premium Dining)</li>
+                                    <li>Expert Wildlife Guide & Naturalist</li>
+                                    <li>Zone 1-3 Entry Guaranteed</li>
+                                    <li>Ranthambore Fort Visit</li>
                                 </ul>
                             </div>
 
@@ -348,8 +471,9 @@
                                 <div>
                                     <p class="text-xs text-gray-600">Starting from</p>
                                     <div class="flex items-end gap-2">
-                                        <p class="text-2xl sm:text-3xl font-extrabold text-amber-600">₹14,999</p>
+                                        <p class="text-2xl md:text-3xl font-extrabold text-amber-600">₹14,999</p>
                                         <span class="text-xs text-gray-600 mb-1">/person</span>
+                                        <span class="text-xs text-green-600 font-medium">10% OFF</span>
                                     </div>
                                     <p class="text-xs text-green-600 mt-2 flex items-center">
                                         <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 20 20" role="img"
@@ -361,37 +485,68 @@
                                         Free Cancellation • Pay at Hotel
                                     </p>
                                 </div>
-                                <button
-                                    class="px-5 py-2 bg-gradient-to-r from-amber-500 to-amber-700 hover:from-amber-600 hover:to-amber-800 text-white rounded-lg font-semibold transition-all transform hover:scale-105 shadow-md hover:shadow-lg focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
-                                    aria-label="View Royal Tiger Experience deal">
-                                    Book Now
-                                </button>
+                                <div class="flex flex-col items-end">
+                                    <button
+                                        class="px-5 py-2 bg-gradient-to-r from-amber-500 to-amber-700 hover:from-amber-600 hover:to-amber-800 text-white rounded-lg font-semibold transition-all transform hover:scale-105 shadow-md hover:shadow-lg focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
+                                        aria-label="Book Royal Tiger Experience now">
+                                        Book Now
+                                    </button>
+                                    <a href="#" class="mt-2 text-sm text-amber-600 hover:underline flex items-center"
+                                        aria-label="View Royal Tiger Experience details">
+                                        View Details
+                                        <svg class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                            role="img" aria-label="Chevron right icon">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Standard Package Card -->
                     <div
-                        class="relative bg-white rounded-2xl shadow-xl overflow-hidden group border border-amber-100 hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+                        class="relative bg-white rounded-2xl shadow-xl overflow-hidden border border-amber-200 hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 min-h-96 group">
                         <!-- Badge -->
                         <div class="absolute top-4 left-0 z-10">
-                            <div class="bg-red-500 text-white text-xs font-semibold px-3 py-1.5 rounded-r-lg shadow-md">
+                            <div class="bg-gradient-to-r from-amber-500 to-amber-700 text-white text-sm font-semibold px-4 py-2 rounded-r-lg shadow-md"
+                                aria-label="Flat 15% off badge">
                                 FLAT 15% OFF
                             </div>
                         </div>
 
-                        <!-- Image -->
-                        <div class="relative h-52 aspect-[16/9] overflow-hidden">
+                        <!-- Image with Quick View Button -->
+                        <div class="relative h-48 md:h-56 aspect-[4/3] overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1589656966895-2f33e7653819?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
                                 srcset="https://images.unsplash.com/photo-1589656966895-2f33e7653819?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80 400w,
-                       https://images.unsplash.com/photo-1589656966895-2f33e7653819?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80 800w"
+                                   https://images.unsplash.com/photo-1589656966895-2f33e7653819?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80 800w"
                                 sizes="(max-width: 640px) 400px, 800px" alt="Wildlife Explorer Safari"
-                                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                                 loading="lazy">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent flex flex-col justify-between p-4">
+                                <div class="flex justify-end">
+                                    <button
+                                        class="bg-white/90 text-amber-700 p-2 rounded-full hover:bg-white transition-all"
+                                        aria-label="Add to favorites">
+                                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                            role="img" aria-label="Heart icon">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                                            </path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <button
+                                    class="self-center bg-amber-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-amber-700 transition-all group-hover:opacity-100 opacity-0">
+                                    Quick View
+                                </button>
+                            </div>
                             <button
-                                class="absolute bottom-4 right-4 bg-amber-900/80 backdrop-blur-sm text-white px-3 py-1.5 rounded-full text-sm font-semibold flex items-center hover:bg-amber-900 hover:scale-105 transition-all focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
+                                class="absolute bottom-4 right-4 bg-amber-900/80 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center hover:bg-amber-900 hover:scale-105 transition-all focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
                                 aria-label="View Wildlife Explorer gallery">
-                                <svg class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                <svg class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                     role="img" aria-label="Gallery icon">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4">
@@ -402,38 +557,38 @@
                         </div>
 
                         <!-- Package Details -->
-                        <div class="p-5 sm:p-6">
+                        <div class="p-6">
                             <!-- Title and Rating -->
-                            <div class="flex justify-between items-start mb-3">
-                                <h3 class="text-xl sm:text-2xl font-bold text-gray-900">Wildlife Explorer</h3>
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-xl md:text-2xl font-bold text-gray-900">Wildlife Explorer</h3>
                                 <div class="flex items-center space-x-1">
                                     <span class="text-sm font-semibold text-gray-700">4.7</span>
                                     <div class="flex">
-                                        <svg class="h-4 w-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
+                                        <svg class="h-5 w-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
                                             role="img" aria-label="Star rating">
                                             <path
                                                 d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
                                             </path>
                                         </svg>
-                                        <svg class="h-4 w-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
+                                        <svg class="h-5 w-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
                                             role="img" aria-label="Star rating">
                                             <path
                                                 d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
                                             </path>
                                         </svg>
-                                        <svg class="h-4 w-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
+                                        <svg class="h-5 w-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
                                             role="img" aria-label="Star rating">
                                             <path
                                                 d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
                                             </path>
                                         </svg>
-                                        <svg class="h-4 w-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
+                                        <svg class="h-5 w-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
                                             role="img" aria-label="Star rating">
                                             <path
                                                 d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
                                             </path>
                                         </svg>
-                                        <svg class="h-4 w-4 text-amber-500/50" fill="currentColor" viewBox="0 0 20 20"
+                                        <svg class="h-5 w-5 text-amber-500/50" fill="currentColor" viewBox="0 0 20 20"
                                             role="img" aria-label="Star rating">
                                             <path
                                                 d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
@@ -467,9 +622,11 @@
                                     <span class="font-semibold">2 Nights / 3 Days • 2 Canter Safaris</span>
                                 </div>
                                 <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
-                                    <li>Comfortable Hotel Stay</li>
-                                    <li>Breakfast & Dinner</li>
-                                    <li>Local Guide</li>
+                                    <li>Comfortable 4-Star Hotel Stay</li>
+                                    <li>Breakfast & Dinner Included</li>
+                                    <li>Experienced Local Guide</li>
+                                    <li>Zone 4-6 Entry</li>
+                                    <li>Evening Nature Walk</li>
                                 </ul>
                             </div>
 
@@ -478,7 +635,7 @@
                                 <div>
                                     <p class="text-xs text-gray-600">Starting from</p>
                                     <div class="flex items-end gap-2">
-                                        <p class="text-2xl sm:text-3xl font-extrabold text-amber-600">₹9,999</p>
+                                        <p class="text-2xl md:text-3xl font-extrabold text-amber-600">₹9,999</p>
                                         <span class="text-xs text-gray-600 mb-1">/person</span>
                                         <span class="text-xs text-gray-400 line-through mb-1">₹11,499</span>
                                     </div>
@@ -492,38 +649,68 @@
                                         Free Cancellation • Pay Later
                                     </p>
                                 </div>
-                                <button
-                                    class="px-5 py-2 bg-gradient-to-r from-amber-500 to-amber-700 hover:from-amber-600 hover:to-amber-800 text-white rounded-lg font-semibold transition-all transform hover:scale-105 shadow-md hover:shadow-lg focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
-                                    aria-label="View Wildlife Explorer deal">
-                                    Book Now
-                                </button>
+                                <div class="flex flex-col items-end">
+                                    <button
+                                        class="px-5 py-2 bg-gradient-to-r from-amber-500 to-amber-700 hover:from-amber-600 hover:to-amber-800 text-white rounded-lg font-semibold transition-all transform hover:scale-105 shadow-md hover:shadow-lg focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
+                                        aria-label="Book Wildlife Explorer now">
+                                        Book Now
+                                    </button>
+                                    <a href="#" class="mt-2 text-sm text-amber-600 hover:underline flex items-center"
+                                        aria-label="View Wildlife Explorer details">
+                                        View Details
+                                        <svg class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                            role="img" aria-label="Chevron right icon">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Budget Package Card -->
                     <div
-                        class="relative bg-white rounded-2xl shadow-xl overflow-hidden group border border-amber-100 hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+                        class="relative bg-white rounded-2xl shadow-xl overflow-hidden border border-amber-200 hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 min-h-96 group">
                         <!-- Badge -->
                         <div class="absolute top-4 left-0 z-10">
-                            <div
-                                class="bg-teal-500 text-white text-xs font-semibold px-3 py-1.5 rounded-r-lg shadow-md">
+                            <div class="bg-gradient-to-r from-amber-500 to-amber-700 text-white text-sm font-semibold px-4 py-2 rounded-r-lg shadow-md"
+                                aria-label="Popular choice badge">
                                 POPULAR CHOICE
                             </div>
                         </div>
 
-                        <!-- Image -->
-                        <div class="relative h-52 aspect-[16/9] overflow-hidden">
+                        <!-- Image with Quick View Button -->
+                        <div class="relative h-48 md:h-56 aspect-[4/3] overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
                                 srcset="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80 400w,
-                       https://images.unsplash.com/photo-1523438885200-e635ba2c371e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80 800w"
+                                   https://images.unsplash.com/photo-1523438885200-e635ba2c371e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80 800w"
                                 sizes="(max-width: 640px) 400px, 800px" alt="Tiger Trail Express Safari"
-                                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                                 loading="lazy">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent flex flex-col justify-between p-4">
+                                <div class="flex justify-end">
+                                    <button
+                                        class="bg-white/90 text-amber-700 p-2 rounded-full hover:bg-white transition-all"
+                                        aria-label="Add to favorites">
+                                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                            role="img" aria-label="Heart icon">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                                            </path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <button
+                                    class="self-center bg-amber-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-amber-700 transition-all group-hover:opacity-100 opacity-0">
+                                    Quick View
+                                </button>
+                            </div>
                             <button
-                                class="absolute bottom-4 right-4 bg-amber-900/80 backdrop-blur-sm text-white px-3 py-1.5 rounded-full text-sm font-semibold flex items-center hover:bg-amber-900 hover:scale-105 transition-all focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
+                                class="absolute bottom-4 right-4 bg-amber-900/80 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center hover:bg-amber-900 hover:scale-105 transition-all focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
                                 aria-label="View Tiger Trail Express gallery">
-                                <svg class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                <svg class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                     role="img" aria-label="Gallery icon">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4">
@@ -534,38 +721,38 @@
                         </div>
 
                         <!-- Package Details -->
-                        <div class="p-5 sm:p-6">
+                        <div class="p-6">
                             <!-- Title and Rating -->
-                            <div class="flex justify-between items-start mb-3">
-                                <h3 class="text-xl sm:text-2xl font-bold text-gray-900">Tiger Trail Express</h3>
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-xl md:text-2xl font-bold text-gray-900">Tiger Trail Express</h3>
                                 <div class="flex items-center space-x-1">
                                     <span class="text-sm font-semibold text-gray-700">4.5</span>
                                     <div class="flex">
-                                        <svg class="h-4 w-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
+                                        <svg class="h-5 w-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
                                             role="img" aria-label="Star rating">
                                             <path
                                                 d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
                                             </path>
                                         </svg>
-                                        <svg class="h-4 w-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
+                                        <svg class="h-5 w-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
                                             role="img" aria-label="Star rating">
                                             <path
                                                 d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
                                             </path>
                                         </svg>
-                                        <svg class="h-4 w-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
+                                        <svg class="h-5 w-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
                                             role="img" aria-label="Star rating">
                                             <path
                                                 d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
                                             </path>
                                         </svg>
-                                        <svg class="h-4 w-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
+                                        <svg class="h-5 w-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
                                             role="img" aria-label="Star rating">
                                             <path
                                                 d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
                                             </path>
                                         </svg>
-                                        <svg class="h-4 w-4 text-amber-500/50" fill="currentColor" viewBox="0 0 20 20"
+                                        <svg class="h-5 w-5 text-amber-500/50" fill="currentColor" viewBox="0 0 20 20"
                                             role="img" aria-label="Star rating">
                                             <path
                                                 d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
@@ -599,9 +786,11 @@
                                     <span class="font-semibold">1 Night / 2 Days • 1 Canter Safari</span>
                                 </div>
                                 <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
-                                    <li>Budget-Friendly Hotel</li>
+                                    <li>Budget-Friendly 3-Star Hotel</li>
                                     <li>Breakfast Included</li>
                                     <li>Shared Safari Experience</li>
+                                    <li>Zone 7-10 Entry</li>
+                                    <li>Basic Guide Service</li>
                                 </ul>
                             </div>
 
@@ -610,7 +799,7 @@
                                 <div>
                                     <p class="text-xs text-gray-600">Starting from</p>
                                     <div class="flex items-end gap-2">
-                                        <p class="text-2xl sm:text-3xl font-extrabold text-amber-600">₹6,499</p>
+                                        <p class="text-2xl md:text-3xl font-extrabold text-amber-600">₹6,499</p>
                                         <span class="text-xs text-gray-600 mb-1">/person</span>
                                     </div>
                                     <p class="text-xs text-green-600 mt-2 flex items-center">
@@ -623,26 +812,42 @@
                                         Free Cancellation • Instant Confirmation
                                     </p>
                                 </div>
-                                <button
-                                    class="px-5 py-2 bg-gradient-to-r from-amber-500 to-amber-700 hover:from-amber-600 hover:to-amber-800 text-white rounded-lg font-semibold transition-all transform hover:scale-105 shadow-md hover:shadow-lg focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
-                                    aria-label="View Tiger Trail Express deal">
-                                    Book Now
-                                </button>
+                                <div class="flex flex-col items-end">
+                                    <button
+                                        class="px-5 py-2 bg-gradient-to-r from-amber-500 to-amber-700 hover:from-amber-600 hover:to-amber-800 text-white rounded-lg font-semibold transition-all transform hover:scale-105 shadow-md hover:shadow-lg focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
+                                        aria-label="Book Tiger Trail Express now">
+                                        Book Now
+                                    </button>
+                                    <a href="#" class="mt-2 text-sm text-amber-600 hover:underline flex items-center"
+                                        aria-label="View Tiger Trail Express details">
+                                        View Details
+                                        <svg class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                            role="img" aria-label="Chevron right icon">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- View All Button -->
+                <!-- View All Button with Total Packages -->
                 <div class="text-center mt-12">
                     <button
-                        class="px-10 py-3 bg-gradient-to-r from-amber-500 to-amber-700 hover:from-amber-600 hover:to-amber-800 text-white rounded-lg font-semibold text-lg transition-all transform hover:scale-105 shadow-lg hover:shadow-xl focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
+                        class="px-10 py-3 bg-gradient-to-r from-amber-500 to-amber-700 hover:from-amber-600 hover:to-amber-800 text-white rounded-lg font-semibold text-lg transition-all transform hover:scale-105 shadow-lg hover:shadow-xl focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 flex items-center mx-auto"
                         aria-label="View all safari packages">
                         Explore All 12 Packages
+                        <svg class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" role="img"
+                            aria-label="Arrow right icon">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
                     </button>
                 </div>
 
-                <!-- Trust Badges -->
+                <!-- Enhanced Trust Badges with Testimonials -->
                 <div class="mt-12 bg-white/80 backdrop-blur-md p-6 rounded-2xl shadow-lg border border-amber-200/50">
                     <div class="flex flex-col sm:flex-row sm:flex-wrap justify-center items-center gap-6 sm:gap-8">
                         <div class="flex items-center animate-fade-in" style="animation-delay: 0.1s;">
@@ -681,6 +886,263 @@
                                 <p class="text-sm text-gray-600">Safe and trusted transactions</p>
                             </div>
                         </div>
+                    </div>
+
+                    <!-- Testimonials Section -->
+                    <div class="mt-8 pt-6 border-t border-amber-100">
+                        <h3 class="text-center text-lg font-semibold text-gray-800 mb-6">What Our Travelers Say</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="bg-amber-50/50 p-4 rounded-lg border border-amber-200">
+                                <div class="flex items-center mb-3">
+                                    <div class="flex mr-2">
+                                        <svg class="h-5 w-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
+                                            role="img" aria-label="Star rating">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                            </path>
+                                        </svg>
+                                        <svg class="h-5 w-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
+                                            role="img" aria-label="Star rating">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                            </path>
+                                        </svg>
+                                        <svg class="h-5 w-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
+                                            role="img" aria-label="Star rating">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                            </path>
+                                        </svg>
+                                        <svg class="h-5 w-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
+                                            role="img" aria-label="Star rating">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                            </path>
+                                        </svg>
+                                        <svg class="h-5 w-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
+                                            role="img" aria-label="Star rating">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <span class="text-sm font-medium text-gray-700">5.0</span>
+                                </div>
+                                <p class="text-gray-700 italic mb-3">"Saw 3 tigers on our first safari! The Royal Tiger
+                                    Experience was worth every penny. The resort was luxurious and the guide extremely
+                                    knowledgeable."</p>
+                                <div class="flex items-center">
+                                    <div
+                                        class="h-8 w-8 rounded-full bg-amber-200 mr-2 flex items-center justify-center text-amber-800 font-medium">
+                                        AK</div>
+                                    <div>
+                                        <p class="text-sm font-medium">Amit K.</p>
+                                        <p class="text-xs text-gray-500">March 2023</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-amber-50/50 p-4 rounded-lg border border-amber-200">
+                                <div class="flex items-center mb-3">
+                                    <div class="flex mr-2">
+                                        <svg class="h-5 w-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
+                                            role="img" aria-label="Star rating">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                            </path>
+                                        </svg>
+                                        <svg class="h-5 w-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
+                                            role="img" aria-label="Star rating">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                            </path>
+                                        </svg>
+                                        <svg class="h-5 w-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
+                                            role="img" aria-label="Star rating">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                            </path>
+                                        </svg>
+                                        <svg class="h-5 w-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
+                                            role="img" aria-label="Star rating">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                            </path>
+                                        </svg>
+                                        <svg class="h-5 w-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
+                                            role="img" aria-label="Star rating">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <span class="text-sm font-medium text-gray-700">5.0</span>
+                                </div>
+                                <p class="text-gray-700 italic mb-3">"The Wildlife Explorer package was perfect for our
+                                    family. Comfortable stay, great food, and we were lucky to spot a tiger with cubs!"
+                                </p>
+                                <div class="flex items-center">
+                                    <div
+                                        class="h-8 w-8 rounded-full bg-amber-200 mr-2 flex items-center justify-center text-amber-800 font-medium">
+                                        PS</div>
+                                    <div>
+                                        <p class="text-sm font-medium">Priya S.</p>
+                                        <p class="text-xs text-gray-500">January 2023</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-amber-50/50 p-4 rounded-lg border border-amber-200">
+                                <div class="flex items-center mb-3">
+                                    <div class="flex mr-2">
+                                        <svg class="h-5 w-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
+                                            role="img" aria-label="Star rating">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                            </path>
+                                        </svg>
+                                        <svg class="h-5 w-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
+                                            role="img" aria-label="Star rating">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                            </path>
+                                        </svg>
+                                        <svg class="h-5 w-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
+                                            role="img" aria-label="Star rating">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                            </path>
+                                        </svg>
+                                        <svg class="h-5 w-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"
+                                            role="img" aria-label="Star rating">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                            </path>
+                                        </svg>
+                                        <svg class="h-5 w-5 text-amber-500/50" fill="currentColor" viewBox="0 0 20 20"
+                                            role="img" aria-label="Star rating">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <span class="text-sm font-medium text-gray-700">4.5</span>
+                                </div>
+                                <p class="text-gray-700 italic mb-3">"Great value for money with the Tiger Trail
+                                    Express. Didn't see a tiger but the experience was still amazing. Would recommend
+                                    for budget travelers."</p>
+                                <div class="flex items-center">
+                                    <div
+                                        class="h-8 w-8 rounded-full bg-amber-200 mr-2 flex items-center justify-center text-amber-800 font-medium">
+                                        RM</div>
+                                    <div>
+                                        <p class="text-sm font-medium">Rahul M.</p>
+                                        <p class="text-xs text-gray-500">December 2022</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="mt-12 bg-white/80 backdrop-blur-md p-6 rounded-2xl shadow-lg border border-amber-200/50">
+                    <h3 class="text-xl font-bold text-gray-900 mb-6 text-center">Frequently Asked Questions</h3>
+                    <div class="space-y-4">
+                        <div class="border-b border-amber-200 pb-4">
+                            <button
+                                class="flex justify-between items-center w-full text-left font-medium text-gray-800 hover:text-amber-700 focus:outline-none"
+                                aria-expanded="false" aria-controls="faq1">
+                                <span>What is the best time to visit Ranthambore for tiger sightings?</span>
+                                <svg class="h-5 w-5 text-amber-500 transform transition-transform" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" role="img" aria-label="Chevron down icon">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div id="faq1" class="hidden mt-2 text-gray-600 text-sm">
+                                <p>The best time for tiger sightings is from October to April when the weather is cooler
+                                    and animals are more active near water sources. The park remains closed during the
+                                    monsoon season (July to September).</p>
+                            </div>
+                        </div>
+                        <div class="border-b border-amber-200 pb-4">
+                            <button
+                                class="flex justify-between items-center w-full text-left font-medium text-gray-800 hover:text-amber-700 focus:outline-none"
+                                aria-expanded="false" aria-controls="faq2">
+                                <span>What's the difference between a Gypsy and Canter safari?</span>
+                                <svg class="h-5 w-5 text-amber-500 transform transition-transform" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" role="img" aria-label="Chevron down icon">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div id="faq2" class="hidden mt-2 text-gray-600 text-sm">
+                                <p>A Gypsy is a 6-seater open-top jeep ideal for small groups offering more flexibility
+                                    and better wildlife viewing. A Canter is a 20-seater open bus more economical for
+                                    larger groups but with less mobility.</p>
+                            </div>
+                        </div>
+                        <div class="border-b border-amber-200 pb-4">
+                            <button
+                                class="flex justify-between items-center w-full text-left font-medium text-gray-800 hover:text-amber-700 focus:outline-none"
+                                aria-expanded="false" aria-controls="faq3">
+                                <span>What should I wear and bring for the safari?</span>
+                                <svg class="h-5 w-5 text-amber-500 transform transition-transform" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" role="img" aria-label="Chevron down icon">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div id="faq3" class="hidden mt-2 text-gray-600 text-sm">
+                                <p>Wear earth-toned clothing (avoid bright colors), comfortable shoes, a hat, and
+                                    sunscreen. Bring binoculars, a camera, water, and any personal medications. Winters
+                                    can be chilly, so layer appropriately.</p>
+                            </div>
+                        </div>
+                        <div class="border-b border-amber-200 pb-4">
+                            <button
+                                class="flex justify-between items-center w-full text-left font-medium text-gray-800 hover:text-amber-700 focus:outline-none"
+                                aria-expanded="false" aria-controls="faq4">
+                                <span>Are children allowed on safaris?</span>
+                                <svg class="h-5 w-5 text-amber-500 transform transition-transform" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" role="img" aria-label="Chevron down icon">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div id="faq4" class="hidden mt-2 text-gray-600 text-sm">
+                                <p>Yes, children are allowed but must be supervised at all times. Children under 5 years
+                                    may find the bumpy rides uncomfortable. We recommend private Gypsy safaris for
+                                    families with young children.</p>
+                            </div>
+                        </div>
+                        <div class="border-b border-amber-200 pb-4">
+                            <button
+                                class="flex justify-between items-center w-full text-left font-medium text-gray-800 hover:text-amber-700 focus:outline-none"
+                                aria-expanded="false" aria-controls="faq5">
+                                <span>What is your cancellation policy?</span>
+                                <svg class="h-5 w-5 text-amber-500 transform transition-transform" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" role="img" aria-label="Chevron down icon">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div id="faq5" class="hidden mt-2 text-gray-600 text-sm">
+                                <p>Most packages offer free cancellation up to 15 days before travel. Within 15 days,
+                                    cancellation charges may apply. Safari permits are non-refundable once booked.
+                                    Please check individual package terms for details.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-6">
+                        <a href="#" class="text-amber-600 hover:text-amber-800 font-medium inline-flex items-center"
+                            aria-label="View all FAQs">
+                            View All FAQs
+                            <svg class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" role="img"
+                                aria-label="Chevron right icon">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
