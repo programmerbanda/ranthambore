@@ -1,17 +1,3 @@
-const hideButton = document.getElementById("hide-search-section");
-const hotelSearchContainer = document.getElementById("hotel-container");
-const hotelSearchButton = document.getElementById("search-hotel-btn");
-
-hideButton.addEventListener("click", () => {
-  hotelSearchContainer.style.display = "none";
-  hotelSearchButton.style.display = "block";
-});
-
-hotelSearchButton.addEventListener("click", () => {
-  hotelSearchContainer.style.display = "block";
-  hotelSearchButton.style.display = "none";
-});
-
 // Advanced search toggle
 document
   .getElementById("advanced-toggle")
@@ -104,3 +90,197 @@ document.querySelector(".carousel-next").addEventListener("click", () => {
 
 // Initialize dots
 updateDots();
+
+// Advanced animations and interactions
+document.addEventListener("DOMContentLoaded", function () {
+  // Parallax effect for hero section
+  const heroSection = document.querySelector(".hero");
+  const parallaxElements = document.querySelectorAll(".parallax");
+
+  if (heroSection) {
+    window.addEventListener("scroll", function () {
+      const scrolled = window.pageYOffset;
+      const speed = scrolled * 0.5;
+
+      parallaxElements.forEach(function (element) {
+        element.style.setProperty("--parallax-y", speed + "px");
+      });
+    });
+  }
+
+  // Stagger animation observer
+  const staggerElements = document.querySelectorAll(".stagger-animation");
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px",
+  };
+
+  const staggerObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.style.animationPlayState = "running";
+      }
+    });
+  }, observerOptions);
+
+  staggerElements.forEach(function (el) {
+    el.style.animationPlayState = "paused";
+    staggerObserver.observe(el);
+  });
+
+  // Scroll to top button
+  const scrollToTopBtn = document.getElementById("scroll-to-top");
+  if (scrollToTopBtn) {
+    window.addEventListener("scroll", function () {
+      if (window.pageYOffset > 300) {
+        scrollToTopBtn.style.opacity = "1";
+        scrollToTopBtn.style.visibility = "visible";
+      } else {
+        scrollToTopBtn.style.opacity = "0";
+        scrollToTopBtn.style.visibility = "hidden";
+      }
+    });
+
+    scrollToTopBtn.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  }
+
+  // Add floating animation to cards randomly
+  const hotelCards = document.querySelectorAll(".featured-hotels .grid > div");
+  hotelCards.forEach(function (card, index) {
+    if (index === 1) {
+      // Make second card float
+      card.classList.add("floating");
+    }
+  });
+
+  // Add shimmer effect to search button on hover
+  const searchButton = document.querySelector('button[type="submit"]');
+  if (searchButton) {
+    searchButton.addEventListener("mouseenter", function () {
+      searchButton.classList.add("shimmer");
+    });
+    searchButton.addEventListener("mouseleave", function () {
+      searchButton.classList.remove("shimmer");
+    });
+  }
+
+  // Add pulse glow to CTA buttons
+  const ctaButtons = document.querySelectorAll(".hero a");
+  ctaButtons.forEach(function (btn) {
+    btn.classList.add("pulse-glow");
+  });
+
+  // Note: Typewriter effect is now handled via CSS animations using the typewriter-infinite class
+
+  // Morphing background for newsletter section
+  const newsletterSection = document.querySelector(".newsletter");
+  if (newsletterSection) {
+    newsletterSection.classList.add("morphing");
+  }
+
+  // Add stagger animation to hotel cards - but keep them visible
+  const hotelCardElements = document.querySelectorAll(
+    ".featured-hotels .grid > div"
+  );
+  hotelCardElements.forEach(function (card, index) {
+    // Don't add stagger animation to hotel cards to prevent hiding issues
+    // card.classList.add('stagger-animation');
+    // card.style.animationDelay = (index * 0.2) + 's';
+
+    // Keep hotel cards fully visible
+    card.style.opacity = "1";
+    card.style.transform = "translateY(0)";
+  });
+
+  // Add stagger animation to destination cards
+  const destinationCards = document.querySelectorAll(
+    ".destination-guides .grid > div"
+  );
+  destinationCards.forEach(function (card, index) {
+    card.classList.add("stagger-animation");
+    card.style.animationDelay = index * 0.15 + "s";
+  });
+
+  // Enhanced hover effects for deal cards
+  const dealCards = document.querySelectorAll(".special-deals .grid > div");
+  dealCards.forEach(function (card) {
+    card.addEventListener("mouseenter", function () {
+      card.style.transform = "translateY(-10px) scale(1.02)";
+      card.style.boxShadow = "0 25px 50px rgba(0,0,0,0.2)";
+    });
+
+    card.addEventListener("mouseleave", function () {
+      card.style.transform = "translateY(0) scale(1)";
+      card.style.boxShadow = "";
+    });
+  });
+
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    });
+  });
+
+  // Add reveal animation to sections on scroll - but avoid hiding hotel cards
+  const revealElements = document.querySelectorAll(
+    "section:not(.featured-hotels)"
+  );
+  const revealObserver = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = "1";
+          entry.target.style.transform = "translateY(0)";
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  revealElements.forEach(function (section) {
+    section.style.opacity = "0";
+    section.style.transform = "translateY(30px)";
+    section.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+    revealObserver.observe(section);
+  });
+
+  // Initialize first section as visible
+  const firstSection = document.querySelector("section");
+  if (firstSection) {
+    firstSection.style.opacity = "1";
+    firstSection.style.transform = "translateY(0)";
+  }
+
+  // Ensure featured hotels section is always visible
+  const featuredHotelsSection = document.querySelector(".featured-hotels");
+  if (featuredHotelsSection) {
+    featuredHotelsSection.style.opacity = "1";
+    featuredHotelsSection.style.transform = "translateY(0)";
+  }
+
+  // Add interactive hover effects to images
+  const images = document.querySelectorAll("img");
+  images.forEach(function (img) {
+    img.addEventListener("mouseenter", function () {
+      img.style.transform = "scale(1.05)";
+      img.style.transition = "transform 0.3s ease";
+    });
+
+    img.addEventListener("mouseleave", function () {
+      img.style.transform = "scale(1)";
+    });
+  });
+});
