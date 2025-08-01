@@ -241,7 +241,7 @@ document.addEventListener("DOMContentLoaded", function () {
         newsletterBtn.textContent = 'Subscribe';
         newsletterBtn.disabled = false;
         showSuccess();
-      }, 1500);
+      }, 500);
     });
     
     // Back to form button
