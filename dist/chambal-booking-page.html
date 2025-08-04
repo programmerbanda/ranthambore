@@ -101,163 +101,248 @@
         </div>
     </nav>
     <main>
-        <section class="bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+        <section class="bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
             <div class="max-w-3xl mx-auto">
                 <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Chambal Safari Booking Details</h2>
 
-                <form id="booking-form" class="bg-white shadow-md rounded-lg p-6 sm:p-8" novalidate>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                        <!-- Name -->
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name <span
-                                    class="text-red-500">*</span></label>
-                            <input type="text" id="name" placeholder="Enter your full name"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent invalid:border-red-500"
-                                required aria-required="true" aria-describedby="name-error">
-                            <p id="name-error" class="text-red-500 text-xs mt-1 hidden">Please enter your name</p>
-                        </div>
+                <form id="booking-form" class="bg-white shadow-md rounded-lg overflow-hidden" novalidate>
+                    <div class="p-6 sm:p-8">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <!-- Name -->
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-[#b87333] mb-1">Name <span
+                                        class="text-red-500">*</span></label>
+                                <input type="text" id="name" name="name" placeholder="Enter your full name"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                    required minlength="3">
+                                <p id="name-error" class="text-red-500 text-xs mt-1 hidden">Please enter your full name
+                                    (min 3 characters)</p>
+                            </div>
 
-                        <!-- Mobile Number -->
-                        <div>
-                            <label for="mobile" class="block text-sm font-medium text-gray-700 mb-1">Mobile Number <span
-                                    class="text-red-500">*</span></label>
-                            <input type="tel" id="mobile" pattern="[0-9]{10}" placeholder="Enter 10-digit mobile number"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent invalid:border-red-500"
-                                required aria-required="true" aria-describedby="mobile-error">
-                            <p id="mobile-error" class="text-red-500 text-xs mt-1 hidden">Please enter a valid 10-digit
-                                mobile number</p>
-                        </div>
+                            <!-- Mobile Number -->
+                            <div>
+                                <label for="mobile" class="block text-sm font-medium text-[#b87333] mb-1">Mobile Number
+                                    <span class="text-red-500">*</span></label>
+                                <div class="relative">
+                                    <span
+                                        class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">+91</span>
+                                    <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}"
+                                        placeholder="Enter 10-digit number"
+                                        class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                        required>
+                                </div>
+                                <p id="mobile-error" class="text-red-500 text-xs mt-1 hidden">Please enter a valid
+                                    10-digit mobile number</p>
+                            </div>
 
-                        <!-- Email -->
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email ID <span
-                                    class="text-red-500">*</span></label>
-                            <input type="email" id="email" placeholder="Enter your email address"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent invalid:border-red-500"
-                                required aria-required="true" aria-describedby="email-error">
-                            <p id="email-error" class="text-red-500 text-xs mt-1 hidden">Please enter a valid email
-                                address</p>
-                        </div>
+                            <!-- Email -->
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-[#b87333] mb-1">Email ID <span
+                                        class="text-red-500">*</span></label>
+                                <input type="email" id="email" name="email" placeholder="Enter your email address"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                    required>
+                                <p id="email-error" class="text-red-500 text-xs mt-1 hidden">Please enter a valid email
+                                    address</p>
+                            </div>
 
-                        <!-- ID Proof -->
-                        <div>
-                            <label for="id-proof" class="block text-sm font-medium text-gray-700 mb-1">ID Proof No.
-                                (Aadhar/PAN/Driving License) <span class="text-red-500">*</span></label>
-                            <input type="text" id="id-proof" placeholder="Enter ID proof number"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent invalid:border-red-500"
-                                required aria-required="true" aria-describedby="id-proof-error">
-                            <p id="id-proof-error" class="text-red-500 text-xs mt-1 hidden">Please enter a valid ID
-                                proof number</p>
-                        </div>
+                            <!-- ID Proof -->
+                            <div>
+                                <label for="id-proof-type" class="block text-sm font-medium text-[#b87333] mb-1">ID Type
+                                    <span class="text-red-500">*</span></label>
+                                <select id="id-proof-type" name="id-proof-type"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                    required>
+                                    <option value="" disabled selected>Select ID Type</option>
+                                    <option value="aadhar">Aadhar</option>
+                                    <option value="pan">PAN</option>
+                                    <option value="dl">Driving License</option>
+                                </select>
+                            </div>
 
-                        <!-- State -->
-                        <div>
-                            <label for="state" class="block text-sm font-medium text-gray-700 mb-1">State <span
-                                    class="text-red-500">*</span></label>
-                            <select id="state"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none bg-white"
-                                required aria-required="true" aria-describedby="state-error">
-                                <option value="" disabled selected>Please Select State</option>
-                                <option value="UP">Uttar Pradesh</option>
-                                <option value="MP">Madhya Pradesh</option>
-                                <option value="RJ">Rajasthan</option>
-                            </select>
-                            <p id="state-error" class="text-red-500 text-xs mt-1 hidden">Please select a state</p>
-                        </div>
+                            <div>
+                                <label for="id-proof" class="block text-sm font-medium text-[#b87333] mb-1">ID Proof
+                                    Number <span class="text-red-500">*</span></label>
+                                <input type="text" id="id-proof" name="id-proof" placeholder="Enter ID number"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                    required>
+                                <p id="id-proof-error" class="text-red-500 text-xs mt-1 hidden">Please enter a valid ID
+                                    proof number</p>
+                            </div>
 
-                        <!-- Indian Persons -->
-                        <div>
-                            <label for="indian-persons" class="block text-sm font-medium text-gray-700 mb-1">No. of
-                                Persons (Indian) <span class="text-red-500">*</span></label>
-                            <select id="indian-persons"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none bg-white"
-                                required aria-required="true" aria-describedby="indian-persons-error">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                            </select>
-                            <p id="indian-persons-error" class="text-red-500 text-xs mt-1 hidden">Please select the
-                                number of Indian persons</p>
-                        </div>
+                            <!-- State -->
+                            <div>
+                                <label for="state" class="block text-sm font-medium text-[#b87333] mb-1">State <span
+                                        class="text-red-500">*</span></label>
+                                <select id="state" name="state"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                    required>
+                                    <option value="" disabled selected>Select State</option>
+                                    <option value="UP">Uttar Pradesh</option>
+                                    <option value="MP">Madhya Pradesh</option>
+                                    <option value="RJ">Rajasthan</option>
+                                </select>
+                                <p id="state-error" class="text-red-500 text-xs mt-1 hidden">Please select a state</p>
+                            </div>
 
-                        <!-- Foreigner Persons -->
-                        <div>
-                            <label for="foreigner-persons" class="block text-sm font-medium text-gray-700 mb-1">No. of
-                                Persons (Foreigner)</label>
-                            <select id="foreigner-persons"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none bg-white"
-                                aria-describedby="foreigner-persons-error">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                            </select>
-                            <p id="foreigner-persons-error" class="text-red-500 text-xs mt-1 hidden">Please select the
-                                number of foreign persons</p>
-                        </div>
+                            <!-- Indian Persons -->
+                            <div>
+                                <label for="indian-persons" class="block text-sm font-medium text-[#b87333] mb-1">No. of
+                                    Persons (Indian) <span class="text-red-500">*</span></label>
+                                <select id="indian-persons" name="indian-persons"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                    required>
+                                    <option value="" disabled selected>Select quantity</option>
+                                    <option value="1">1 (₹500)</option>
+                                    <option value="2">2 (₹900)</option>
+                                    <option value="3">3 (₹1200)</option>
+                                    <option value="4">4 (₹1500)</option>
+                                </select>
+                                <p id="indian-persons-error" class="text-red-500 text-xs mt-1 hidden">Please select
+                                    number of Indian persons</p>
+                            </div>
 
-                        <!-- Booking Date -->
-                        <div>
-                            <label for="booking-date" class="block text-sm font-medium text-gray-700 mb-1">Booking Date
-                                <span class="text-red-500">*</span></label>
-                            <input type="date" id="booking-date"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent invalid:border-red-500"
-                                required aria-required="true" aria-describedby="booking-date-error">
-                            <p id="booking-date-error" class="text-red-500 text-xs mt-1 hidden">Please select a booking
-                                date</p>
-                        </div>
+                            <!-- Foreigner Persons -->
+                            <div>
+                                <label for="foreigner-persons" class="block text-sm font-medium text-[#b87333] mb-1">No.
+                                    of Persons (Foreigner)</label>
+                                <select id="foreigner-persons" name="foreigner-persons"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                                    <option value="0" selected>0</option>
+                                    <option value="1">1 ($15)</option>
+                                    <option value="2">2 ($25)</option>
+                                </select>
+                            </div>
 
-                        <!-- Safari Timing -->
-                        <div>
-                            <label for="safari-timing" class="block text-sm font-medium text-gray-700 mb-1">Select
-                                Safari Timing <span class="text-red-500">*</span></label>
-                            <select id="safari-timing"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none bg-white"
-                                required aria-required="true" aria-describedby="safari-timing-error">
-                                <option value="" disabled selected>Select Timing</option>
-                                <option value="morning">Morning (6:00 AM - 9:00 AM)</option>
-                                <option value="afternoon">Afternoon (3:00 PM - 6:00 PM)</option>
-                            </select>
-                            <p id="safari-timing-error" class="text-red-500 text-xs mt-1 hidden">Please select a safari
-                                timing</p>
-                        </div>
+                            <!-- Booking Date -->
+                            <div>
+                                <label for="booking-date" class="block text-sm font-medium text-[#b87333] mb-1">Booking
+                                    Date <span class="text-red-500">*</span></label>
+                                <input type="date" id="booking-date" name="booking-date" min=""
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                    required>
+                                <p id="booking-date-error" class="text-red-500 text-xs mt-1 hidden">Please select a
+                                    valid booking date</p>
+                            </div>
 
-                        <!-- Full Address -->
-                        <div class="md:col-span-2">
-                            <label for="address" class="block text-sm font-medium text-gray-700 mb-1">Full Address <span
-                                    class="text-red-500">*</span></label>
-                            <textarea id="address" rows="3" placeholder="Enter your full address"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent invalid:border-red-500"
-                                required aria-required="true" aria-describedby="address-error"></textarea>
-                            <p id="address-error" class="text-red-500 text-xs mt-1 hidden">Please enter your full
-                                address</p>
+                            <!-- Safari Timing -->
+                            <div>
+                                <label for="safari-timing" class="block text-sm font-medium text-[#b87333] mb-1">Safari
+                                    Timing <span class="text-red-500">*</span></label>
+                                <select id="safari-timing" name="safari-timing"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                    required>
+                                    <option value="" disabled selected>Select Timing</option>
+                                    <option value="morning">Morning (6:00 AM - 9:00 AM)</option>
+                                    <option value="afternoon">Afternoon (3:00 PM - 6:00 PM)</option>
+                                </select>
+                                <p id="safari-timing-error" class="text-red-500 text-xs mt-1 hidden">Please select a
+                                    safari timing</p>
+                            </div>
+
+                            <!-- Full Address -->
+                            <div class="md:col-span-2">
+                                <label for="address" class="block text-sm font-medium text-[#b87333] mb-1">Full Address
+                                    <span class="text-red-500">*</span></label>
+                                <textarea id="address" name="address" rows="3" placeholder="Enter your full address"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                    required minlength="10"></textarea>
+                                <p id="address-error" class="text-red-500 text-xs mt-1 hidden">Please enter your
+                                    complete address (min 10 characters)</p>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Note -->
-                    <div class="text-sm text-gray-600 mb-6">
-                        <p><span class="font-semibold">Note:</span> Fields marked with <span
-                                class="text-red-500">*</span> are mandatory.</p>
-                    </div>
+                    <!-- Terms and Payment Section -->
+                    <div class="bg-gray-50 border-t border-gray-200 p-6 sm:p-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Note</h2>
 
-                    <!-- Buttons -->
-                    <div class="flex justify-center space-x-4">
-                        <button type="submit" id="submit-btn"
-                            class="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-6 rounded-md transition duration-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 disabled:bg-gray-400 disabled:cursor-not-allowed">
-                            Book Now
-                        </button>
-                        <button type="reset"
-                            class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-medium py-2 px-6 rounded-md transition duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
-                            Reset
-                        </button>
+                        <ul class="space-y-3 mb-6 text-gray-700">
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>Visitors must report 30 minutes before at Palighat Chambal</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>Safari amount is non-refundable</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>Online booking is compulsory for Chambal Safari</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>Children below 5 years are complimentary (Above 5 years charges apply)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>Safari will be conducted by motor boat</span>
+                            </li>
+                        </ul>
+
+                        <div class="mb-6">
+                            <div class="flex items-start">
+                                <div class="flex items-center h-5">
+                                    <input id="terms-checkbox" name="terms" type="checkbox"
+                                        class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-green-300"
+                                        required>
+                                </div>
+                                <label for="terms-checkbox" class="ml-2 text-sm font-medium text-gray-700">
+                                    I agree to all terms and conditions mentioned above
+                                </label>
+                            </div>
+                            <p id="terms-error" class="mt-1 text-xs text-red-500 hidden">You must accept the terms and
+                                conditions</p>
+                        </div>
+
+                        <div class="flex justify-between items-center mb-6">
+                            <span class="text-lg font-semibold text-gray-800">Payable Amount:</span>
+                            <span id="payable-amount" class="text-2xl font-bold text-green-600">₹0</span>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button type="button" id="go-back-btn"
+                                class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2.5 px-4 rounded-lg transition">
+                                Go Back
+                            </button>
+                            <button type="submit" id="submit-btn"
+                                class="flex-1 bg-green-600 hover:bg-green-700 text-white font-medium py-2.5 px-4 rounded-lg transition flex items-center justify-center">
+                                <span id="btn-text">Pay Now</span>
+                                <svg id="loading-spinner" class="hidden w-5 h-5 ml-2 text-white animate-spin"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                        stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor"
+                                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                                    </path>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </form>
             </div>
         </section>
     </main>
-
     <!-- Footer Section -->
     <footer class="bg-[#604019] text-white pt-8 pb-6">
         <div class="container mx-auto px-4 max-w-6xl">
