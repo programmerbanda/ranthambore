@@ -59,11 +59,16 @@
                     <ul class="flex space-x-8 text-lg font-medium items-center">
                         <li><a href="/dist/index.html" id="home-btn"
                                 class="text-[#604019] hover:text-amber-600 transition-colors">Home</a></li>
-                        <li><a href="safari.html" class="text-[#604019] hover:text-amber-600 transition-colors">Safari</a></li>
-                        <li><a href="chambal.html" class="chambalBtn text-[#604019] hover:text-amber-600 transition-colors">Chambal Safari</a>
+                        <li><a href="safari.html"
+                                class="text-[#604019] hover:text-amber-600 transition-colors">Safari</a></li>
+                        <li><a href="chambal.html"
+                                class="chambalBtn text-[#604019] hover:text-amber-600 transition-colors">Chambal
+                                Safari</a>
                         </li>
-                        <li><a href="hotel.html" class="hotelBtn text-[#604019] hover:text-amber-600 transition-colors">Hotels</a></li>
-                        <li><a href="package-booking.html" class="tourBtn text-[#604019] hover:text-amber-600 transition-colors">Packages</a></li>
+                        <li><a href="hotel.html"
+                                class="hotelBtn text-[#604019] hover:text-amber-600 transition-colors">Hotels</a></li>
+                        <li><a href="package-booking.html"
+                                class="tourBtn text-[#604019] hover:text-amber-600 transition-colors">Packages</a></li>
                         <li><a href="contact.html" id="contact-btn"
                                 class="text-[#604019] hover:text-amber-600 transition-colors">Contact</a></li>
                     </ul>
@@ -85,6 +90,537 @@
             </div>
         </div>
     </nav>
+    <main>
+        <section class="max-w-6xl mx-auto p-4 border-2 my-2 md:my-8 rounded-[10px]">
+            <div class="bg-[#ff7518] rounded-[6px] mb-2">
+                <h1 class="text-3xl font-bold text-[#fff] py-2 text-center">Booking Person Details</h1>
+            </div>
+            <div class="text-lg mb-4">
+                <p class="font-semibold text-center">Safari Zone: zone-1/2/3/4/5/6/7</p>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg mb-6">
+                <table class="w-full border-collapse">
+                    <tr>
+                        <td class="border border-gray-300 p-2"><span class="font-semibold">Booking Date:</span>
+                            2025-08-30
+                        </td>
+                        <td class="border border-gray-300 p-2"><span class="font-semibold">Mode:</span> Gypsy</td>
+                        <td class="border border-gray-300 p-2"><span class="font-semibold">Safari Timing:</span> Morning
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="border border-gray-300 p-2"><span class="font-semibold">Your Name:</span> SHubham
+                        </td>
+                        <td class="border border-gray-300 p-2"><span class="font-semibold">Mobile No.:</span> 987652135
+                        </td>
+                        <td class="border border-gray-300 p-2"><span class="font-semibold">Booking Email:</span>
+                            test@gmail.com</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="space-y-4 mb-4">
+                <div>
+                    <label class="block font-semibold mb-1">State:</label>
+                    <select class="w-full p-2 border border-gray-300 rounded-md">
+                        <option value="">State</option>
+                        <option value="andaman-and-nicobar-islands">Andaman and Nicobar Islands</option>
+                        <option value="andhra-pradesh">Andhra Pradesh</option>
+                        <option value="arunachal-pradesh">Arunachal Pradesh</option>
+                        <option value="assam">Assam</option>
+                        <option value="bihar">Bihar</option>
+                        <option value="chandigarh">Chandigarh</option>
+                        <option value="chhattisgarh">Chhattisgarh</option>
+                        <option value="dadra-and-nagar-haveli-and-daman-and-diu">Dadra and Nagar Haveli and
+                            Daman and Diu</option>
+                        <option value="delhi">Delhi</option>
+                        <option value="goa">Goa</option>
+                        <option value="gujarat">Gujarat</option>
+                        <option value="haryana">Haryana</option>
+                        <option value="himachal-pradesh">Himachal Pradesh</option>
+                        <option value="jammu-and-kashmir">Jammu and Kashmir</option>
+                        <option value="jharkhand">Jharkhand</option>
+                        <option value="karnataka">Karnataka</option>
+                        <option value="kerala">Kerala</option>
+                        <option value="ladakh">Ladakh</option>
+                        <option value="lakshadweep">Lakshadweep</option>
+                        <option value="madhya-pradesh">Madhya Pradesh</option>
+                        <option value="maharashtra">Maharashtra</option>
+                        <option value="manipur">Manipur</option>
+                        <option value="meghalaya">Meghalaya</option>
+                        <option value="mizoram">Mizoram</option>
+                        <option value="nagaland">Nagaland</option>
+                        <option value="odisha">Odisha</option>
+                        <option value="puducherry">Puducherry</option>
+                        <option value="punjab">Punjab</option>
+                        <option value="rajasthan">Rajasthan</option>
+                        <option value="sikkim">Sikkim</option>
+                        <option value="tamil-nadu">Tamil Nadu</option>
+                        <option value="telangana">Telangana</option>
+                        <option value="tripura">Tripura</option>
+                        <option value="uttar-pradesh">Uttar Pradesh</option>
+                        <option value="uttarakhand">Uttarakhand</option>
+                        <option value="west-bengal">West Bengal</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block font-semibold mb-1">Full Address:</label>
+                    <textarea class="w-full p-2 border border-gray-300 rounded-md" rows="2"
+                        placeholder="Full Address"></textarea>
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <h3 class="text-2xl font-semibold mb-4">Please fill out the passengers booking details</h3>
+                <table class="w-full border-collapse">
+                    <tbody>
+                        <!-- Passenger Row 1 -->
+                        <tr>
+                            <td class="p-1">
+                                <p class="px-3 py-1 rounded-[10px] bg-[#604019] font-bold text-[#fff]">
+                                    1.
+                                </p>
+                            </td>
+                            <td class="p-1"><input type="text" class="w-full p-1 border border-gray-300 rounded pl"
+                                    placeholder="Enter name"></td>
+                            <td class="p-1"><input type="number" class="w-full p-1 border border-gray-300 rounded"
+                                    placeholder="Age"></td>
+                            <td class="p-1">
+                                <select class=" p-1 border border-gray-300 rounded">
+                                    <option value="">Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </td>
+                            <td class="p-1">
+                                <select class="p-1 border border-gray-300 rounded">
+                                    <option value="">Nationality</option>
+                                    <option value="indian">Indian</option>
+                                    <option value="foreigner">Foreigner</option>
+                                </select>
+                            </td>
+                            <td class="p-1">
+                                <select class="p-1 border border-gray-300 rounded">
+                                    <option value="">State</option>
+                                    <option value="andaman-and-nicobar-islands">Andaman and Nicobar Islands</option>
+                                    <option value="andhra-pradesh">Andhra Pradesh</option>
+                                    <option value="arunachal-pradesh">Arunachal Pradesh</option>
+                                    <option value="assam">Assam</option>
+                                    <option value="bihar">Bihar</option>
+                                    <option value="chandigarh">Chandigarh</option>
+                                    <option value="chhattisgarh">Chhattisgarh</option>
+                                    <option value="dadra-and-nagar-haveli-and-daman-and-diu">Dadra and Nagar Haveli and
+                                        Daman and Diu</option>
+                                    <option value="delhi">Delhi</option>
+                                    <option value="goa">Goa</option>
+                                    <option value="gujarat">Gujarat</option>
+                                    <option value="haryana">Haryana</option>
+                                    <option value="himachal-pradesh">Himachal Pradesh</option>
+                                    <option value="jammu-and-kashmir">Jammu and Kashmir</option>
+                                    <option value="jharkhand">Jharkhand</option>
+                                    <option value="karnataka">Karnataka</option>
+                                    <option value="kerala">Kerala</option>
+                                    <option value="ladakh">Ladakh</option>
+                                    <option value="lakshadweep">Lakshadweep</option>
+                                    <option value="madhya-pradesh">Madhya Pradesh</option>
+                                    <option value="maharashtra">Maharashtra</option>
+                                    <option value="manipur">Manipur</option>
+                                    <option value="meghalaya">Meghalaya</option>
+                                    <option value="mizoram">Mizoram</option>
+                                    <option value="nagaland">Nagaland</option>
+                                    <option value="odisha">Odisha</option>
+                                    <option value="puducherry">Puducherry</option>
+                                    <option value="punjab">Punjab</option>
+                                    <option value="rajasthan">Rajasthan</option>
+                                    <option value="sikkim">Sikkim</option>
+                                    <option value="tamil-nadu">Tamil Nadu</option>
+                                    <option value="telangana">Telangana</option>
+                                    <option value="tripura">Tripura</option>
+                                    <option value="uttar-pradesh">Uttar Pradesh</option>
+                                    <option value="uttarakhand">Uttarakhand</option>
+                                    <option value="west-bengal">West Bengal</option>
+                                </select>
+                            </td>
+                            <td class="p-1">
+                                <select class="w-full p-1 border border-gray-300 rounded">
+                                    <option value="">Select ID</option>
+                                    <option value="aadhar">Aadhar</option>
+                                    <option value="passport">Passport</option>
+                                    <option value="dl">Driver's License</option>
+                                    <option value="pan-card">Pan card</option>
+                                    <option value="voter">Voter ID</option>
+                                    <option value="other">Any Other ID</option>
+                                </select>
+                            </td>
+                            <td class="p-1"><input type="text" class="w-full p-1 border border-gray-300 rounded"
+                                    placeholder="ID Number"></td>
+                            <td class="p-1"><button
+                                    class="w-full px-6 py-1 border border-gray-300 rounded cursor-pointer bg-[#FF0000]">X
+                                </button>
+                            </td>
+
+                        </tr>
+                        <!-- passengers row 2 -->
+                        <tr>
+                            <td class="p-1">
+                                <p class="px-3 py-1 rounded-[10px] bg-[#604019] font-bold text-[#fff]">
+                                    2.
+                                </p>
+                            </td>
+                            <td class="p-1"><input type="text" class="w-full p-1 border border-gray-300 rounded pl"
+                                    placeholder="Enter name"></td>
+                            <td class="p-1"><input type="number" class="w-full p-1 border border-gray-300 rounded"
+                                    placeholder="Age"></td>
+                            <td class="p-1">
+                                <select class=" p-1 border border-gray-300 rounded">
+                                    <option value="">Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </td>
+                            <td class="p-1">
+                                <select class="p-1 border border-gray-300 rounded">
+                                    <option value="">Nationality</option>
+                                    <option value="indian">Indian</option>
+                                    <option value="foreigner">Foreigner</option>
+                                </select>
+                            </td>
+                            <td class="p-1">
+                                <select class="p-1 border border-gray-300 rounded">
+                                    <option value="">State</option>
+                                    <option value="andaman-and-nicobar-islands">Andaman and Nicobar Islands</option>
+                                    <option value="andhra-pradesh">Andhra Pradesh</option>
+                                    <option value="arunachal-pradesh">Arunachal Pradesh</option>
+                                    <option value="assam">Assam</option>
+                                    <option value="bihar">Bihar</option>
+                                    <option value="chandigarh">Chandigarh</option>
+                                    <option value="chhattisgarh">Chhattisgarh</option>
+                                    <option value="dadra-and-nagar-haveli-and-daman-and-diu">Dadra and Nagar Haveli and
+                                        Daman and Diu</option>
+                                    <option value="delhi">Delhi</option>
+                                    <option value="goa">Goa</option>
+                                    <option value="gujarat">Gujarat</option>
+                                    <option value="haryana">Haryana</option>
+                                    <option value="himachal-pradesh">Himachal Pradesh</option>
+                                    <option value="jammu-and-kashmir">Jammu and Kashmir</option>
+                                    <option value="jharkhand">Jharkhand</option>
+                                    <option value="karnataka">Karnataka</option>
+                                    <option value="kerala">Kerala</option>
+                                    <option value="ladakh">Ladakh</option>
+                                    <option value="lakshadweep">Lakshadweep</option>
+                                    <option value="madhya-pradesh">Madhya Pradesh</option>
+                                    <option value="maharashtra">Maharashtra</option>
+                                    <option value="manipur">Manipur</option>
+                                    <option value="meghalaya">Meghalaya</option>
+                                    <option value="mizoram">Mizoram</option>
+                                    <option value="nagaland">Nagaland</option>
+                                    <option value="odisha">Odisha</option>
+                                    <option value="puducherry">Puducherry</option>
+                                    <option value="punjab">Punjab</option>
+                                    <option value="rajasthan">Rajasthan</option>
+                                    <option value="sikkim">Sikkim</option>
+                                    <option value="tamil-nadu">Tamil Nadu</option>
+                                    <option value="telangana">Telangana</option>
+                                    <option value="tripura">Tripura</option>
+                                    <option value="uttar-pradesh">Uttar Pradesh</option>
+                                    <option value="uttarakhand">Uttarakhand</option>
+                                    <option value="west-bengal">West Bengal</option>
+                                </select>
+                            </td>
+                            <td class="p-1">
+                                <select class="w-full p-1 border border-gray-300 rounded">
+                                    <option value="">Select ID</option>
+                                    <option value="aadhar">Aadhar</option>
+                                    <option value="passport">Passport</option>
+                                    <option value="dl">Driver's License</option>
+                                    <option value="pan-card">Pan card</option>
+                                    <option value="voter">Voter ID</option>
+                                    <option value="other">Any Other ID</option>
+                                </select>
+                            </td>
+                            <td class="p-1"><input type="text" class="w-full p-1 border border-gray-300 rounded"
+                                    placeholder="ID Number"></td>
+                            <td class="p-1"><button
+                                    class="w-full px-6 py-1 border border-gray-300 rounded cursor-pointer bg-[#FF0000]">X
+                                </button>
+                            </td>
+
+                        </tr>
+                        <!-- passengers row 3 -->
+                        <tr>
+                            <td class="p-1">
+                                <p class="px-3 py-1 rounded-[10px] bg-[#604019] font-bold text-[#fff]">
+                                    3.
+                                </p>
+                            </td>
+                            <td class="p-1"><input type="text" class="w-full p-1 border border-gray-300 rounded pl"
+                                    placeholder="Enter name"></td>
+                            <td class="p-1"><input type="number" class="w-full p-1 border border-gray-300 rounded"
+                                    placeholder="Age"></td>
+                            <td class="p-1">
+                                <select class=" p-1 border border-gray-300 rounded">
+                                    <option value="">Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </td>
+                            <td class="p-1">
+                                <select class="p-1 border border-gray-300 rounded">
+                                    <option value="">Nationality</option>
+                                    <option value="indian">Indian</option>
+                                    <option value="foreigner">Foreigner</option>
+                                </select>
+                            </td>
+                            <td class="p-1">
+                                <select class="p-1 border border-gray-300 rounded">
+                                    <option value="">State</option>
+                                    <option value="andaman-and-nicobar-islands">Andaman and Nicobar Islands</option>
+                                    <option value="andhra-pradesh">Andhra Pradesh</option>
+                                    <option value="arunachal-pradesh">Arunachal Pradesh</option>
+                                    <option value="assam">Assam</option>
+                                    <option value="bihar">Bihar</option>
+                                    <option value="chandigarh">Chandigarh</option>
+                                    <option value="chhattisgarh">Chhattisgarh</option>
+                                    <option value="dadra-and-nagar-haveli-and-daman-and-diu">Dadra and Nagar Haveli and
+                                        Daman and Diu</option>
+                                    <option value="delhi">Delhi</option>
+                                    <option value="goa">Goa</option>
+                                    <option value="gujarat">Gujarat</option>
+                                    <option value="haryana">Haryana</option>
+                                    <option value="himachal-pradesh">Himachal Pradesh</option>
+                                    <option value="jammu-and-kashmir">Jammu and Kashmir</option>
+                                    <option value="jharkhand">Jharkhand</option>
+                                    <option value="karnataka">Karnataka</option>
+                                    <option value="kerala">Kerala</option>
+                                    <option value="ladakh">Ladakh</option>
+                                    <option value="lakshadweep">Lakshadweep</option>
+                                    <option value="madhya-pradesh">Madhya Pradesh</option>
+                                    <option value="maharashtra">Maharashtra</option>
+                                    <option value="manipur">Manipur</option>
+                                    <option value="meghalaya">Meghalaya</option>
+                                    <option value="mizoram">Mizoram</option>
+                                    <option value="nagaland">Nagaland</option>
+                                    <option value="odisha">Odisha</option>
+                                    <option value="puducherry">Puducherry</option>
+                                    <option value="punjab">Punjab</option>
+                                    <option value="rajasthan">Rajasthan</option>
+                                    <option value="sikkim">Sikkim</option>
+                                    <option value="tamil-nadu">Tamil Nadu</option>
+                                    <option value="telangana">Telangana</option>
+                                    <option value="tripura">Tripura</option>
+                                    <option value="uttar-pradesh">Uttar Pradesh</option>
+                                    <option value="uttarakhand">Uttarakhand</option>
+                                    <option value="west-bengal">West Bengal</option>
+                                </select>
+                            </td>
+                            <td class="p-1">
+                                <select class="w-full p-1 border border-gray-300 rounded">
+                                    <option value="">Select ID</option>
+                                    <option value="aadhar">Aadhar</option>
+                                    <option value="passport">Passport</option>
+                                    <option value="dl">Driver's License</option>
+                                    <option value="pan-card">Pan card</option>
+                                    <option value="voter">Voter ID</option>
+                                    <option value="other">Any Other ID</option>
+                                </select>
+                            </td>
+                            <td class="p-1"><input type="text" class="w-full p-1 border border-gray-300 rounded"
+                                    placeholder="ID Number"></td>
+                            <td class="p-1"><button
+                                    class="w-full px-6 py-1 border border-gray-300 rounded cursor-pointer bg-[#FF0000]">X
+                                </button>
+                            </td>
+
+                        </tr>
+
+                        <!-- passengers row 4 -->
+                        <tr>
+                            <td class="p-1">
+                                <p class="px-3 py-1 rounded-[10px] bg-[#604019] font-bold text-[#fff]">
+                                    4.
+                                </p>
+                            </td>
+                            <td class="p-1"><input type="text" class="w-full p-1 border border-gray-300 rounded pl"
+                                    placeholder="Enter name"></td>
+                            <td class="p-1"><input type="number" class="w-full p-1 border border-gray-300 rounded"
+                                    placeholder="Age"></td>
+                            <td class="p-1">
+                                <select class=" p-1 border border-gray-300 rounded">
+                                    <option value="">Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </td>
+                            <td class="p-1">
+                                <select class="p-1 border border-gray-300 rounded">
+                                    <option value="">Nationality</option>
+                                    <option value="indian">Indian</option>
+                                    <option value="foreigner">Foreigner</option>
+                                </select>
+                            </td>
+                            <td class="p-1">
+                                <select class="p-1 border border-gray-300 rounded">
+                                    <option value="">State</option>
+                                    <option value="andaman-and-nicobar-islands">Andaman and Nicobar Islands</option>
+                                    <option value="andhra-pradesh">Andhra Pradesh</option>
+                                    <option value="arunachal-pradesh">Arunachal Pradesh</option>
+                                    <option value="assam">Assam</option>
+                                    <option value="bihar">Bihar</option>
+                                    <option value="chandigarh">Chandigarh</option>
+                                    <option value="chhattisgarh">Chhattisgarh</option>
+                                    <option value="dadra-and-nagar-haveli-and-daman-and-diu">Dadra and Nagar Haveli and
+                                        Daman and Diu</option>
+                                    <option value="delhi">Delhi</option>
+                                    <option value="goa">Goa</option>
+                                    <option value="gujarat">Gujarat</option>
+                                    <option value="haryana">Haryana</option>
+                                    <option value="himachal-pradesh">Himachal Pradesh</option>
+                                    <option value="jammu-and-kashmir">Jammu and Kashmir</option>
+                                    <option value="jharkhand">Jharkhand</option>
+                                    <option value="karnataka">Karnataka</option>
+                                    <option value="kerala">Kerala</option>
+                                    <option value="ladakh">Ladakh</option>
+                                    <option value="lakshadweep">Lakshadweep</option>
+                                    <option value="madhya-pradesh">Madhya Pradesh</option>
+                                    <option value="maharashtra">Maharashtra</option>
+                                    <option value="manipur">Manipur</option>
+                                    <option value="meghalaya">Meghalaya</option>
+                                    <option value="mizoram">Mizoram</option>
+                                    <option value="nagaland">Nagaland</option>
+                                    <option value="odisha">Odisha</option>
+                                    <option value="puducherry">Puducherry</option>
+                                    <option value="punjab">Punjab</option>
+                                    <option value="rajasthan">Rajasthan</option>
+                                    <option value="sikkim">Sikkim</option>
+                                    <option value="tamil-nadu">Tamil Nadu</option>
+                                    <option value="telangana">Telangana</option>
+                                    <option value="tripura">Tripura</option>
+                                    <option value="uttar-pradesh">Uttar Pradesh</option>
+                                    <option value="uttarakhand">Uttarakhand</option>
+                                    <option value="west-bengal">West Bengal</option>
+                                </select>
+                            </td>
+                            <td class="p-1">
+                                <select class="w-full p-1 border border-gray-300 rounded">
+                                    <option value="">Select ID</option>
+                                    <option value="aadhar">Aadhar</option>
+                                    <option value="passport">Passport</option>
+                                    <option value="dl">Driver's License</option>
+                                    <option value="pan-card">Pan card</option>
+                                    <option value="voter">Voter ID</option>
+                                    <option value="other">Any Other ID</option>
+                                </select>
+                            </td>
+                            <td class="p-1"><input type="text" class="w-full p-1 border border-gray-300 rounded"
+                                    placeholder="ID Number"></td>
+                            <td class="p-1"><button
+                                    class="w-full px-6 py-1 border border-gray-300 rounded cursor-pointer bg-[#FF0000]">X
+                                </button>
+                            </td>
+
+                        </tr>
+                        <!-- passengers row 5 -->
+                        <tr>
+                            <td class="p-1">
+                                <p class="px-3 py-1 rounded-[10px] bg-[#604019] font-bold text-[#fff]">
+                                    5.
+                                </p>
+                            </td>
+                            <td class="p-1"><input type="text" class="w-full p-1 border border-gray-300 rounded pl"
+                                    placeholder="Enter name"></td>
+                            <td class="p-1"><input type="number" class="w-full p-1 border border-gray-300 rounded"
+                                    placeholder="Age"></td>
+                            <td class="p-1">
+                                <select class=" p-1 border border-gray-300 rounded">
+                                    <option value="">Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </td>
+                            <td class="p-1">
+                                <select class="p-1 border border-gray-300 rounded">
+                                    <option value="">Nationality</option>
+                                    <option value="indian">Indian</option>
+                                    <option value="foreigner">Foreigner</option>
+                                </select>
+                            </td>
+                            <td class="p-1">
+                                <select class="p-1 border border-gray-300 rounded">
+                                    <option value="">State</option>
+                                    <option value="andaman-and-nicobar-islands">Andaman and Nicobar Islands</option>
+                                    <option value="andhra-pradesh">Andhra Pradesh</option>
+                                    <option value="arunachal-pradesh">Arunachal Pradesh</option>
+                                    <option value="assam">Assam</option>
+                                    <option value="bihar">Bihar</option>
+                                    <option value="chandigarh">Chandigarh</option>
+                                    <option value="chhattisgarh">Chhattisgarh</option>
+                                    <option value="dadra-and-nagar-haveli-and-daman-and-diu">Dadra and Nagar Haveli and
+                                        Daman and Diu</option>
+                                    <option value="delhi">Delhi</option>
+                                    <option value="goa">Goa</option>
+                                    <option value="gujarat">Gujarat</option>
+                                    <option value="haryana">Haryana</option>
+                                    <option value="himachal-pradesh">Himachal Pradesh</option>
+                                    <option value="jammu-and-kashmir">Jammu and Kashmir</option>
+                                    <option value="jharkhand">Jharkhand</option>
+                                    <option value="karnataka">Karnataka</option>
+                                    <option value="kerala">Kerala</option>
+                                    <option value="ladakh">Ladakh</option>
+                                    <option value="lakshadweep">Lakshadweep</option>
+                                    <option value="madhya-pradesh">Madhya Pradesh</option>
+                                    <option value="maharashtra">Maharashtra</option>
+                                    <option value="manipur">Manipur</option>
+                                    <option value="meghalaya">Meghalaya</option>
+                                    <option value="mizoram">Mizoram</option>
+                                    <option value="nagaland">Nagaland</option>
+                                    <option value="odisha">Odisha</option>
+                                    <option value="puducherry">Puducherry</option>
+                                    <option value="punjab">Punjab</option>
+                                    <option value="rajasthan">Rajasthan</option>
+                                    <option value="sikkim">Sikkim</option>
+                                    <option value="tamil-nadu">Tamil Nadu</option>
+                                    <option value="telangana">Telangana</option>
+                                    <option value="tripura">Tripura</option>
+                                    <option value="uttar-pradesh">Uttar Pradesh</option>
+                                    <option value="uttarakhand">Uttarakhand</option>
+                                    <option value="west-bengal">West Bengal</option>
+                                </select>
+                            </td>
+                            <td class="p-1">
+                                <select class="w-full p-1 border border-gray-300 rounded">
+                                    <option value="">Select ID</option>
+                                    <option value="aadhar">Aadhar</option>
+                                    <option value="passport">Passport</option>
+                                    <option value="dl">Driver's License</option>
+                                    <option value="pan-card">Pan card</option>
+                                    <option value="voter">Voter ID</option>
+                                    <option value="other">Any Other ID</option>
+                                </select>
+                            </td>
+                            <td class="p-1"><input type="text" class="w-full p-1 border border-gray-300 rounded"
+                                    placeholder="ID Number"></td>
+                            <td class="p-1"><button
+                                    class="w-full px-6 py-1 border border-gray-300 rounded cursor-pointer bg-[#FF0000]">X
+                                </button>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+
+                <button
+                    class="w-full cursor-pointer mt-4 bg-[#604019] hover:bg-[#ff7518] text-white py-2 px-4 rounded-md">
+                    Add Members
+                </button>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer Section -->
     <footer class="bg-[#604019] text-white pt-8 pb-6">
