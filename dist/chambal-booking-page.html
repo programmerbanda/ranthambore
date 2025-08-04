@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranthambore National Park Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/output.css">
+    <link rel="shortcut icon" href="/Images/favicon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif
+        }
+
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+            background-repeat: no-repeat;
+            background-position-x: 98%;
+            background-position-y: 50%;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="w-full sticky top-0 z-50 shadow-md">
+        <!-- Top Contact Bar -->
+        <div class="w-full bg-[#604019] text-white h-12 sm:h-8 flex items-center">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col justify-between items-center px-8 sm:flex-row">
+                    <!-- Changed to justify-around -->
+                    <div class="flex items-center cursor-pointer">
+                        <div class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            <span>8076438491 | 7982193537</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center cursor-pointer">
+                        <div class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <span>ranthambore360@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <div class="w-full bg-white flex justify-between">
+            <div class="container mx-auto px-4 py-1 lg:px-16 flex md:flex-col lg:flex-row justify-between items-center">
+                <div>
+                    <img class="logo h-16 cursor-pointer" src="/Images/logo.svg" alt="Ranthambore 360 Logo">
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <ul class="flex space-x-8 text-lg font-medium items-center">
+                        <li><a href="/dist/index.html" id="home-btn"
+                                class="text-[#604019] hover:text-amber-600 transition-colors">Home</a></li>
+                        <li><a href="safari.html"
+                                class="text-[#604019] hover:text-amber-600 transition-colors">Safari</a></li>
+                        <li><a href="chambal.html"
+                                class="chambalBtn text-[#604019] hover:text-amber-600 transition-colors">Chambal
+                                Safari</a>
+                        </li>
+                        <li><a href="hotel.html"
+                                class="hotelBtn text-[#604019] hover:text-amber-600 transition-colors">Hotels</a></li>
+                        <li><a href="package-booking.html"
+                                class="tourBtn text-[#604019] hover:text-amber-600 transition-colors">Packages</a></li>
+                        <li><a href="contact.html" id="contact-btn"
+                                class="text-[#604019] hover:text-amber-600 transition-colors">Contact</a></li>
+                    </ul>
+                    <button
+                        class="safariBtn ml-6 bg-amber-700 hover:bg-amber-600 text-white font-medium py-1 px-6 rounded-lg transition-colors shadow-md cursor-pointer">
+                        Book Now
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button class="text-amber-900 focus:outline-none cursor-pointer">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <section class="bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Chambal Safari Booking Details</h2>
+
+                <form id="booking-form" class="bg-white shadow-md rounded-lg p-6 sm:p-8" novalidate>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <!-- Name -->
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name <span
+                                    class="text-red-500">*</span></label>
+                            <input type="text" id="name" placeholder="Enter your full name"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent invalid:border-red-500"
+                                required aria-required="true" aria-describedby="name-error">
+                            <p id="name-error" class="text-red-500 text-xs mt-1 hidden">Please enter your name</p>
+                        </div>
+
+                        <!-- Mobile Number -->
+                        <div>
+                            <label for="mobile" class="block text-sm font-medium text-gray-700 mb-1">Mobile Number <span
+                                    class="text-red-500">*</span></label>
+                            <input type="tel" id="mobile" pattern="[0-9]{10}" placeholder="Enter 10-digit mobile number"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent invalid:border-red-500"
+                                required aria-required="true" aria-describedby="mobile-error">
+                            <p id="mobile-error" class="text-red-500 text-xs mt-1 hidden">Please enter a valid 10-digit
+                                mobile number</p>
+                        </div>
+
+                        <!-- Email -->
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email ID <span
+                                    class="text-red-500">*</span></label>
+                            <input type="email" id="email" placeholder="Enter your email address"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent invalid:border-red-500"
+                                required aria-required="true" aria-describedby="email-error">
+                            <p id="email-error" class="text-red-500 text-xs mt-1 hidden">Please enter a valid email
+                                address</p>
+                        </div>
+
+                        <!-- ID Proof -->
+                        <div>
+                            <label for="id-proof" class="block text-sm font-medium text-gray-700 mb-1">ID Proof No.
+                                (Aadhar/PAN/Driving License) <span class="text-red-500">*</span></label>
+                            <input type="text" id="id-proof" placeholder="Enter ID proof number"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent invalid:border-red-500"
+                                required aria-required="true" aria-describedby="id-proof-error">
+                            <p id="id-proof-error" class="text-red-500 text-xs mt-1 hidden">Please enter a valid ID
+                                proof number</p>
+                        </div>
+
+                        <!-- State -->
+                        <div>
+                            <label for="state" class="block text-sm font-medium text-gray-700 mb-1">State <span
+                                    class="text-red-500">*</span></label>
+                            <select id="state"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none bg-white"
+                                required aria-required="true" aria-describedby="state-error">
+                                <option value="" disabled selected>Please Select State</option>
+                                <option value="UP">Uttar Pradesh</option>
+                                <option value="MP">Madhya Pradesh</option>
+                                <option value="RJ">Rajasthan</option>
+                            </select>
+                            <p id="state-error" class="text-red-500 text-xs mt-1 hidden">Please select a state</p>
+                        </div>
+
+                        <!-- Indian Persons -->
+                        <div>
+                            <label for="indian-persons" class="block text-sm font-medium text-gray-700 mb-1">No. of
+                                Persons (Indian) <span class="text-red-500">*</span></label>
+                            <select id="indian-persons"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none bg-white"
+                                required aria-required="true" aria-describedby="indian-persons-error">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                            <p id="indian-persons-error" class="text-red-500 text-xs mt-1 hidden">Please select the
+                                number of Indian persons</p>
+                        </div>
+
+                        <!-- Foreigner Persons -->
+                        <div>
+                            <label for="foreigner-persons" class="block text-sm font-medium text-gray-700 mb-1">No. of
+                                Persons (Foreigner)</label>
+                            <select id="foreigner-persons"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none bg-white"
+                                aria-describedby="foreigner-persons-error">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                            <p id="foreigner-persons-error" class="text-red-500 text-xs mt-1 hidden">Please select the
+                                number of foreign persons</p>
+                        </div>
+
+                        <!-- Booking Date -->
+                        <div>
+                            <label for="booking-date" class="block text-sm font-medium text-gray-700 mb-1">Booking Date
+                                <span class="text-red-500">*</span></label>
+                            <input type="date" id="booking-date"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent invalid:border-red-500"
+                                required aria-required="true" aria-describedby="booking-date-error">
+                            <p id="booking-date-error" class="text-red-500 text-xs mt-1 hidden">Please select a booking
+                                date</p>
+                        </div>
+
+                        <!-- Safari Timing -->
+                        <div>
+                            <label for="safari-timing" class="block text-sm font-medium text-gray-700 mb-1">Select
+                                Safari Timing <span class="text-red-500">*</span></label>
+                            <select id="safari-timing"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none bg-white"
+                                required aria-required="true" aria-describedby="safari-timing-error">
+                                <option value="" disabled selected>Select Timing</option>
+                                <option value="morning">Morning (6:00 AM - 9:00 AM)</option>
+                                <option value="afternoon">Afternoon (3:00 PM - 6:00 PM)</option>
+                            </select>
+                            <p id="safari-timing-error" class="text-red-500 text-xs mt-1 hidden">Please select a safari
+                                timing</p>
+                        </div>
+
+                        <!-- Full Address -->
+                        <div class="md:col-span-2">
+                            <label for="address" class="block text-sm font-medium text-gray-700 mb-1">Full Address <span
+                                    class="text-red-500">*</span></label>
+                            <textarea id="address" rows="3" placeholder="Enter your full address"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent invalid:border-red-500"
+                                required aria-required="true" aria-describedby="address-error"></textarea>
+                            <p id="address-error" class="text-red-500 text-xs mt-1 hidden">Please enter your full
+                                address</p>
+                        </div>
+                    </div>
+
+                    <!-- Note -->
+                    <div class="text-sm text-gray-600 mb-6">
+                        <p><span class="font-semibold">Note:</span> Fields marked with <span
+                                class="text-red-500">*</span> are mandatory.</p>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="flex justify-center space-x-4">
+                        <button type="submit" id="submit-btn"
+                            class="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-6 rounded-md transition duration-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 disabled:bg-gray-400 disabled:cursor-not-allowed">
+                            Book Now
+                        </button>
+                        <button type="reset"
+                            class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-medium py-2 px-6 rounded-md transition duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
+                            Reset
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-[#604019] text-white pt-8 pb-6">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="flex flex-col lg:flex-row justify-between gap-8">
+                <!-- About Section -->
+                <div class="w-full lg:w-1/3 flex flex-col items-center lg:items-start">
+                    <img class="h-16 cursor-pointer mb-4" src="/Images/logo.svg" alt="Ranthambore 360 Logo">
+                    <p class="mb-4 text-sm text-gray-200 font-sans font-medium text-center lg:text-left">
+                        This is not an official website of "Ranthambhore National Park". This is a Registered under the
+                        Private Travel Agency name Daily Tour and Travel. We organize Hotel, Safari and Tour Package
+                        bookings in Ranthambhore National Park.
+                    </p>
+                    <div class="mb-2">
+                        <p class="flex items-center mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-amber-400" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            Phone: 8076438491, 7982193537
+                        </p>
+                        <p class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-amber-400" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            Email: ranthambore360@gmail.com
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Links Sections -->
+                <div class="w-full flex flex-col md:flex-row gap-8">
+                    <!-- Useful Links -->
+                    <div class="w-full md:w-1/3">
+                        <h4 class="text-lg font-semibold mb-4 text-amber-400">Useful Links</h4>
+                        <ul class="space-y-2">
+                            <li>
+                                <a href="/dist/index.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    Home
+                                </a>
+                            </li>
+                            <li>
+                                <a href="safari.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    Safari Booking
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chambal.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    Chambal Safari Booking
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dist/package-booking.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    Package Booking
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dist/contact.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    Contact Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dist/blogs.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    Blogs
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="w-full md:w-1/3">
+                        <h4 class="text-lg font-semibold mb-4 text-amber-400">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li>
+                                <a href="/dist/privacy-policy.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    Privacy Policy
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dist/Cancellatiion-Policy.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    Cancellation Policy
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dist/term-condition.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    Terms & Condition
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dist/how-to-reach.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    How To Reach
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dist/about.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    About Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dist/support.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    Support
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Gallery Section -->
+                    <div class="w-full md:w-1/3">
+                        <h4 class="text-lg font-semibold mb-4 text-amber-400">Our Gallery</h4>
+                        <div class="grid grid-cols-3 gap-2">
+                            <img src="/Images/Sanbar Deer.jpg" alt="Gallery Image 1"
+                                class="rounded-lg h-20 w-full object-cover border-2 border-amber-400 hover:border-amber-500 transition-all cursor-pointer">
+                            <img src="/Images/Black Buck Sighting.jpg" alt="Gallery Image 2"
+                                class="rounded-lg h-20 w-full object-cover border-2 border-amber-400 hover:border-amber-500 transition-all cursor-pointer">
+                            <img src="/Images/Tiger and cub.jpg" alt="Gallery Image 3"
+                                class="rounded-lg h-20 w-full object-cover border-2 border-amber-400 hover:border-amber-500 transition-all cursor-pointer">
+                            <img src="/Images/Crocodile in River.jpg" alt="Gallery Image 4"
+                                class="rounded-lg h-20 w-full object-cover border-2 border-amber-400 hover:border-amber-500 transition-all cursor-pointer">
+                            <img src="/Images/Chambal Boating.jpg" alt="Gallery Image 5"
+                                class="rounded-lg h-20 w-full object-cover border-2 border-amber-400 hover:border-amber-500 transition-all cursor-pointer">
+                            <img src="/Images/Birds Paradise.jpg" alt="Gallery Image 6"
+                                class="rounded-lg h-20 w-full object-cover border-2 border-amber-400 hover:border-amber-500 transition-all cursor-pointer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Address and Copyright -->
+            <div class="mt-8 pt-6 border-t border-[#fff]">
+                <p class="text-center mb-2 text-[#fff]">
+                    <span class="font-bold bg-amber-400 px-2 py-1 text-gray-900 rounded">Daily Tour and Travel Delhi
+                        110092 Address</span> : A-2 Second Floor Ganesh Nagar, Pandav Nagar, Delhi 110092
+                </p>
+                <p class="text-center text-[#fff] text-sm">
+                    © Copyright Ranthambore. All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script src="/JS/app.js"></script>
+</body>
+
+</html>
