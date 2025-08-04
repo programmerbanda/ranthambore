@@ -3,9 +3,9 @@ logo.addEventListener('click', ()=> {
     window.location.href = 'index.html';
 });
 
-const chambalBtn = document.getElementById('chambalBtn');
-const hotelBtn = document.getElementById('hotelBtn');
-const tourBtn = document.getElementById('tourBtn');
+const chambalBtn = document.querySelector('.chambalBtn');
+const hotelBtn = document.querySelector('.hotelBtn');
+const tourBtn = document.querySelector('.tourBtn');
 const safariBtn = document.querySelector('.safariBtn');
 
 chambalBtn.addEventListener('click', ()=> {
