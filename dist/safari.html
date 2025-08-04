@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/src/output.css">
     <link rel="shortcut icon" href="/Images/favicon.jpg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.18/index.global.min.js'></script>
     <style>
         body {
             font-family: 'Times New Roman', Times, serif
@@ -19,6 +20,7 @@
         }
     </style>
 </head>
+
 <body class="bg-gray-50">
     <!-- Navbar -->
     <nav class="w-full sticky top-0 z-50 shadow-md">
@@ -63,7 +65,8 @@
                         <li><a href="/dist/index.html" id="home-btn"
                                 class="text-[#604019] hover:text-amber-600 transition-colors">Home</a></li>
                         <li><a href="safari.html" class="text-amber-600 transition-colors">Safari</a></li>
-                        <li><a href="chambal.html" class="chambalBtn text-[#604019] hover:text-amber-600 transition-colors">Chambal
+                        <li><a href="chambal.html"
+                                class="chambalBtn text-[#604019] hover:text-amber-600 transition-colors">Chambal
                                 Safari</a>
                         </li>
                         <li><a href="hotel.html"
@@ -185,41 +188,67 @@
                     </table>
                 </div>
                 <!-- calender -->
-                <div class="w-full md:w-1/2 px-4 md:px-10 mt-8 md:mt-0">
-                    <div class="p-6 rounded-xl max-w-md mx-auto">
-                        <!-- Change grid-cols-2 to grid-cols-1 on small screens and grid-cols-2 on md+ screens -->
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <!-- Tigers -->
-                            <div
-                                class="p-4 rounded-lg text-center border-[2px] border-[#604019] bg-[#ffffff] hover:border-dotted">
-                                <img class="w-10 mx-auto" src="/Images/Tiger Face.png" alt="Tiger-Face">
-                                <p class="text-2xl md:text-3xl font-bold text-[#ff7518]">80+</p>
-                                <p class="text-lg font-semibold text-[#B87333] bg-[#f2d2bd] rounded-[4px]">Tigers</p>
+                <div class="w-full md:w-1/2 px-4 md:px-6 mt-8 md:mt-0">
+                    <div id="calendar"></div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg max-w-md w-full mx-4">
+                        <form class="space-y-6">
+                            <!-- First Row - Timeslot -->
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <select id="start-time" required
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none">
+                                        <option value="" disabled selected>Choose Safari Mode</option>
+                                        <option value="morning">Gypsy</option>
+                                        <option value="evening">Canter</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <select id="end-time" required
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none">
+                                        <option value="" disabled selected>Choose Zone</option>
+                                        <option value="morning">Zone 1/2/3/4/5/6/7</option>
+                                        <option value="evening">Zone 8/9/10</option>
+                                    </select>
+                                </div>
                             </div>
-                            <!-- Leopards -->
-                            <div
-                                class="p-4 rounded-lg text-center border-[2px] border-[#604019] bg-[#ffffff] hover:border-dotted">
-                                <img class="w-10 mx-auto" src="/Images/Leopard.png" alt="Leopard">
-                                <p class="text-2xl md:text-3xl font-bold text-[#ff7518]">167+</p>
-                                <p class="text-lg font-semibold text-[#B87333] bg-[#f2d2bd] rounded-[4px]">Leopards</p>
+
+                            <!-- Second Row - Zone and Mobile -->
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <select id="zone" required
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none">
+                                        <option value="" disabled selected>Select Timeslot</option>
+                                        <option value="zone1-7">Morning</option>
+                                        <option value="zone8-10">Evening</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <input type="text" id="name" required
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                        placeholder="Your name">
+                                </div>
                             </div>
-                            <!-- Bird Species -->
-                            <div
-                                class="p-4 rounded-lg text-center border-[2px] border-[#604019] bg-[#ffffff] hover:border-dotted">
-                                <img class="w-10 mx-auto" src="/Images/Bird Species.png" alt="Bird">
-                                <p class="text-2xl md:text-3xl font-bold text-[#ff7518]">320+</p>
-                                <p class="text-lg font-semibold text-[#B87333] bg-[#f2d2bd] rounded-[4px]">Bird Species
-                                </p>
+
+                            <!-- Third Row - Email and Name -->
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <input type="email" id="email" required
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                        placeholder="Email address">
+                                </div>
+                                <div>
+                                    <input type="tel" id="mobile" required pattern="[0-9]{10}"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                        placeholder="Mobile number">
+                                </div>
                             </div>
-                            <!-- Sloth Bears -->
-                            <div
-                                class="p-4 rounded-lg text-center border-[2px] border-[#604019] bg-[#ffffff] hover:border-dotted">
-                                <img class="w-10 mx-auto" src="/Images/Sloth Bear.png" alt="Bears">
-                                <p class="text-2xl md:text-3xl font-bold text-[#ff7518]">100+</p>
-                                <p class="text-lg font-semibold text-[#B87333] bg-[#f2d2bd] rounded-[4px]">Sloth Bears
-                                </p>
-                            </div>
-                        </div>
+
+                            <!-- Book Now Button -->
+                            <button type="submit"
+                                class="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition duration-200 font-medium">
+                                Book Now
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -492,7 +521,8 @@
                         <li class="flex items-start gap-2">
                             <span class="font-bold">2.</span>
                             <p>
-                                Select the date on which you need to enjoy a safari ride in Ranthambore. It is advised to the travelers to make Ranthambore safari booking 3 months before the arrival date.
+                                Select the date on which you need to enjoy a safari ride in Ranthambore. It is advised
+                                to the travelers to make Ranthambore safari booking 3 months before the arrival date.
                             </p>
                         </li>
                         <li class="flex items-start gap-2">
@@ -504,7 +534,8 @@
                         <li class="flex items-start gap-2">
                             <span class="font-bold">4.</span>
                             <p>
-                                Select the zone in which you want to enjoy your ride. You can either choose from zones 1 to 7 or from zones 8 to 10.
+                                Select the zone in which you want to enjoy your ride. You can either choose from zones 1
+                                to 7 or from zones 8 to 10.
                             </p>
                         </li>
                         <li class="flex items-start gap-2">
@@ -516,7 +547,8 @@
                         <li class="flex items-start gap-2">
                             <span class="font-bold">6.</span>
                             <p>
-                                Then you have to fill in the name of the person who is filling in the information for Ranthambore online safari booking.
+                                Then you have to fill in the name of the person who is filling in the information for
+                                Ranthambore online safari booking.
                             </p>
                         </li>
                         <li class="flex items-start gap-2">
@@ -528,25 +560,30 @@
                         <li class="flex items-start gap-2">
                             <span class="font-bold">8.</span>
                             <p>
-                                Then a page will open, on that page you have to fill in some basic details like the state from which you’re coming along with the full address.
+                                Then a page will open, on that page you have to fill in some basic details like the
+                                state from which you’re coming along with the full address.
                             </p>
                         </li>
                         <li class="flex items-start gap-2">
                             <span class="font-bold">9.</span>
                             <p>
-                                You have to provide the details of the passengers who are going for the ride while making Ranthambore safari booking.
+                                You have to provide the details of the passengers who are going for the ride while
+                                making Ranthambore safari booking.
                             </p>
                         </li>
                         <li class="flex items-start gap-2">
                             <span class="font-bold">10.</span>
                             <p>
-                                Click on I agree to terms and conditions and then pay the amount that will be mentioned on your screen.
+                                Click on I agree to terms and conditions and then pay the amount that will be mentioned
+                                on your screen.
                             </p>
                         </li>
                     </ul>
                     <div class="bg-amber-50 p-4 rounded-lg border border-amber-200">
                         <p class="text-[#604019] font-semibold font-sans">
-                            <span class="font-bold">Note:</span> Just make sure to fill in the correct details of passengers and also the correct details of your ID. The IDs will be checked when you reach there and every detail should match, failing which your booking can be cancelled.
+                            <span class="font-bold">Note:</span> Just make sure to fill in the correct details of
+                            passengers and also the correct details of your ID. The IDs will be checked when you reach
+                            there and every detail should match, failing which your booking can be cancelled.
                         </p>
                     </div>
                 </div>
@@ -564,49 +601,58 @@
                         <li class="flex items-start gap-4">
                             <img class="w-[20px] sm:w-[25px]" src="/Images/Mark-icon.png" alt="arr-image">
                             <p class="font-semibold">
-                               If you want to make your safari memorable then the most important thing is to come with your original identity card.
+                                If you want to make your safari memorable then the most important thing is to come with
+                                your original identity card.
                             </p>
                         </li>
                         <li class="flex items-start gap-4">
                             <img class="w-[20px] sm:w-[25px]" src="/Images/Mark-icon.png" alt="arr-image">
                             <p class="font-semibold">
-                                Before going inside the park, the government officials check your IDs, without them, you cannot enter the park.
+                                Before going inside the park, the government officials check your IDs, without them, you
+                                cannot enter the park.
                             </p>
                         </li>
                         <li class="flex items-start gap-4">
                             <img class="w-[20px] sm:w-[25px]" src="/Images/Mark-icon.png" alt="arr-image">
                             <p class="font-semibold">
-                                Always listen to your guide and driver during the safari. They are knowledgeable and will keep you safe inside the wild area.
+                                Always listen to your guide and driver during the safari. They are knowledgeable and
+                                will keep you safe inside the wild area.
                             </p>
                         </li>
                         <li class="flex items-start gap-4">
                             <img class="w-[20px] sm:w-[25px]" src="/Images/Mark-icon.png" alt="arr-image">
                             <p class="font-semibold">
-                                Try to stay silent or talk slowly if you are interested in spotting more animals during your canter or gypsy safari in Ranthambore. Animals get scared by human voices and they remain away. If you talk loudly, it can decrease the chances of spotting animals.
+                                Try to stay silent or talk slowly if you are interested in spotting more animals during
+                                your canter or gypsy safari in Ranthambore. Animals get scared by human voices and they
+                                remain away. If you talk loudly, it can decrease the chances of spotting animals.
                             </p>
                         </li>
                         <li class="flex items-start gap-4">
                             <img class="w-[20px] sm:w-[25px]" src="/Images/Mark-icon.png" alt="arr-image">
                             <p class="font-semibold">
-                                Using any kind of tape recorder, transistor, or radio is strictly prohibited inside this wild area.
+                                Using any kind of tape recorder, transistor, or radio is strictly prohibited inside this
+                                wild area.
                             </p>
                         </li>
                         <li class="flex items-start gap-4">
                             <img class="w-[20px] sm:w-[25px]" src="/Images/Mark-icon.png" alt="arr-image">
                             <p class="font-semibold">
-                                Be inside your safari, don’t try to get down from your vehicle, until and unless your guide tells you to do so.
+                                Be inside your safari, don’t try to get down from your vehicle, until and unless your
+                                guide tells you to do so.
                             </p>
                         </li>
                         <li class="flex items-start gap-4">
                             <img class="w-[20px] sm:w-[25px]" src="/Images/Mark-icon.png" alt="arr-image">
                             <p class="font-semibold">
-                                Carrying pets is strictly prohibited. Carnivores can come near for hunting so do not come with your pets.
+                                Carrying pets is strictly prohibited. Carnivores can come near for hunting so do not
+                                come with your pets.
                             </p>
                         </li>
                         <li class="flex items-start gap-4">
                             <img class="w-[20px] sm:w-[25px]" src="/Images/Mark-icon.png" alt="arr-image">
                             <p class="font-semibold">
-                                Make sure that your Ranthambore Safari Booking includes the guide because without them, you cannot enter the park.
+                                Make sure that your Ranthambore Safari Booking includes the guide because without them,
+                                you cannot enter the park.
                             </p>
                         </li>
                         <li class="flex items-start gap-4">
@@ -787,6 +833,7 @@
             </div>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js"></script>
     <script src="/JS/app.js"></script>
 </body>
 

@@ -1,23 +1,31 @@
-const logo = document.querySelector('.logo');
-logo.addEventListener('click', ()=> {
-    window.location.href = 'index.html';
+const logo = document.querySelector(".logo");
+logo.addEventListener("click", () => {
+  window.location.href = "index.html";
 });
 
-const chambalBtn = document.querySelector('.chambalBtn');
-const hotelBtn = document.querySelector('.hotelBtn');
-const tourBtn = document.querySelector('.tourBtn');
-const safariBtn = document.querySelector('.safariBtn');
+const chambalBtn = document.querySelector(".chambalBtn");
+const hotelBtn = document.querySelector(".hotelBtn");
+const tourBtn = document.querySelector(".tourBtn");
+const safariBtn = document.querySelector(".safariBtn");
 
-chambalBtn.addEventListener('click', ()=> {
-    window.location.href = 'chambal.html'
-})
-hotelBtn.addEventListener('click', ()=> {
-    window.location.href = 'hotel.html'
-})
-tourBtn.addEventListener('click', ()=> {
-    window.location.href = 'package-booking.html'
-})
-safariBtn.addEventListener('click', ()=> {
-    window.location.href = 'safari.html';
-    console.log('safari Button clicked')
-})
+chambalBtn.addEventListener("click", () => {
+  window.location.href = "chambal.html";
+});
+hotelBtn.addEventListener("click", () => {
+  window.location.href = "hotel.html";
+});
+tourBtn.addEventListener("click", () => {
+  window.location.href = "package-booking.html";
+});
+safariBtn.addEventListener("click", () => {
+  window.location.href = "safari.html";
+  console.log("safari Button clicked");
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  var calendarEl = document.getElementById("calendar");
+  var calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: "dayGridMonth",
+  });
+  calendar.render();
+});
