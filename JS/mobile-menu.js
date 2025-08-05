@@ -1,4 +1,3 @@
-// Mobile Menu Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuButton = document.querySelector('[aria-label="Toggle mobile menu"]');
     const mobileMenu = document.getElementById('mobile-menu');
