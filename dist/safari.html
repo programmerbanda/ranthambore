@@ -20,17 +20,65 @@
         }
 
         .fc-daygrid-day {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            border: 1px solid #ddd;
+            /* padding: 2px; */
+            /* margin: 1px; */
+            /* height: 20px; */
+            /* width: 20px; */
             cursor: pointer;
         }
 
+        .fc-day-past {
+            background-color: #ffffff;
+            color: #000;
+        }
+
+        .fc-day-future {
+            background-color: #ffffff;
+            color: #000;
+        }
+
+        .fc-day-other {
+            background-color: #f8f9fa;
+            color: #6c757d;
+        }
+
+        .fc-day-today {
+            background-color: #006adc;
+            color: #000000;
+            font-weight: bold;
+        }
+
+        .fc-daygrid-day-number {
+            /* padding: 2px; */
+            /* font-size: 18px; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 20px;
+            width: 20px;
+        }
+
         .fc-daygrid-day:hover {
-            background-color: #f3f4f6;
-            transition: 0.3s;
+            background-color: #e9ecef;
+            transition: 0.2s;
+        }
+
+        .fc-toolbar-title {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .fc-toolbar {
+            padding: 4px 8px ;
+            background-color: #ff7518;
         }
 
         /* Calendar container improvements */
         .calender-container {
-            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            background: #fff5ee;
             border: 1px solid #e5e7eb;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
@@ -44,18 +92,16 @@
             border-radius: 8px;
             overflow: hidden;
             margin-bottom: 1.5rem;
-        }
-
-        /* Form improvements */
-        .booking-form {
-            background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
-            border: 1px solid #e5e7eb;
+            width: auto;
+            height: auto;
+            margin: 0 auto;
         }
 
         /* Select and input improvements */
         select,
         input {
             transition: all 0.2s ease;
+            background-color: #fff;
         }
 
         select:focus,
@@ -236,7 +282,7 @@
                 <div class="calender-container w-full md:w-1/2 px-4 md:px-6 mt-8 md:mt-0"
                     style="max-width: 90%; padding: 0.75rem; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 12px; height: auto;">
                     <div id="calendar"></div>
-                    <div class="booking-form bg-white p-6 rounded-xl shadow-lg w-full">
+                    <div class="booking-form py-4 mt-2 rounded-xl w-full">
                         <form class="space-y-6" id="form">
                             <!-- First Row - Timeslot -->
                             <div class="grid grid-cols-2 gap-4">
