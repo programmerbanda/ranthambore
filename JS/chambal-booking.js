@@ -726,6 +726,18 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("comparison-modal").classList.add("hidden");
     });
 
+    // Close Modal from escape button
+
+     document.addEventListener('keydown', (e)=> {
+        if(e.key === 'Escape'){
+            document.getElementById("comparison-modal").classList.add("hidden");
+            document.getElementById("gallery-modal").classList.add("hidden");
+            document.getElementById("calculator-modal").classList.add("hidden");
+            document.getElementById("availability-modal").classList.add("hidden");
+            document.getElementById("safari-map-modal").classList.add("hidden");
+        }
+    })
+
   document
     .getElementById("view-gallery-btn")
     .addEventListener("click", function () {
