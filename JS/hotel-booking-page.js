@@ -1,32 +1,5 @@
-// Service Worker (embedded)
-if ("serviceWorker" in navigator) {
-  const swCode = `
-                self.addEventListener('install', event => {
-                    event.waitUntil(
-                        caches.open('hotel-booking-cache').then(cache => {
-                            return cache.addAll([
-                                '/',
-                                '/index.html',
-                                'https://cdn.tailwindcss.com'
-                            ]);
-                        })
-                    );
-                });
-
-                self.addEventListener('fetch', event => {
-                    event.respondWith(
-                        caches.match(event.request).then(response => {
-                            return response || fetch(event.request);
-                        })
-                    );
-                });
-            `;
-  const blob = new Blob([swCode], { type: "application/javascript" });
-  const swURL = URL.createObjectURL(blob);
-  navigator.serviceWorker.register(swURL).catch((error) => {
-    console.error("Service Worker registration failed:", error);
-  });
-}
+// Service Worker removed to prevent errors
+// Will be implemented later with proper file-based approach
 
 // Enhanced Hotel Data with Real Hotel Information
 const hotels = [
@@ -538,7 +511,7 @@ function loadHotelData(hotelId) {
 
   // Update guest limits and room images
   const roomTypeValue = roomTypeSelect ? roomTypeSelect.value : "standard";
-  updateGuestLimit(hotel, roomTypeValue);
+//   updateGuestLimit(hotel, roomTypeValue);
   updateRoomImage(hotel, roomTypeValue);
   updatePrice();
 
@@ -791,26 +764,26 @@ if (roomTypeSelect) {
   });
 }
 
-function updateGuestLimit(hotel, roomType) {
-  if (!guestsSelect || !hotel || !hotel.guestLimits) {
-    console.warn("Missing elements for guest limit update");
-    return;
-  }
+// function updateGuestLimit(hotel, roomType) {
+//   if (!guestsSelect || !hotel || !hotel.guestLimits) {
+//     console.warn("Missing elements for guest limit update");
+//     return;
+//   }
 
-  const maxGuests = hotel.guestLimits[roomType] || 2;
-  guestsSelect.innerHTML = "";
-  for (let i = 1; i <= maxGuests; i++) {
-    guestsSelect.innerHTML += `<option value="${i}">${i} Guest${
-      i > 1 ? "s" : ""
-    }</option>`;
-  }
-  if (parseInt(guestsSelect.value) > maxGuests) {
-    guestsSelect.value = maxGuests;
-    if (guestsSelect.dispatchEvent) {
-      guestsSelect.dispatchEvent(new Event("change"));
-    }
-  }
-}
+//   const maxGuests = hotel.guestLimits[roomType] || 2;
+//   guestsSelect.innerHTML = "";
+//   for (let i = 1; i <= maxGuests; i++) {
+//     guestsSelect.innerHTML += `<option value="${i}">${i} Guest${
+//       i > 1 ? "s" : ""
+//     }</option>`;
+//   }
+//   if (parseInt(guestsSelect.value) > maxGuests) {
+//     guestsSelect.value = maxGuests;
+//     if (guestsSelect.dispatchEvent) {
+//       guestsSelect.dispatchEvent(new Event("change"));
+//     }
+//   }
+// }
 
 // Room Image Update
 function updateRoomImage(hotel, roomType) {
@@ -1549,81 +1522,6 @@ document.addEventListener("DOMContentLoaded", function () {
     ],
   });
 
-  // Theme Switcher
-  const themeToggle = document.getElementById("theme-toggle");
-  const themeIcon = document.getElementById("theme-icon");
-  let isDarkMode = false;
-
-  themeToggle.addEventListener("click", () => {
-    isDarkMode = !isDarkMode;
-    document.documentElement.setAttribute(
-      "data-theme",
-      isDarkMode ? "dark" : "light"
-    );
-    themeIcon.className = isDarkMode
-      ? "fas fa-sun text-yellow-400 text-lg"
-      : "fas fa-moon text-white text-lg";
-    notyf.success(`Switched to ${isDarkMode ? "dark" : "light"} mode`);
-
-    // Update body background for dark mode
-    if (isDarkMode) {
-      document.body.style.background =
-        "linear-gradient(135deg, #1a202c 0%, #2d3748 100%)";
-    } else {
-      document.body.style.background =
-        "linear-gradient(135deg, #667eea 0%, #764ba2 100%)";
-    }
-  });
-
-  // Search & Filter Panel
-  const filterPanel = document.getElementById("search-filter-panel");
-  const toggleFilterBtn = document.getElementById("toggle-filter-panel");
-  const closeFilterBtn = document.getElementById("close-filter-panel");
-
-  toggleFilterBtn.addEventListener("click", () => {
-    filterPanel.style.transform = "translateX(0)";
-  });
-
-  closeFilterBtn.addEventListener("click", () => {
-    filterPanel.style.transform = "translateX(-100%)";
-  });
-
-  // Price Range Filter
-  const priceRange = document.getElementById("price-range");
-  const priceRangeValue = document.getElementById("price-range-value");
-
-  priceRange.addEventListener("input", (e) => {
-    const value = parseInt(e.target.value);
-    priceRangeValue.textContent = `₹${value.toLocaleString("en-IN")}`;
-  });
-
-  // Star Rating Filter
-  const starFilters = document.querySelectorAll(".star-filter");
-  let selectedRating = 0;
-
-  starFilters.forEach((star, index) => {
-    star.addEventListener("click", () => {
-      selectedRating = index + 1;
-      starFilters.forEach((s, i) => {
-        s.style.color = i < selectedRating ? "#facc15" : "#d1d5db";
-      });
-    });
-  });
-
-  // Apply Filters
-  document.getElementById("apply-filters").addEventListener("click", () => {
-    const priceMax = document.getElementById("price-range").value;
-    const selectedAmenities = Array.from(
-      document.querySelectorAll(".amenity-filter:checked")
-    ).map((cb) => cb.value);
-
-    notyf.success(
-      `Filters applied: Max price ₹${parseInt(priceMax).toLocaleString(
-        "en-IN"
-      )}, ${selectedRating} stars, ${selectedAmenities.length} amenities`
-    );
-    filterPanel.style.transform = "translateX(-100%)";
-  });
 
   // Payment Modal
   const paymentModal = document.getElementById("payment-modal");
@@ -1714,14 +1612,14 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Progress Bar
-  function updateProgressBar() {
-    const scrollTop = window.pageYOffset;
-    const docHeight = document.body.scrollHeight - window.innerHeight;
-    const scrollPercent = (scrollTop / docHeight) * 100;
-    document.getElementById("progress-bar").style.width = scrollPercent + "%";
-  }
+//   function updateProgressBar() {
+//     const scrollTop = window.pageYOffset;
+//     const docHeight = document.body.scrollHeight - window.innerHeight;
+//     const scrollPercent = (scrollTop / docHeight) * 100;
+//     document.getElementById("progress-bar").style.width = scrollPercent + "%";
+//   }
 
-  window.addEventListener("scroll", updateProgressBar);
+//   window.addEventListener("scroll", updateProgressBar);
 
   // PWA Installation
   let deferredPrompt;
@@ -1919,14 +1817,4 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize with success message
   notyf.success("Professional hotel booking system loaded! 🏨");
 });
-// </script>
 
-// <!-- PWA Manifest -->
-// <script>
-// Register service worker for PWA
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker
-    .register("/sw.js")
-    .then((registration) => console.log("SW registered:", registration))
-    .catch((error) => console.log("SW registration failed:", error));
-}
