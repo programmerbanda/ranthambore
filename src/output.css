@@ -604,6 +604,9 @@
   .my-4 {
     margin-block: calc(var(--spacing) * 4);
   }
+  .my-6 {
+    margin-block: calc(var(--spacing) * 6);
+  }
   .my-10 {
     margin-block: calc(var(--spacing) * 10);
   }
@@ -4009,6 +4012,11 @@
   .sm\:h-14 {
     @media (width >= 40rem) {
       height: calc(var(--spacing) * 14);
+    }
+  }
+  .sm\:h-48 {
+    @media (width >= 40rem) {
+      height: calc(var(--spacing) * 48);
     }
   }
   .sm\:h-64 {
