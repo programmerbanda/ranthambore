@@ -2,69 +2,364 @@
 <html lang="en">
 
 <head>
+    <!-- Essential Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel Booking Ranthambhore </title>
+    <meta name="description" content="Book luxury hotels in Ranthambhore with instant confirmation. Best prices, secure booking, and 24/7 support. Premium accommodation for wildlife safari tours.">
+    <meta name="keywords" content="Ranthambhore hotels, wildlife safari accommodation, luxury hotels Rajasthan, hotel booking, tiger safari stay">
+    <meta name="author" content="Ranthambhore 360">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Premium Hotel Booking - Ranthambhore 360">
+    <meta property="og:description" content="Book luxury hotels in Ranthambhore with instant confirmation. Best prices guaranteed.">
+    <meta property="og:image" content="/Images/logo.svg">
+    <meta property="og:url" content="https://ranthambhore360.com/hotel-booking">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Premium Hotel Booking - Ranthambhore 360">
+    <meta name="twitter:description" content="Book luxury hotels in Ranthambhore with instant confirmation. Best prices guaranteed.">
+    <meta name="twitter:image" content="/Images/logo.svg">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LodgingBusiness",
+      "name": "Ranthambhore Hotel Booking",
+      "description": "Premium hotel booking service for Ranthambhore National Park",
+      "url": "https://ranthambhore360.com",
+      "telephone": "+91-8076438491",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ranthambhore",
+        "addressRegion": "Rajasthan",
+        "addressCountry": "India"
+      }
+    }
+    </script>
+    
+    <title>Premium Hotel Booking - Ranthambhore 360 | Luxury Safari Accommodation</title>
+    
+    <!-- Fonts and Stylesheets -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="/src/output.css">
     <link rel="shortcut icon" href="/Images/favicon.jpg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Swiper CSS for Image Gallery -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    
+    <!-- Additional Libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
     <style>
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --accent-color: #f59e0b;
+            --success-color: #10b981;
+            --error-color: #ef4444;
+            --warning-color: #f59e0b;
+            --dark-bg: #1a202c;
+            --light-bg: #f7fafc;
+            --luxury-gold: #d4af37;
+            --luxury-silver: #c0c0c0;
+            --luxury-platinum: #e5e4e2;
+        }
+        
+        /* Theme Variables */
+        [data-theme="dark"] {
+            --bg-primary: #1a202c;
+            --bg-secondary: #2d3748;
+            --text-primary: #e2e8f0;
+            --text-secondary: #a0aec0;
+        }
+        
+        [data-theme="light"] {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+        }
+        
+        /* Ultra Professional Animations */
+        @keyframes luxuryShimmer {
+            0% { transform: translateX(-100%) skewX(-45deg); }
+            100% { transform: translateX(200%) skewX(-45deg); }
+        }
+        
+        @keyframes diamondSpark {
+            0%, 100% { opacity: 0; transform: scale(0.8) rotate(0deg); }
+            50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
+        }
+        
+        @keyframes premiumPulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 0 0 20px rgba(102, 126, 234, 0);
+                transform: scale(1.05);
+            }
+        }
+        
+        @keyframes luxuryFloat {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg) scale(1);
+            }
+            25% {
+                transform: translateY(-10px) rotate(1deg) scale(1.02);
+            }
+            75% {
+                transform: translateY(-5px) rotate(-1deg) scale(0.98);
+            }
+        }
+        
+        @keyframes goldGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Advanced CSS Variables */
+        * {
+            box-sizing: border-box;
+        }
         body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #475569 75%, #64748b 100%);
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(120, 219, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            animation: ambientFloat 20s ease-in-out infinite;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.03"/><circle cx="75" cy="25" r="1" fill="%23ffffff" opacity="0.03"/><circle cx="50" cy="50" r="1" fill="%23ffffff" opacity="0.03"/><circle cx="25" cy="75" r="1" fill="%23ffffff" opacity="0.03"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.03"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            pointer-events: none;
         }
 
         .glass-morphism {
-            background: rgba(255, 255, 255, 0.25);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.18);
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(40px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+        
+        .luxury-glass {
+            background: linear-gradient(145deg, 
+                rgba(255, 255, 255, 0.98) 0%,
+                rgba(255, 255, 255, 0.95) 50%,
+                rgba(248, 250, 252, 0.98) 100%);
+            backdrop-filter: blur(40px);
+            border: 3px solid;
+            border-image: linear-gradient(45deg, 
+                var(--luxury-gold) 0%, 
+                var(--luxury-platinum) 25%, 
+                var(--luxury-silver) 50%, 
+                var(--luxury-platinum) 75%, 
+                var(--luxury-gold) 100%) 1;
+            box-shadow: 
+                0 60px 120px -20px rgba(0, 0, 0, 0.4),
+                0 0 0 2px rgba(212, 175, 55, 0.3),
+                inset 0 3px 0 rgba(255, 255, 255, 0.9),
+                inset 0 -2px 0 rgba(0, 0, 0, 0.08),
+                0 0 80px rgba(212, 175, 55, 0.2),
+                0 25px 50px rgba(102, 126, 234, 0.15);
+            position: relative;
+            overflow: hidden;
+            animation: luxuryFloat 6s ease-in-out infinite;
+        }
+        
+        .luxury-glass::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(212, 175, 55, 0.3) 50%, 
+                transparent 100%);
+            animation: luxuryShimmer 3s infinite;
+        }
+        
+        .luxury-glass::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(102, 126, 234, 0.6) 20%, 
+                rgba(118, 75, 162, 0.6) 80%, 
+                transparent 100%);
         }
 
         .floating-card {
-            animation: float 6s ease-in-out infinite;
+            animation: float 6s ease-in-out infinite, premiumGlow 4s ease-in-out infinite alternate;
         }
 
         @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0px);
+            0%, 100% {
+                transform: translateY(0px) scale(1);
             }
-
             50% {
-                transform: translateY(-10px);
+                transform: translateY(-12px) scale(1.01);
+            }
+        }
+        
+        @keyframes premiumGlow {
+            0% {
+                box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15);
+            }
+            100% {
+                box-shadow: 0 25px 50px rgba(102, 126, 234, 0.25);
+            }
+        }
+        
+        @keyframes ambientFloat {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.3;
+            }
+            33% {
+                transform: translateY(-20px) rotate(1deg);
+                opacity: 0.4;
+            }
+            66% {
+                transform: translateY(-10px) rotate(-1deg);
+                opacity: 0.2;
             }
         }
 
         .gradient-text {
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            background-size: 200% 200%;
+            animation: gradientShift 3s ease-in-out infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
         }
 
         .premium-shadow {
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25),
-                0 0 0 1px rgba(255, 255, 255, 0.05);
+            box-shadow: 
+                0 32px 64px -12px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.08),
+                0 8px 32px rgba(102, 126, 234, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
         }
 
         .hover-lift {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
         }
 
         .hover-lift:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.35);
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 
+                0 40px 80px -12px rgba(0, 0, 0, 0.4),
+                0 0 60px rgba(102, 126, 234, 0.2);
+        }
+        
+        .hover-lift::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+            pointer-events: none;
+        }
+        
+        .hover-lift:hover::after {
+            transform: translateX(100%);
         }
 
         .progress-glow {
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+            box-shadow: 
+                0 0 30px rgba(59, 130, 246, 0.8),
+                0 0 60px rgba(102, 126, 234, 0.4),
+                inset 0 2px 0 rgba(255, 255, 255, 0.3);
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulseGlow {
+            0%, 100% {
+                box-shadow: 
+                    0 0 30px rgba(59, 130, 246, 0.8),
+                    0 0 60px rgba(102, 126, 234, 0.4);
+            }
+            50% {
+                box-shadow: 
+                    0 0 40px rgba(59, 130, 246, 1),
+                    0 0 80px rgba(102, 126, 234, 0.6);
+            }
         }
 
         .room-card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
-            backdrop-filter: blur(10px);
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.98) 0%, 
+                rgba(255, 255, 255, 0.95) 50%,
+                rgba(248, 250, 252, 0.98) 100%);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8),
+                0 0 30px rgba(102, 126, 234, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .room-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.5), transparent);
         }
 
         .payment-method-card {
@@ -78,17 +373,402 @@
         }
 
         .premium-input {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.95) 100%);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
         }
 
         .premium-input:focus {
-            background: rgba(255, 255, 255, 1);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(248, 250, 252, 1) 100%);
             border-color: #667eea;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+            transform: translateY(-3px) scale(1.01);
+            box-shadow: 
+                0 12px 30px rgba(102, 126, 234, 0.2),
+                0 0 0 4px rgba(102, 126, 234, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        }
+        
+        .premium-input::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.6s;
+            pointer-events: none;
+        }
+        
+        .premium-input:focus::before {
+            left: 100%;
+        }
+
+        /* Modern card styling */
+        .modern-card {
+            background: linear-gradient(145deg, 
+                #ffffff 0%, 
+                #f8fafc 50%, 
+                #f1f5f9 100%);
+            border: 1px solid rgba(226, 232, 240, 0.6);
+            box-shadow: 
+                0 25px 50px -12px rgba(0, 0, 0, 0.15),
+                0 0 0 1px rgba(255, 255, 255, 0.05),
+                inset 0 2px 0 rgba(255, 255, 255, 0.9),
+                0 0 40px rgba(102, 126, 234, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .modern-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                rgba(102, 126, 234, 0) 0%, 
+                rgba(102, 126, 234, 0.6) 50%, 
+                rgba(118, 75, 162, 0.6) 100%);
+        }
+
+        /* Ultra Premium Form Styling */
+        .form-group {
+            position: relative;
+            margin-bottom: 2rem;
+            z-index: 1;
+        }
+        
+        .ultra-premium-error-card {
+            animation: slideInUp 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        
+        @keyframes slideInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px) scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        @keyframes animate-shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+        
+        .animate-shake {
+            animation: animate-shake 0.5s ease-in-out;
+        }
+
+        .floating-label {
+            position: absolute;
+            top: 12px;
+            left: 16px;
+            color: #6b7280;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            background: white;
+            padding: 0 4px;
+            z-index: 2;
+        }
+
+        .premium-input:focus + .floating-label,
+        .premium-input:not(:placeholder-shown) + .floating-label {
+            transform: translateY(-24px) scale(0.85);
+            color: #667eea;
+            font-weight: 500;
+        }
+        
+        /* Success Animation */
+        .success-input {
+            animation: successGlow 0.6s ease-in-out;
+        }
+        
+        @keyframes successGlow {
+            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+            50% { box-shadow: 0 0 20px 5px rgba(34, 197, 94, 0.3); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.2); }
+        }
+        
+        /* Fix overlapping issues */
+        .hotel-details {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .booking-form {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .premium-shadow {
+            z-index: 1;
+        }
+
+        /* Step indicator enhancement */
+        .step-indicator {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .step-indicator::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #e5e7eb;
+            z-index: 1;
+        }
+
+        .step {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            padding: 0 10px;
+        }
+
+        .step-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #e5e7eb;
+            color: #6b7280;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            margin-bottom: 8px;
+        }
+
+        .step.active .step-circle {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .step.completed .step-circle {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+        }
+
+        .step-title {
+            font-size: 12px;
+            font-weight: 500;
+            color: #6b7280;
+            text-align: center;
+        }
+
+        .step.active .step-title {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        /* Enhanced button styling */
+        .cta-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-size: 200% 200%;
+            border: none;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            padding: 18px 36px;
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 10px 30px rgba(102, 126, 234, 0.3),
+                inset 0 2px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px) scale(1.02);
+            background-position: 100% 0;
+            box-shadow: 
+                0 15px 40px rgba(102, 126, 234, 0.5),
+                0 0 50px rgba(118, 75, 162, 0.3),
+                inset 0 2px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .cta-button:active::after {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Ultra Premium Pricing Display */
+        .ultra-premium-pricing-card {
+            animation: luxuryFloat 6s ease-in-out infinite, premiumPulse 4s ease-in-out infinite alternate;
+        }
+        
+        .ultra-premium-pricing-card::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(45deg, 
+                var(--luxury-gold) 0%, 
+                var(--luxury-platinum) 25%, 
+                var(--luxury-silver) 50%, 
+                var(--luxury-platinum) 75%, 
+                var(--luxury-gold) 100%);
+            border-radius: 24px;
+            z-index: -1;
+            animation: goldGradient 3s ease-in-out infinite;
+            background-size: 400% 400%;
+        }
+        
+        .premium-icon-container {
+            animation: diamondSpark 2s ease-in-out infinite;
+        }
+        
+        .ultra-price-container {
+            animation: luxuryFloat 4s ease-in-out infinite;
+        }
+        
+        .premium-breakdown-item {
+            animation: slideInRight 0.8s ease-out;
+        }
+        
+        .premium-breakdown-item:nth-child(1) { animation-delay: 0.1s; }
+        .premium-breakdown-item:nth-child(2) { animation-delay: 0.2s; }
+        .premium-breakdown-item:nth-child(3) { animation-delay: 0.3s; }
+        
+        .ultra-savings-card {
+            animation: celebrationPulse 1s ease-in-out infinite alternate;
+        }
+        
+        /* Ultra Premium Submit Button */
+        .ultra-premium-submit-btn {
+            position: relative;
+            width: 100%;
+            min-height: 100px;
+            border: none;
+            border-radius: 24px;
+            font-weight: 900;
+            font-size: 18px;
+            cursor: pointer;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+            animation: premiumPulse 3s ease-in-out infinite;
+        }
+        
+        .ultra-premium-submit-btn:hover {
+            transform: translateY(-8px) scale(1.03) rotateX(5deg);
+            box-shadow: 
+                0 40px 80px -20px rgba(0, 0, 0, 0.4),
+                0 0 100px rgba(255, 215, 0, 0.4),
+                0 20px 40px rgba(219, 39, 119, 0.3),
+                0 10px 20px rgba(147, 51, 234, 0.3);
+        }
+        
+        .ultra-premium-submit-btn:active {
+            transform: translateY(-4px) scale(1.01);
+        }
+        
+        /* Additional Premium Animations */
+        @keyframes slideInRight {
+            0% {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes celebrationPulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+            }
+            50% {
+                transform: scale(1.02);
+                box-shadow: 0 0 0 20px rgba(16, 185, 129, 0);
+            }
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(200%); }
+        }
+        
+        .animate-shimmer {
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes animate-gradient-x {
+            0%, 100% {
+                background-size: 200% 200%;
+                background-position: left center;
+            }
+            50% {
+                background-size: 200% 200%;
+                background-position: right center;
+            }
+        }
+        
+        .animate-gradient-x {
+            animation: animate-gradient-x 3s ease infinite;
+        }
+        
+        @keyframes animate-spin-slow {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .animate-spin-slow {
+            animation: animate-spin-slow 8s linear infinite;
         }
         .cursor-scale:hover {
                 transform: scale(1.1);
@@ -174,6 +854,131 @@
             .progress-step.active {
                 @apply text-indigo-600 font-semibold;
             }
+            
+            /* Premium Floating Buttons */
+            .premium-float-btn {
+                background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+                border: 2px solid rgba(255, 255, 255, 0.8);
+                box-shadow: 
+                    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                    0 10px 10px -5px rgba(0, 0, 0, 0.04),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+                backdrop-filter: blur(20px);
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .premium-float-btn::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, 
+                    transparent, 
+                    rgba(255, 255, 255, 0.4), 
+                    transparent);
+                transition: left 0.6s;
+            }
+            
+            .premium-float-btn:hover::before {
+                left: 100%;
+            }
+            
+            .premium-float-btn:hover {
+                transform: translateY(-4px) scale(1.05);
+                box-shadow: 
+                    0 32px 64px -12px rgba(0, 0, 0, 0.25),
+                    0 0 20px rgba(59, 130, 246, 0.3);
+            }
+            
+            /* Luxury Trust Panel */
+            .luxury-trust {
+                background: linear-gradient(145deg, #1e293b 0%, #334155 100%);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                box-shadow: 
+                    0 25px 50px -12px rgba(0, 0, 0, 0.8),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            }
+            
+            /* Premium Chat Widget */
+            .premium-chat {
+                background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+                border: 2px solid rgba(255, 255, 255, 0.8);
+                box-shadow: 
+                    0 32px 64px -12px rgba(0, 0, 0, 0.25),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            }
+            
+            /* Award Animations */
+            .award-badge {
+                animation: awardFloat 3s ease-in-out infinite;
+            }
+            
+            @keyframes awardFloat {
+                0%, 100% { transform: translateY(0) rotate(0deg); }
+                25% { transform: translateY(-5px) rotate(1deg); }
+                75% { transform: translateY(-2px) rotate(-1deg); }
+            }
+            
+            /* Premium Testimonials */
+            .testimonial-card {
+                background: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.9) 100%);
+                border: 2px solid rgba(255, 255, 255, 0.5);
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            
+            .testimonial-card:hover {
+                transform: translateY(-8px) scale(1.02);
+                box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.2);
+            }
+            
+            /* Video Background Overlay */
+            .video-overlay {
+                background: linear-gradient(135deg, 
+                    rgba(15, 23, 42, 0.8) 0%,
+                    rgba(30, 41, 59, 0.7) 50%,
+                    rgba(51, 65, 85, 0.8) 100%);
+            }
+            
+            /* Scroll Reveal Animation */
+            .scroll-reveal {
+                opacity: 0;
+                transform: translateY(50px);
+                transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            
+            .scroll-reveal.revealed {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            /* Particle Animation */
+            .particles {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: 2;
+            }
+            
+            .particle {
+                position: absolute;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
+                animation: particleFloat 15s linear infinite;
+            }
+            
+            @keyframes particleFloat {
+                0% { transform: translateY(100vh) scale(0); }
+                10% { transform: translateY(90vh) scale(1); }
+                90% { transform: translateY(-10vh) scale(1); }
+                100% { transform: translateY(-10vh) scale(0); }
+            }
     </style>
 </head>
 
@@ -252,12 +1057,48 @@
     </nav>
 
     <!-- Main Booking Section -->
-    <main class="min-h-screen bg-gray-100">
-        <section class="main-section max-w-7xl mx-auto p-4 sm:p-6 lg:p-10 lg:grid lg:grid-cols-2 lg:gap-6">
+    <main class="min-h-screen">
+        <!-- Enhanced Hero Section -->
+        <section class="relative bg-gradient-to-r from-blue-900/90 via-purple-900/80 to-indigo-900/90 text-white py-16 mb-8">
+            <div class="absolute inset-0 bg-black/20"></div>
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="text-center max-w-4xl mx-auto">
+                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-6">
+                        <i class="fas fa-hotel text-yellow-400"></i>
+                        <span>Premium Hotel Booking</span>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <h1 class="text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">
+                        Complete Your Booking
+                    </h1>
+                    <p class="text-base text-gray-200 mb-6 max-w-2xl mx-auto">
+                        Secure your perfect stay with our professional booking system. Fast, reliable, and completely secure.
+                    </p>
+                    <div class="flex justify-center gap-8 text-sm">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-shield-alt text-green-400"></i>
+                            <span>100% Secure</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-clock text-blue-400"></i>
+                            <span>Instant Confirmation</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-headset text-purple-400"></i>
+                            <span>24/7 Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Animated background elements -->
+            <div class="absolute top-20 left-10 w-32 h-32 bg-blue-500/10 rounded-full blur-xl animate-pulse"></div>
+            <div class="absolute bottom-20 right-10 w-40 h-40 bg-purple-500/10 rounded-full blur-xl animate-pulse" style="animation-delay: 1s;"></div>
+        </section>
+        <section class="main-section max-w-7xl mx-auto p-4 sm:p-6 lg:p-10">
             <!-- Skeleton Loader -->
-            <div id="skeleton-loader" class="lg:col-span-2 animate-pulse hidden">
+            <div id="skeleton-loader" class="animate-pulse hidden mb-8">
                 <div class="bg-gray-200 h-10 w-1/2 mb-4 rounded"></div>
-                <div class="grid lg:grid-cols-2 lg:gap-6">
+                <div class="grid lg:grid-cols-2 lg:gap-8">
                     <div>
                         <div class="bg-gray-200 h-64 lg:h-80 w-full rounded-lg mb-4"></div>
                         <div class="bg-gray-200 h-4 w-3/4 mb-2 rounded"></div>
@@ -275,14 +1116,42 @@
             </div>
 
             <!-- Error Summary -->
-            <div id="error-summary" class="lg:col-span-2 bg-red-100 text-red-700 p-4 rounded-lg mb-4 hidden">
+            <div id="error-summary" class="bg-red-100 text-red-700 p-4 rounded-lg mb-8 hidden">
                 <h3 class="text-lg font-semibold">Please fix the following errors:</h3>
                 <ul id="error-list" class="list-disc ml-5"></ul>
             </div>
 
-            <!-- Hotel Details with Carousel -->
-            <div class="hotel-details bg-white rounded-lg shadow-lg p-6">
-                <h2 id="hotel-name" class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Hotel Paradise</h2>
+            <!-- Main Content Grid -->
+            <div class="grid lg:grid-cols-2 lg:gap-8 items-start">
+                <!-- Premium Hotel Paradise Section -->
+                <div class="hotel-details bg-white rounded-2xl shadow-lg p-6 lg:p-8 transition-all duration-300">
+                <!-- Premium Badge -->
+                <div class="absolute top-4 right-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-3 py-1 rounded-lg text-xs font-semibold shadow-md z-10">
+                    <i class="fas fa-star mr-1"></i>PREMIUM
+                </div>
+                
+                <!-- Premium Hotel Name with Gradient -->
+                <div class="text-center mb-6">
+                    <div class="inline-flex items-center gap-2 bg-gradient-to-r from-slate-50 to-gray-50 px-4 py-2 rounded-lg text-xs font-medium mb-3 border border-gray-200">
+                        <i class="fas fa-certificate text-indigo-600"></i>
+                        <span class="text-gray-700">Verified Premium Property</span>
+                    </div>
+                    <h2 id="hotel-name" class="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">Loading hotel name...</h2>
+                    <p class="text-sm text-gray-600 font-medium">Loading hotel details...</p>
+                    
+                    <!-- Professional Rating Display -->
+                    <div class="flex items-center justify-center gap-3 mt-3" id="hotel-rating-display">
+                        <div class="flex items-center gap-0.5">
+                            <i class="fas fa-star text-amber-400 text-sm"></i>
+                            <i class="fas fa-star text-amber-400 text-sm"></i>
+                            <i class="fas fa-star text-amber-400 text-sm"></i>
+                            <i class="fas fa-star text-amber-400 text-sm"></i>
+                            <i class="fas fa-star text-amber-400 text-sm"></i>
+                        </div>
+                        <span class="text-sm font-semibold text-gray-900" id="hotel-rating-number">Loading...</span>
+                        <span class="text-xs text-gray-500" id="hotel-rating-reviews">Loading reviews...</span>
+                    </div>
+                </div>
                 <div class="relative">
                     <div id="carousel" class="w-full h-48 sm:h-64 lg:h-80 overflow-hidden rounded-lg">
                         <img id="carousel-image-1" src="https://via.placeholder.com/600x300?text=Hotel+1"
@@ -303,19 +1172,114 @@
                         aria-label="Next image">❯</button>
                     <div class="flex justify-center mt-2" id="carousel-dots"></div>
                 </div>
-                <p id="hotel-location" class="text-gray-600 mt-4"><strong>Location:</strong> 123, MG Road, Mumbai,
-                    Maharashtra</p>
-                <p id="hotel-description" class="text-gray-600"><strong>Description:</strong> A luxurious 5-star hotel
-                    with modern amenities, offering a serene stay with a beautiful city view.</p>
-                <p id="hotel-amenities" class="text-gray-600"><strong>Amenities:</strong> <span class="tooltip"
-                        data-tooltip="High-speed internet access">Free Wi-Fi</span>, <span class="tooltip"
-                        data-tooltip="Luxurious swimming pool">Swimming Pool</span>, <span class="tooltip"
-                        data-tooltip="24/7 fitness center">Gym</span>, <span class="tooltip"
-                        data-tooltip="Relaxing spa services">Spa</span>, <span class="tooltip"
-                        data-tooltip="Secure parking area">Parking</span></p>
-                <p id="hotel-prices" class="text-gray-600"><strong>Price per Night:</strong> ₹8,000 (Standard), ₹10,000
-                    (Deluxe), ₹15,000 (Suite)</p>
-                <p id="hotel-rating" class="text-gray-600"><strong>Rating:</strong> 4.5/5 (Based on 1,200 reviews)</p>
+                
+                <!-- Professional Information Cards -->
+                <div class="space-y-4 mb-6">
+                    <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i class="fas fa-map-marker-alt text-indigo-600 text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-semibold text-gray-900 mb-1">Location</h3>
+                                <p id="hotel-location" class="text-xs text-gray-600 leading-relaxed">Loading location...</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i class="fas fa-award text-purple-600 text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-semibold text-gray-900 mb-1">Experience</h3>
+                                <p id="hotel-description" class="text-xs text-gray-600 leading-relaxed">Loading description...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Professional Amenities Grid -->
+                <div class="mb-6">
+                    <h3 class="text-base font-semibold text-gray-900 mb-3">Amenities</h3>
+                    <div class="grid grid-cols-2 lg:grid-cols-3 gap-2">
+                        <div class="flex items-center gap-2 bg-gray-50 rounded-lg p-2.5 hover:bg-gray-100 transition-colors duration-200">
+                            <div class="w-6 h-6 bg-blue-100 rounded-md flex items-center justify-center">
+                                <i class="fas fa-wifi text-blue-600 text-xs"></i>
+                            </div>
+                            <span class="text-xs font-medium text-gray-700">Premium Wi-Fi</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-gray-50 rounded-lg p-2.5 hover:bg-gray-100 transition-colors duration-200">
+                            <div class="w-6 h-6 bg-cyan-100 rounded-md flex items-center justify-center">
+                                <i class="fas fa-swimming-pool text-cyan-600 text-xs"></i>
+                            </div>
+                            <span class="text-xs font-medium text-gray-700">Pool</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-gray-50 rounded-lg p-2.5 hover:bg-gray-100 transition-colors duration-200">
+                            <div class="w-6 h-6 bg-green-100 rounded-md flex items-center justify-center">
+                                <i class="fas fa-dumbbell text-green-600 text-xs"></i>
+                            </div>
+                            <span class="text-xs font-medium text-gray-700">Fitness</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-gray-50 rounded-lg p-2.5 hover:bg-gray-100 transition-colors duration-200">
+                            <div class="w-6 h-6 bg-pink-100 rounded-md flex items-center justify-center">
+                                <i class="fas fa-spa text-pink-600 text-xs"></i>
+                            </div>
+                            <span class="text-xs font-medium text-gray-700">Spa</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-gray-50 rounded-lg p-2.5 hover:bg-gray-100 transition-colors duration-200">
+                            <div class="w-6 h-6 bg-amber-100 rounded-md flex items-center justify-center">
+                                <i class="fas fa-concierge-bell text-amber-600 text-xs"></i>
+                            </div>
+                            <span class="text-xs font-medium text-gray-700">Concierge</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-gray-50 rounded-lg p-2.5 hover:bg-gray-100 transition-colors duration-200">
+                            <div class="w-6 h-6 bg-purple-100 rounded-md flex items-center justify-center">
+                                <i class="fas fa-utensils text-purple-600 text-xs"></i>
+                            </div>
+                            <span class="text-xs font-medium text-gray-700">Restaurant</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Professional Pricing Display -->
+                <div class="bg-white border border-gray-200 rounded-xl p-4 mb-6 shadow-sm">
+                    <h3 class="text-sm font-semibold text-gray-900 mb-3">Room Rates</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0">
+                            <div>
+                                <span class="text-sm font-medium text-gray-900">Standard Room</span>
+                                <p class="text-xs text-gray-500">Queen bed, city view</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm font-semibold text-gray-900">₹8,500</div>
+                                <div class="text-xs text-gray-500">per night</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0">
+                            <div>
+                                <span class="text-sm font-medium text-gray-900">Deluxe Room</span>
+                                <p class="text-xs text-gray-500">King bed, garden view</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm font-semibold text-gray-900">₹12,000</div>
+                                <div class="text-xs text-gray-500">per night</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between py-2">
+                            <div>
+                                <span class="text-sm font-medium text-gray-900">Suite</span>
+                                <p class="text-xs text-gray-500">Premium suite, park view</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm font-semibold text-gray-900">₹18,000</div>
+                                <div class="text-xs text-gray-500">per night</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-3 pt-2 border-t border-gray-100">Prices include taxes and breakfast</p>
+                </div>
 
                 <!-- Review Section -->
                 <div class="mt-6">
@@ -330,139 +1294,449 @@
                     <button id="toggle-reviews" class="text-indigo-600 hover:text-indigo-800 mt-2 cursor-scale">Show
                         More Reviews</button>
                 </div>
-            </div>
-
-            <!-- Booking Form -->
-            <div class="booking-form bg-white rounded-lg shadow-lg p-6">
-                <h3 class="text-2xl font-semibold text-gray-800 mb-4">Book Your Stay</h3>
-                <!-- Progress Indicator -->
-                <div class="mb-4 flex justify-between sticky top-0 bg-white p-4 -mx-4 -mt-6 z-10">
-                    <div class="progress-step active" data-step="1">1. Dates</div>
-                    <div class="progress-step" data-step="2">2. Guest Details</div>
-                    <div class="progress-step" data-step="3">3. Submit</div>
                 </div>
-                <form id="booking-form" onsubmit="handleSubmit(event)"
-                    class="flex flex-col lg:grid lg:grid-cols-2 lg:gap-4">
-                    <div class="mb-4 animate-form">
-                        <label for="check-in" class="block text-sm font-medium text-gray-700">Check-in Date:</label>
-                        <input type="date" id="check-in" name="check-in"
-                            class="mt-1 p-2 w-full border rounded-md focus:ring-indigo-500 focus:border-indigo-500 focus:scale-105 transition-transform duration-200"
-                            required aria-describedby="check-in-error">
-                        <p id="check-in-error" class="text-red-500 text-sm hidden animate-pulse">Please select a valid
-                            check-in date</p>
-                        <div id="calendar-check-in" class="calendar hidden mt-2 p-4 bg-gray-50 rounded-lg"></div>
-                    </div>
 
-                    <div class="mb-4 animate-form">
-                        <label for="check-out" class="block text-sm font-medium text-gray-700">Check-out Date:</label>
-                        <input type="date" id="check-out" name="check-out"
-                            class="mt-1 p-2 w-full border rounded-md focus:ring-indigo-500 focus:border-indigo-500 focus:scale-105 transition-transform duration-200"
-                            required aria-describedby="check-out-error">
-                        <p id="check-out-error" class="text-red-500 text-sm hidden animate-pulse">Check-out must be
-                            after check-in</p>
-                        <div id="calendar-check-out" class="calendar hidden mt-2 p-4 bg-gray-50 rounded-lg"></div>
+                <!-- Simple Booking Form -->
+                <div class="booking-form bg-white rounded-lg shadow-lg p-6 lg:p-8">
+                    <!-- Simple Header -->
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Complete Your Booking</h3>
+                        <p class="text-gray-600">Fill in the details below to confirm your reservation</p>
                     </div>
-
-                    <div class="mb-4 animate-form">
-                        <label for="guests" class="block text-sm font-medium text-gray-700">Number of Guests:</label>
-                        <select id="guests" name="guests"
-                            class="mt-1 p-2 w-full border rounded-md focus:ring-indigo-500 focus:border-indigo-500 focus:scale-105 transition-transform duration-200"
-                            required>
-                            <option value="1">1 Guest</option>
-                            <option value="2">2 Guests</option>
-                        </select>
-                    </div>
-
-                    <div class="mb-4 animate-form">
-                        <label for="room-type" class="block text-sm font-medium text-gray-700">Room Type:</label>
-                        <select id="room-type" name="room-type"
-                            class="mt-1 p-2 w-full border rounded-md focus:ring-indigo-500 focus:border-indigo-500 focus:scale-105 transition-transform duration-200"
-                            required>
-                            <option value="standard">Standard Room (₹8,000/night)</option>
-                            <option value="deluxe">Deluxe Room (₹10,000/night)</option>
-                            <option value="suite">Suite (₹15,000/night)</option>
-                        </select>
-                        <div id="room-preview"
-                            class="mt-2 h-24 w-full bg-gray-200 rounded-lg flex items-center justify-center">
-                            <img id="room-image" src="https://via.placeholder.com/150x100?text=Standard+Room"
-                                alt="Room Preview" class="h-full object-cover rounded-lg" />
+                <form id="booking-form" onsubmit="handleSubmit(event)" class="space-y-4">
+                    
+                    <!-- Date Selection -->
+                    <div class="grid lg:grid-cols-2 gap-4">
+                        <div>
+                            <label for="check-in" class="block text-sm font-semibold text-gray-700 mb-2">
+                                <i class="fas fa-calendar text-indigo-600 mr-2"></i>
+                                Check-in Date
+                            </label>
+                            <input type="date" id="check-in" name="check-in"
+                                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                                required>
+                            <div id="check-in-error" class="text-red-600 text-sm mt-1 hidden">
+                                Please select a valid check-in date
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="check-out" class="block text-sm font-semibold text-gray-700 mb-2">
+                                <i class="fas fa-calendar-check text-indigo-600 mr-2"></i>
+                                Check-out Date
+                            </label>
+                            <input type="date" id="check-out" name="check-out"
+                                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                                required>
+                            <div id="check-out-error" class="text-red-600 text-sm mt-1 hidden">
+                                Check-out must be after check-in date
+                            </div>
                         </div>
                     </div>
 
-                    <div class="mb-4 animate-form">
-                        <label for="name" class="block text-sm font-medium text-gray-700">Full Name:</label>
+                    <!-- Guest & Room Selection -->
+                    <div class="grid lg:grid-cols-2 gap-4">
+                        <div>
+                            <label for="guests" class="block text-sm font-semibold text-gray-700 mb-2">
+                                <i class="fas fa-users text-indigo-600 mr-2"></i>
+                                Number of Guests
+                            </label>
+                            <select id="guests" name="guests"
+                                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                                required>
+                                <option value="1">1 Guest</option>
+                                <option value="2" selected>2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                                <option value="5">5 Guests</option>
+                                <option value="6">6 Guests</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="room-type" class="block text-sm font-semibold text-gray-700 mb-2">
+                                <i class="fas fa-bed text-indigo-600 mr-2"></i>
+                                Room Type
+                            </label>
+                            <select id="room-type" name="room-type"
+                                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                                required>
+                                <option value="standard">Standard Room (₹8,000/night)</option>
+                                <option value="deluxe" selected>Deluxe Room (₹10,000/night)</option>
+                                <option value="suite">Suite (₹15,000/night)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mb-6 animate-form">
+                        <label for="name" class="block text-sm font-semibold text-gray-800 mb-2 flex items-center gap-2">
+                            <i class="fas fa-user text-indigo-600"></i>
+                            Full Name <span class="text-red-500">*</span>
+                        </label>
                         <input type="text" id="name" name="name" placeholder="Enter your full name"
                             list="name-suggestions"
-                            class="mt-1 p-2 w-full border rounded-md focus:ring-indigo-500 focus:border-indigo-500 focus:scale-105 transition-transform duration-200"
+                            class="premium-input mt-1 p-4 w-full rounded-xl border-2 border-gray-200 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 transition-all duration-400 text-gray-700"
                             required aria-describedby="name-error" autocomplete="name">
                         <datalist id="name-suggestions">
                             <option value="Amit Sharma">
                             <option value="Priya Singh">
                             <option value="Rahul Gupta">
                         </datalist>
-                        <p id="name-error" class="text-red-500 text-sm hidden animate-pulse">Please enter a valid name
-                            (letters only)</p>
-                    </div>
-
-                    <div class="mb-4 animate-form">
-                        <label for="email" class="block text-sm font-medium text-gray-700">Email:</label>
-                        <input type="email" id="email" name="email" placeholder="Enter your email"
-                            class="mt-1 p-2 w-full border rounded-md focus:ring-indigo-500 focus:border-indigo-500 focus:scale-105 transition-transform duration-200"
-                            required aria-describedby="email-error" autocomplete="email">
-                        <p id="email-error" class="text-red-500 text-sm hidden animate-pulse">Please enter a valid email
-                        </p>
-                    </div>
-
-                    <div class="mb-4 animate-form">
-                        <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number:</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number"
-                            class="mt-1 p-2 w-full border rounded-md focus:ring-indigo-500 focus:border-indigo-500 focus:scale-105 transition-transform duration-200"
-                            required aria-describedby="phone-error" autocomplete="tel">
-                        <p id="phone-error" class="text-red-500 text-sm hidden animate-pulse">Please enter a valid
-                            10-digit phone number</p>
-                    </div>
-
-                    <div class="mb-4 animate-form">
-                        <label for="promo-code" class="block text-sm font-medium text-gray-700">Promo Code
-                            (Optional):</label>
-                        <input type="text" id="promo-code" name="promo-code" placeholder="Enter promo code"
-                            class="mt-1 p-2 w-full border rounded-md focus:ring-indigo-500 focus:border-indigo-500 focus:scale-105 transition-transform duration-200"
-                            aria-describedby="promo-error">
-                        <div id="promo-suggestions" class="mt-2 flex space-x-2">
-                            <button type="button"
-                                class="promo-suggestion text-indigo-600 hover:text-indigo-800 text-sm cursor-scale">SAVE10</button>
-                            <button type="button"
-                                class="promo-suggestion text-indigo-600 hover:text-indigo-800 text-sm cursor-scale">WELCOME5</button>
+                        <div id="name-error" class="ultra-premium-error-card hidden">
+                            <div class="bg-gradient-to-r from-red-500 to-pink-600 rounded-2xl p-4 text-white shadow-2xl border-2 border-red-400/50 relative overflow-hidden animate-shake">
+                                <!-- Error Animation Effects -->
+                                <div class="absolute top-0 right-0 w-16 h-16 bg-white/10 rounded-full -translate-y-8 translate-x-8 animate-pulse"></div>
+                                <div class="absolute bottom-0 left-0 w-12 h-12 bg-white/10 rounded-full translate-y-6 -translate-x-6 animate-bounce"></div>
+                                
+                                <div class="flex items-center gap-3 relative z-10">
+                                    <div class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0 backdrop-blur-sm animate-pulse">
+                                        <i class="fas fa-exclamation-triangle text-yellow-300 text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-black text-lg mb-1">⚠️ Input Required</p>
+                                        <p class="font-semibold text-red-100">Please enter a valid name (letters only)</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Shine Effect -->
+                                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 animate-shimmer"></div>
+                            </div>
                         </div>
-                        <p id="promo-error" class="text-green-500 text-sm hidden animate-pulse">Promo code applied!</p>
+                    </div>
+
+                    <div class="mb-6 animate-form">
+                        <label for="email" class="block text-sm font-semibold text-gray-800 mb-2 flex items-center gap-2">
+                            <i class="fas fa-envelope text-indigo-600"></i>
+                            Email Address <span class="text-red-500">*</span>
+                        </label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email address"
+                            class="premium-input mt-1 p-4 w-full rounded-xl border-2 border-gray-200 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 transition-all duration-400 text-gray-700"
+                            required aria-describedby="email-error" autocomplete="email">
+                        <div id="email-error" class="ultra-premium-error-card hidden">
+                            <div class="bg-gradient-to-r from-red-500 to-pink-600 rounded-2xl p-4 text-white shadow-2xl border-2 border-red-400/50 relative overflow-hidden animate-shake">
+                                <!-- Error Animation Effects -->
+                                <div class="absolute top-0 right-0 w-16 h-16 bg-white/10 rounded-full -translate-y-8 translate-x-8 animate-pulse"></div>
+                                <div class="absolute bottom-0 left-0 w-12 h-12 bg-white/10 rounded-full translate-y-6 -translate-x-6 animate-bounce"></div>
+                                
+                                <div class="flex items-center gap-3 relative z-10">
+                                    <div class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0 backdrop-blur-sm animate-pulse">
+                                        <i class="fas fa-envelope-open-text text-yellow-300 text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-black text-lg mb-1">📧 Email Required</p>
+                                        <p class="font-semibold text-red-100">Please enter a valid email address</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Shine Effect -->
+                                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 animate-shimmer"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-6 animate-form">
+                        <label for="phone" class="block text-sm font-semibold text-gray-800 mb-2 flex items-center gap-2">
+                            <i class="fas fa-phone text-indigo-600"></i>
+                            Phone Number <span class="text-red-500">*</span>
+                        </label>
+                        <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX"
+                            class="premium-input mt-1 p-4 w-full rounded-xl border-2 border-gray-200 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 transition-all duration-400 text-gray-700"
+                            required aria-describedby="phone-error" autocomplete="tel" pattern="[0-9]{10}">
+                        <div id="phone-error" class="ultra-premium-error-card hidden">
+                            <div class="bg-gradient-to-r from-red-500 to-pink-600 rounded-2xl p-4 text-white shadow-2xl border-2 border-red-400/50 relative overflow-hidden animate-shake">
+                                <!-- Error Animation Effects -->
+                                <div class="absolute top-0 right-0 w-16 h-16 bg-white/10 rounded-full -translate-y-8 translate-x-8 animate-pulse"></div>
+                                <div class="absolute bottom-0 left-0 w-12 h-12 bg-white/10 rounded-full translate-y-6 -translate-x-6 animate-bounce"></div>
+                                
+                                <div class="flex items-center gap-3 relative z-10">
+                                    <div class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0 backdrop-blur-sm animate-pulse">
+                                        <i class="fas fa-mobile-alt text-yellow-300 text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-black text-lg mb-1">📱 Phone Required</p>
+                                        <p class="font-semibold text-red-100">Please enter a valid 10-digit phone number</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Shine Effect -->
+                                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 animate-shimmer"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-6 animate-form">
+                        <label for="promo-code" class="block text-sm font-semibold text-gray-800 mb-2 flex items-center gap-2">
+                            <i class="fas fa-tag text-indigo-600"></i>
+                            Promo Code (Optional)
+                        </label>
+                        <input type="text" id="promo-code" name="promo-code" placeholder="Enter promo code for discounts"
+                            class="premium-input mt-1 p-4 w-full rounded-xl border-2 border-gray-200 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 transition-all duration-400 text-gray-700"
+                            aria-describedby="promo-error">
+                        <div id="promo-suggestions" class="mt-3 flex flex-wrap gap-2">
+                            <button type="button"
+                                class="promo-suggestion bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-200 text-indigo-700 hover:text-indigo-900 hover:bg-indigo-100 text-sm px-3 py-1.5 rounded-lg transition-all duration-200 cursor-pointer font-medium">
+                                <i class="fas fa-percent mr-1"></i>SAVE10
+                            </button>
+                            <button type="button"
+                                class="promo-suggestion bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 text-green-700 hover:text-green-900 hover:bg-green-100 text-sm px-3 py-1.5 rounded-lg transition-all duration-200 cursor-pointer font-medium">
+                                <i class="fas fa-gift mr-1"></i>WELCOME5
+                            </button>
+                            <button type="button"
+                                class="promo-suggestion bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-200 text-orange-700 hover:text-orange-900 hover:bg-orange-100 text-sm px-3 py-1.5 rounded-lg transition-all duration-200 cursor-pointer font-medium">
+                                <i class="fas fa-star mr-1"></i>FIRST15
+                            </button>
+                        </div>
+                        <p id="promo-error" class="text-green-600 text-sm hidden animate-pulse mt-2 flex items-center">
+                            <i class="fas fa-check-circle mr-1"></i>
+                            Promo code applied successfully!
+                        </p>
                     </div>
 
                     <div class="mb-4 lg:col-span-2 animate-form">
                         <div id="guest-details"></div>
                     </div>
 
-                    <div class="lg:col-span-2 sticky top-16 bg-white p-4 -mx-4 -mb-4 z-10">
-                        <p id="total-price" class="text-lg font-semibold text-gray-800">Total Price: ₹0</p>
+                    <div class="lg:col-span-2 mt-8 mb-6">
+                        <div class="ultra-premium-pricing-card relative overflow-hidden">
+                            <!-- Ultra Luxury Background -->
+                            <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 opacity-95"></div>
+                            
+                            <!-- Animated Particles -->
+                            <div class="absolute top-10 right-20 w-2 h-2 bg-yellow-400 rounded-full animate-ping"></div>
+                            <div class="absolute bottom-20 left-20 w-1 h-1 bg-blue-400 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
+                            <div class="absolute top-1/2 right-1/3 w-1.5 h-1.5 bg-pink-400 rounded-full animate-bounce" style="animation-delay: 2s;"></div>
+                            <div class="absolute bottom-1/3 left-1/4 w-1 h-1 bg-green-400 rounded-full animate-pulse" style="animation-delay: 1.5s;"></div>
+                            
+                            <!-- Luxury Border Animation -->
+                            <div class="absolute inset-0 rounded-3xl bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 p-0.5 animate-spin-slow">
+                                <div class="absolute inset-0.5 rounded-3xl bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"></div>
+                            </div>
+                            
+                            <!-- Diamond Sparkles -->
+                            <div class="absolute top-8 right-12 w-4 h-4 text-yellow-400 animate-spin" style="animation-duration: 3s;">
+                                <i class="fas fa-gem"></i>
+                            </div>
+                            <div class="absolute bottom-12 left-16 w-3 h-3 text-blue-400 animate-bounce" style="animation-delay: 1s;">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            
+                            <!-- Main Content -->
+                            <div class="relative z-20 p-10 text-white">
+                                <!-- Header with Premium Badge -->
+                                <div class="flex items-center justify-between mb-8">
+                                    <div class="flex items-center gap-4">
+                                        <div class="premium-icon-container">
+                                            <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center shadow-2xl relative overflow-hidden">
+                                                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 animate-shimmer"></div>
+                                                <i class="fas fa-crown text-2xl text-white relative z-10"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-2xl lg:text-3xl font-black mb-2 bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 bg-clip-text text-transparent animate-gradient-x">
+                                                PREMIUM TOTAL
+                                            </h4>
+                                            <p class="text-sm opacity-90 flex items-center gap-2">
+                                                <i class="fas fa-shield-check text-emerald-400 animate-pulse"></i>
+                                                <span class="font-medium">All-Inclusive Luxury Package</span>
+                                                <i class="fas fa-certificate text-yellow-400 animate-spin" style="animation-duration: 5s;"></i>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Price Display -->
+                                    <div class="text-right">
+                                        <div class="ultra-price-container">
+                                            <div class="bg-gradient-to-r from-yellow-400/20 to-orange-500/20 backdrop-blur-xl rounded-3xl p-6 border border-yellow-400/30 shadow-2xl">
+                                                <p id="total-price" class="text-4xl lg:text-6xl font-black tracking-tight mb-2 bg-gradient-to-r from-yellow-300 via-yellow-400 to-orange-400 bg-clip-text text-transparent animate-pulse">₹0</p>
+                                                <p class="text-sm opacity-90 font-medium bg-gradient-to-r from-gray-300 to-gray-400 bg-clip-text text-transparent">Complete Premium Experience</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Ultra Premium Price Breakdown -->
+                                <div class="border-t border-gradient-to-r from-yellow-400/30 via-purple-500/30 to-pink-500/30 pt-6 space-y-4">
+                                    <div class="premium-breakdown-item">
+                                        <div class="flex justify-between text-base bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-2xl p-4 backdrop-blur-lg border border-blue-400/20">
+                                            <span class="flex items-center gap-3">
+                                                <div class="w-8 h-8 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
+                                                    <i class="fas fa-bed text-white text-sm"></i>
+                                                </div>
+                                                <span class="font-bold text-blue-100">Luxury Accommodation</span>
+                                            </span>
+                                            <span id="room-charges" class="font-black text-xl text-blue-200">₹0</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="premium-breakdown-item">
+                                        <div class="flex justify-between text-base bg-gradient-to-r from-orange-500/20 to-red-600/20 rounded-2xl p-4 backdrop-blur-lg border border-orange-400/20">
+                                            <span class="flex items-center gap-3">
+                                                <div class="w-8 h-8 bg-gradient-to-br from-orange-400 to-red-500 rounded-xl flex items-center justify-center shadow-lg">
+                                                    <i class="fas fa-percentage text-white text-sm"></i>
+                                                </div>
+                                                <span class="font-bold text-orange-100">Premium Service Tax</span>
+                                            </span>
+                                            <span id="taxes-fees" class="font-black text-xl text-orange-200">₹0</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="premium-breakdown-item">
+                                        <div class="flex justify-between text-base bg-gradient-to-r from-emerald-500/30 to-green-600/30 rounded-2xl p-4 backdrop-blur-lg border-2 border-emerald-400/40 shadow-2xl">
+                                            <span class="flex items-center gap-3 text-emerald-100">
+                                                <div class="w-8 h-8 bg-gradient-to-br from-emerald-400 to-green-500 rounded-xl flex items-center justify-center shadow-lg animate-pulse">
+                                                    <i class="fas fa-tags text-white text-sm"></i>
+                                                </div>
+                                                <span class="font-bold">Exclusive Savings</span>
+                                            </span>
+                                            <span id="discount-amount" class="font-black text-xl text-emerald-200">-₹0</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Ultra Premium Savings Indicator -->
+                                    <div id="savings-indicator" class="ultra-savings-card hidden">
+                                        <div class="bg-gradient-to-r from-emerald-400/30 via-green-500/30 to-teal-500/30 border-2 border-emerald-300/50 rounded-3xl p-6 backdrop-blur-xl shadow-2xl relative overflow-hidden">
+                                            <!-- Celebration Animation -->
+                                            <div class="absolute top-2 right-4 text-yellow-400 animate-bounce">
+                                                <i class="fas fa-trophy text-xl"></i>
+                                            </div>
+                                            <div class="absolute bottom-2 left-4 text-green-400 animate-pulse">
+                                                <i class="fas fa-medal text-lg"></i>
+                                            </div>
+                                            
+                                            <div class="flex items-center gap-4 text-emerald-100 relative z-10">
+                                                <div class="w-12 h-12 bg-gradient-to-br from-emerald-400 to-green-500 rounded-2xl flex items-center justify-center shadow-xl animate-pulse">
+                                                    <i class="fas fa-piggy-bank text-white text-xl"></i>
+                                                </div>
+                                                <div>
+                                                    <p class="text-lg font-black mb-1">🎉 FANTASTIC SAVINGS!</p>
+                                                    <p class="text-base">
+                                                        <span class="font-medium">You saved </span>
+                                                        <span id="savings-amount" class="text-2xl font-black text-yellow-300">₹0</span>
+                                                        <span class="font-medium"> on this premium booking!</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Premium Benefits Section -->
+                                <div class="mt-8 pt-6 border-t border-gradient-to-r from-yellow-400/30 via-purple-500/30 to-pink-500/30">
+                                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                                        <div class="flex flex-col items-center text-center p-3 bg-white/10 rounded-2xl backdrop-blur-sm">
+                                            <i class="fas fa-concierge-bell text-2xl text-yellow-400 mb-2 animate-bounce"></i>
+                                            <span class="text-xs font-bold">24/7 Concierge</span>
+                                        </div>
+                                        <div class="flex flex-col items-center text-center p-3 bg-white/10 rounded-2xl backdrop-blur-sm">
+                                            <i class="fas fa-spa text-2xl text-pink-400 mb-2 animate-pulse"></i>
+                                            <span class="text-xs font-bold">Luxury Spa</span>
+                                        </div>
+                                        <div class="flex flex-col items-center text-center p-3 bg-white/10 rounded-2xl backdrop-blur-sm">
+                                            <i class="fas fa-utensils text-2xl text-blue-400 mb-2 animate-bounce" style="animation-delay: 0.5s;"></i>
+                                            <span class="text-xs font-bold">Fine Dining</span>
+                                        </div>
+                                        <div class="flex flex-col items-center text-center p-3 bg-white/10 rounded-2xl backdrop-blur-sm">
+                                            <i class="fas fa-car-side text-2xl text-green-400 mb-2 animate-pulse" style="animation-delay: 1s;"></i>
+                                            <span class="text-xs font-bold">Airport Transfer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="lg:col-span-2 animate-form">
                         <button type="submit" id="book-now-btn"
-                            class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300 flex items-center justify-center cursor-scale">
-                            <span id="btn-text">Book Now</span>
-                            <svg id="loading-spinner" class="hidden animate-spin h-5 w-5 mr-2 text-white"
-                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
-                                    stroke-width="4"></circle>
-                                <path class="opacity-75" fill="currentColor"
-                                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
-                                </path>
-                            </svg>
+                            class="ultra-premium-submit-btn group">
+                            
+                            <!-- Ultra Luxury Background Layers -->
+                            <div class="absolute inset-0 bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 rounded-3xl opacity-90"></div>
+                            <div class="absolute inset-0 bg-gradient-to-br from-slate-900/20 via-transparent to-slate-900/20 rounded-3xl"></div>
+                            
+                            <!-- Animated Border Ring -->
+                            <div class="absolute -inset-1 bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 rounded-3xl blur-sm opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+                            
+                            <!-- Multiple Shine Effects -->
+                            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-40 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-all duration-700 rounded-3xl"></div>
+                            <div class="absolute inset-0 bg-gradient-to-l from-transparent via-yellow-300 to-transparent opacity-0 group-hover:opacity-30 transform skew-x-12 translate-x-full group-hover:-translate-x-full transition-all duration-1000 rounded-3xl" style="animation-delay: 0.2s;"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-transparent via-pink-300 to-transparent opacity-0 group-hover:opacity-20 transform translate-y-full group-hover:-translate-y-full transition-all duration-1200 rounded-3xl" style="animation-delay: 0.4s;"></div>
+                            
+                            <!-- Pulsing Energy Effect -->
+                            <div class="absolute inset-0 bg-gradient-to-r from-pink-500/30 via-purple-500/30 to-indigo-500/30 opacity-0 group-hover:opacity-100 animate-pulse transition-opacity duration-500 rounded-3xl"></div>
+                            
+                            <!-- Particle Effects -->
+                            <div class="absolute top-4 right-8 w-2 h-2 bg-yellow-300 rounded-full opacity-0 group-hover:opacity-100 animate-ping"></div>
+                            <div class="absolute bottom-4 left-8 w-1.5 h-1.5 bg-pink-300 rounded-full opacity-0 group-hover:opacity-100 animate-bounce" style="animation-delay: 0.3s;"></div>
+                            <div class="absolute top-1/2 left-1/4 w-1 h-1 bg-blue-300 rounded-full opacity-0 group-hover:opacity-100 animate-pulse" style="animation-delay: 0.6s;"></div>
+                            
+                            <!-- Main Button Content -->
+                            <div class="relative z-20 flex items-center justify-center gap-6 py-8 px-8">
+                                <!-- Left Icon Container -->
+                                <div class="premium-icon-left">
+                                    <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center group-hover:rotate-12 group-hover:scale-110 transition-all duration-500 backdrop-blur-sm border border-white/30">
+                                        <i class="fas fa-crown text-2xl text-white group-hover:text-yellow-300 transition-colors duration-300"></i>
+                                    </div>
+                                </div>
+                                
+                                <!-- Text Content -->
+                                <div class="text-center">
+                                    <span id="btn-text" class="block text-2xl lg:text-3xl font-black tracking-wide text-white group-hover:text-yellow-100 transition-colors duration-300">
+                                        SECURE LUXURY BOOKING
+                                    </span>
+                                    <span class="block text-sm font-semibold text-white/90 group-hover:text-yellow-200 transition-colors duration-300 mt-1">
+                                        ✨ Premium Experience Awaits ✨
+                                    </span>
+                                </div>
+                                
+                                <!-- Right Icon Container -->
+                                <div class="premium-icon-right">
+                                    <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center group-hover:translate-x-2 group-hover:scale-110 transition-all duration-500 backdrop-blur-sm border border-white/30">
+                                        <i class="fas fa-arrow-right text-2xl text-white group-hover:text-yellow-300 transition-colors duration-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Ultra Premium Loading Spinner -->
+                            <div id="loading-spinner" class="absolute inset-0 bg-gradient-to-r from-yellow-500 via-pink-600 to-purple-700 rounded-3xl flex items-center justify-center hidden z-30">
+                                <div class="flex flex-col items-center gap-4">
+                                    <!-- Custom Luxury Spinner -->
+                                    <div class="relative">
+                                        <div class="animate-spin rounded-full h-12 w-12 border-4 border-white border-t-transparent"></div>
+                                        <div class="absolute inset-0 animate-ping rounded-full h-12 w-12 border-2 border-yellow-300 opacity-20"></div>
+                                    </div>
+                                    <div class="text-center">
+                                        <p class="text-xl font-black text-white tracking-wide">Processing...</p>
+                                        <p class="text-sm font-semibold text-white/90 mt-1">✨ Securing Your Luxury Experience ✨</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Success Ripple Effect (for future use) -->
+                            <div class="absolute inset-0 rounded-3xl opacity-0 bg-emerald-400 animate-ping" id="success-ripple"></div>
                         </button>
+                        
+                        <!-- Additional Premium Features -->
+                        <div class="mt-6 text-center">
+                            <div class="flex justify-center items-center gap-6 text-sm text-gray-600">
+                                <div class="flex items-center gap-2">
+                                    <i class="fas fa-lock text-green-500"></i>
+                                    <span>SSL Encrypted</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="fas fa-clock text-blue-500"></i>
+                                    <span>Instant Confirmation</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="fas fa-medal text-yellow-500"></i>
+                                    <span>Best Price Guarantee</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </form>
+                </div>
             </div>
         </section>
-        <script src="https://cdn.tailwindcss.com"></script>
         <script>
             // Service Worker (embedded)
             if ('serviceWorker' in navigator) {
@@ -494,78 +1768,182 @@
                 });
             }
 
-            // Hotel Data
+            // Enhanced Hotel Data with Real Hotel Information
             const hotels = [
                 {
-                    id: '1',
-                    name: 'Hotel Paradise',
+                    id: 'tiger-safari-resort',
+                    name: 'Tiger Safari Resort',
                     images: [
-                        'https://via.placeholder.com/600x300?text=Hotel+Paradise+1',
-                        'https://via.placeholder.com/600x300?text=Hotel+Paradise+2',
-                        'https://via.placeholder.com/600x300?text=Hotel+Paradise+3'
+                        '/Images/hotel1-1.jpg',
+                        '/Images/hotel1-2.jpg', 
+                        '/Images/hotel1-3.jpg'
                     ],
-                    location: '123, MG Road, Mumbai, Maharashtra',
-                    description: 'A luxurious 5-star hotel with modern amenities, offering a serene stay with a beautiful city view.',
-                    amenities: ['Free Wi-Fi', 'Swimming Pool', 'Gym', 'Spa', 'Parking'],
-                    prices: { standard: 8000, deluxe: 10000, suite: 15000 },
+                    location: 'Ranthambhore Road, Sawai Madhopur, Rajasthan 322001',
+                    description: 'A luxury wildlife resort offering premium accommodations with stunning views of Ranthambhore National Park. Experience the wilderness in comfort with world-class amenities.',
+                    amenities: ['Free Wi-Fi', 'Swimming Pool', 'Wildlife Safari', 'Spa & Wellness', 'Multi-Cuisine Restaurant', 'Room Service', 'Parking'],
+                    prices: { standard: 8500, deluxe: 12000, suite: 18000 },
                     roomImages: {
-                        standard: 'https://via.placeholder.com/150x100?text=Standard+Room',
-                        deluxe: 'https://via.placeholder.com/150x100?text=Deluxe+Room',
-                        suite: 'https://via.placeholder.com/150x100?text=Suite'
+                        standard: '/Images/standard-room-1.jpg',
+                        deluxe: '/Images/deluxe-room-1.jpg',
+                        suite: '/Images/suite-room-1.jpg'
                     },
                     guestLimits: { standard: 2, deluxe: 3, suite: 4 },
-                    rating: '4.5/5 (Based on 1,200 reviews)',
+                    rating: '4.8/5 (Based on 1,450 reviews)',
                     reviews: [
-                        '<span class="star-rating" data-rating="4.8">⭐⭐⭐⭐⭐</span> - "Amazing stay, great staff!" - Priya S.',
-                        '<span class="star-rating" data-rating="4.2">⭐⭐⭐⭐</span> - "Loved the pool and food." - Raj K.'
+                        '<span class="star-rating" data-rating="5.0">⭐⭐⭐⭐⭐</span> - "Incredible tiger sighting experience! Staff was amazing." - Rajesh Kumar',
+                        '<span class="star-rating" data-rating="4.8">⭐⭐⭐⭐⭐</span> - "Best safari resort in Ranthambhore. Highly recommended!" - Priya Sharma',
+                        '<span class="star-rating" data-rating="4.5">⭐⭐⭐⭐</span> - "Beautiful rooms with nature views. Great food!" - Amit Singh'
                     ]
                 },
                 {
-                    id: '2',
-                    name: 'Ocean Breeze Resort',
+                    id: 'ranthambhore-regency',
+                    name: 'Ranthambhore Regency',
                     images: [
-                        'https://via.placeholder.com/600x300?text=Ocean+Breeze+1',
-                        'https://via.placeholder.com/600x300?text=Ocean+Breeze+2',
-                        'https://via.placeholder.com/600x300?text=Ocean+Breeze+3'
+                        '/Images/hotel2-1.jpg',
+                        '/Images/hotel2-2.jpg',
+                        '/Images/hotel2-3.jpg'
                     ],
-                    location: '456, Marine Drive, Goa',
-                    description: 'A beachfront resort with stunning ocean views and premium facilities.',
-                    amenities: ['Beach Access', 'Pool', 'Bar', 'Spa', 'Free Breakfast'],
-                    prices: { standard: 9000, deluxe: 12000, suite: 18000 },
+                    location: 'Ranthambhore National Park, Sawai Madhopur, Rajasthan 322001',
+                    description: 'An elegant heritage hotel blending traditional Rajasthani architecture with modern luxury. Perfect for wildlife enthusiasts and cultural explorers.',
+                    amenities: ['Heritage Architecture', 'Cultural Programs', 'Wildlife Library', 'Ayurvedic Spa', 'Organic Garden', 'Butler Service', 'Conference Hall'],
+                    prices: { standard: 9500, deluxe: 14000, suite: 22000 },
                     roomImages: {
-                        standard: 'https://via.placeholder.com/150x100?text=Standard+Resort',
-                        deluxe: 'https://via.placeholder.com/150x100?text=Deluxe+Resort',
-                        suite: 'https://via.placeholder.com/150x100?text=Suite+Resort'
+                        standard: '/Images/standard-room-2.jpg',
+                        deluxe: '/Images/deluxe-room-2.jpg',
+                        suite: '/Images/suite-room-2.jpg'
                     },
-                    guestLimits: { standard: 2, deluxe: 3, suite: 4 },
-                    rating: '4.7/5 (Based on 950 reviews)',
+                    guestLimits: { standard: 2, deluxe: 3, suite: 6 },
+                    rating: '4.9/5 (Based on 950 reviews)',
                     reviews: [
-                        '<span class="star-rating" data-rating="4.9">⭐⭐⭐⭐⭐</span> - "Perfect beach getaway!" - Ankit M.',
-                        '<span class="star-rating" data-rating="4.5">⭐⭐⭐⭐</span> - "Great vibe and food." - Neha R.'
+                        '<span class="star-rating" data-rating="5.0">⭐⭐⭐⭐⭐</span> - "Royal treatment and unforgettable tiger safari!" - Neha Gupta',
+                        '<span class="star-rating" data-rating="4.9">⭐⭐⭐⭐⭐</span> - "Heritage charm with luxury comfort. Perfect!" - Vikram Patel',
+                        '<span class="star-rating" data-rating="4.7">⭐⭐⭐⭐⭐</span> - "Authentic Rajasthani experience. Loved every moment!" - Sarah Johnson'
                     ]
                 },
                 {
-                    id: '3',
-                    name: 'Mountain Retreat',
+                    id: 'jungle-retreat',
+                    name: 'Jungle Retreat Ranthambhore',
                     images: [
-                        'https://via.placeholder.com/600x300?text=Mountain+Retreat+1',
-                        'https://via.placeholder.com/600x300?text=Mountain+Retreat+2',
-                        'https://via.placeholder.com/600x300?text=Mountain+Retreat+3'
+                        '/Images/hotel3-1.jpg',
+                        '/Images/hotel3-2.jpg',
+                        '/Images/hotel3-3.jpg'
                     ],
-                    location: '789, Hilltop Lane, Shimla, Himachal Pradesh',
-                    description: 'A cozy retreat nestled in the mountains with breathtaking views.',
-                    amenities: ['Heater', 'Guided Tours', 'Restaurant', 'Free Wi-Fi'],
-                    prices: { standard: 7000, deluxe: 9500, suite: 14000 },
+                    location: 'Village Khilchipur, Ranthambhore, Sawai Madhopur, Rajasthan 322001',
+                    description: 'A boutique eco-resort nestled in the wilderness, offering an intimate connection with nature while providing luxury accommodations and personalized service.',
+                    amenities: ['Eco-Friendly', 'Nature Walks', 'Bird Watching', 'Campfire Evenings', 'Yoga Deck', 'Organic Meals', 'Photography Tours'],
+                    prices: { standard: 7500, deluxe: 11000, suite: 16500 },
                     roomImages: {
-                        standard: 'https://via.placeholder.com/150x100?text=Standard+Retreat',
-                        deluxe: 'https://via.placeholder.com/150x100?text=Deluxe+Retreat',
-                        suite: 'https://via.placeholder.com/150x100?text=Suite+Retreat'
+                        standard: '/Images/standard-room-3.jpg',
+                        deluxe: '/Images/deluxe-room-3.jpg',
+                        suite: '/Images/suite-room-3.jpg'
                     },
                     guestLimits: { standard: 2, deluxe: 3, suite: 4 },
-                    rating: '4.3/5 (Based on 800 reviews)',
+                    rating: '4.6/5 (Based on 800 reviews)',
                     reviews: [
-                        '<span class="star-rating" data-rating="4.4">⭐⭐⭐⭐</span> - "Peaceful and scenic!" - Vikram T.',
-                        '<span class="star-rating" data-rating="4.0">⭐⭐⭐⭐</span> - "Loved the cozy rooms." - Simran P.'
+                        '<span class="star-rating" data-rating="4.8">⭐⭐⭐⭐⭐</span> - "Perfect eco-retreat experience. Very peaceful!" - Maya Reddy',
+                        '<span class="star-rating" data-rating="4.5">⭐⭐⭐⭐</span> - "Great for nature lovers. Excellent bird watching!" - Ravi Kumar',
+                        '<span class="star-rating" data-rating="4.6">⭐⭐⭐⭐⭐</span> - "Sustainable luxury at its best. Loved the experience!" - Lisa Chen'
+                    ]
+                },
+                {
+                    id: 'royal-tiger-palace',
+                    name: 'Royal Tiger Palace',
+                    images: [
+                        '/Images/hotel4-1.jpg',
+                        '/Images/hotel4-2.jpg',
+                        '/Images/hotel4-3.jpg'
+                    ],
+                    location: 'Ranthambhore Fort Road, Sawai Madhopur, Rajasthan 322001',
+                    description: 'A magnificent palace hotel offering royal luxury with panoramic views of Ranthambhore Fort. Experience the grandeur of Rajasthani hospitality.',
+                    amenities: ['Palace Architecture', 'Fort Views', 'Royal Dining', 'Vintage Car Collection', 'Horse Safari', 'Traditional Music', 'Luxury Spa'],
+                    prices: { standard: 12000, deluxe: 18000, suite: 28000 },
+                    roomImages: {
+                        standard: '/Images/standard-room-4.jpg',
+                        deluxe: '/Images/deluxe-room-4.jpg',
+                        suite: '/Images/suite-room-4.jpg'
+                    },
+                    guestLimits: { standard: 2, deluxe: 4, suite: 6 },
+                    rating: '5.0/5 (Based on 1,200 reviews)',
+                    reviews: [
+                        '<span class="star-rating" data-rating="5.0">⭐⭐⭐⭐⭐</span> - "True royal experience! Every detail is perfect." - Arjun Malhotra',
+                        '<span class="star-rating" data-rating="5.0">⭐⭐⭐⭐⭐</span> - "Palace luxury with modern comfort. Extraordinary!" - Jennifer Smith',
+                        '<span class="star-rating" data-rating="4.9">⭐⭐⭐⭐⭐</span> - "Unforgettable stay in a real palace. Magical!" - David Wilson'
+                    ]
+                },
+                // Hotels from hotel.html page
+                {
+                    id: 'grand-plaza-hotel',
+                    name: 'Grand Plaza Hotel',
+                    images: [
+                        'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                        'https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                        'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+                    ],
+                    location: 'New York, USA',
+                    description: 'A luxury hotel in the heart of New York with stunning city views and world-class amenities',
+                    amenities: ['Free Wi-Fi', 'Business Center', 'Fitness Center', 'Spa & Wellness', 'Fine Dining', 'Room Service', 'Concierge', 'Valet Parking'],
+                    prices: { standard: 14950, deluxe: 19900, suite: 29850 }, // Converting $199 to INR approx
+                    roomImages: {
+                        standard: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                        deluxe: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                        suite: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+                    },
+                    guestLimits: { standard: 2, deluxe: 3, suite: 4 },
+                    rating: '4.8/5 (128 reviews)',
+                    reviews: [
+                        '<span class="star-rating" data-rating="4.8">⭐⭐⭐⭐⭐</span> - "Amazing stay in the heart of NYC! Great service." - John Smith',
+                        '<span class="star-rating" data-rating="4.7">⭐⭐⭐⭐⭐</span> - "Excellent location and beautiful rooms." - Sarah Johnson',
+                        '<span class="star-rating" data-rating="4.9">⭐⭐⭐⭐⭐</span> - "Perfect for business trips. Highly recommended!" - Michael Chen'
+                    ]
+                },
+                {
+                    id: 'paradise-beach-resort',
+                    name: 'Paradise Beach Resort',
+                    images: [
+                        'https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=800&q=80',
+                        'https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                        'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+                    ],
+                    location: 'Maldives',
+                    description: 'An eco-friendly beach resort in the Maldives with crystal clear waters and overwater villas',
+                    amenities: ['Private Beach', 'Overwater Villas', 'Diving Center', 'Spa & Wellness', 'Water Sports', 'Eco-Friendly', 'All-Inclusive', 'Butler Service'],
+                    prices: { standard: 26215, deluxe: 34950, suite: 52425 }, // Converting $349 to INR approx
+                    roomImages: {
+                        standard: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                        deluxe: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                        suite: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+                    },
+                    guestLimits: { standard: 2, deluxe: 3, suite: 4 },
+                    rating: '4.7/5 (94 reviews)',
+                    reviews: [
+                        '<span class="star-rating" data-rating="4.8">⭐⭐⭐⭐⭐</span> - "Paradise on earth! Crystal clear waters and amazing service." - Emma Wilson',
+                        '<span class="star-rating" data-rating="4.6">⭐⭐⭐⭐⭐</span> - "Perfect honeymoon destination. So romantic!" - David Miller',
+                        '<span class="star-rating" data-rating="4.7">⭐⭐⭐⭐⭐</span> - "Eco-friendly luxury at its finest. Loved every moment." - Lisa Chen'
+                    ]
+                },
+                {
+                    id: 'alpine-retreat',
+                    name: 'Alpine Retreat',
+                    images: [
+                        'https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                        'https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                        'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+                    ],
+                    location: 'Swiss Alps, Switzerland',
+                    description: 'A luxury mountain retreat in the Swiss Alps with world-class spa facilities and breathtaking views',
+                    amenities: ['Mountain Views', 'Luxury Spa', 'Skiing', 'Hiking Trails', 'Gourmet Restaurant', 'Wellness Center', 'Heated Pool', 'Concierge'],
+                    prices: { standard: 20925, deluxe: 27900, suite: 41850 }, // Converting $279 to INR approx
+                    roomImages: {
+                        standard: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                        deluxe: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                        suite: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+                    },
+                    guestLimits: { standard: 2, deluxe: 3, suite: 4 },
+                    rating: '4.9/5 (156 reviews)',
+                    reviews: [
+                        '<span class="star-rating" data-rating="4.9">⭐⭐⭐⭐⭐</span> - "Breathtaking mountain views and exceptional service!" - Robert Johnson',
+                        '<span class="star-rating" data-rating="4.8">⭐⭐⭐⭐⭐</span> - "Perfect winter getaway. Skiing was amazing!" - Maria Garcia',
+                        '<span class="star-rating" data-rating="5.0">⭐⭐⭐⭐⭐</span> - "Luxury spa treatments with stunning alpine views. Perfect!" - Thomas Anderson'
                     ]
                 }
             ];
@@ -578,39 +1956,210 @@
                 document.querySelector('.booking-form').classList.remove('hidden');
             }, 1000);
 
-            // Load Hotel Data
+                // Enhanced Load Hotel Data Function - Use URL params directly, remove hardcoded fallback
             function loadHotelData(hotelId) {
-                const hotel = hotels.find(h => h.id === hotelId) || hotels[0];
-                document.getElementById('hotel-name').textContent = hotel.name;
-                document.getElementById('hotel-location').innerHTML = `<strong>Location:</strong> ${hotel.location}`;
-                document.getElementById('hotel-description').innerHTML = `<strong>Description:</strong> ${hotel.description}`;
-                document.getElementById('hotel-amenities').innerHTML = `<strong>Amenities:</strong> ${hotel.amenities.map(a => `<span class="tooltip" data-tooltip="${a} available">${a}</span>`).join(', ')}`;
-                document.getElementById('hotel-prices').innerHTML = `<strong>Price per Night:</strong> ₹${hotel.prices.standard.toLocaleString('en-IN')} (Standard), ₹${hotel.prices.deluxe.toLocaleString('en-IN')} (Deluxe), ₹${hotel.prices.suite.toLocaleString('en-IN')} (Suite)`;
-                document.getElementById('hotel-rating').innerHTML = `<strong>Rating:</strong> ${hotel.rating}`;
-                document.getElementById('hotel-reviews').innerHTML = hotel.reviews.join('<br>');
+                // Get URL parameters inside the function
+                const urlParams = new URLSearchParams(window.location.search);
+                
+                console.log('Loading hotel data for:', hotelId);
+                console.log('URL Params:', urlParams.toString());
+                console.log('All URL params:');
+                for (const [key, value] of urlParams) {
+                    console.log(`${key}: ${value}`);
+                }
+                
+                let hotel = null;
+                
+                // Always use URL parameters if available (prioritize dynamic data)
+                if (urlParams.get('hotelName') || urlParams.get('hotelImage')) {
+                    console.log('Creating dynamic hotel from URL params');
+                    // Convert USD price to INR (approximate conversion)
+                    const usdPrice = parseInt(urlParams.get('hotelPrice')) || 199;
+                    const inrPrice = Math.round(usdPrice * 75); // Approximate conversion rate
+                    
+                    hotel = {
+                        id: hotelId || 'dynamic-hotel',
+                        name: urlParams.get('hotelName') || 'Selected Hotel',
+                        images: [
+                            urlParams.get('hotelImage') || '/Images/default-hotel-1.jpg',
+                            urlParams.get('hotelImage2') || urlParams.get('hotelImage') || '/Images/default-hotel-2.jpg',
+                            urlParams.get('hotelImage3') || urlParams.get('hotelImage') || '/Images/default-hotel-3.jpg'
+                        ],
+                        location: urlParams.get('hotelLocation') || 'Prime Location',
+                        description: urlParams.get('hotelDescription') || 'A premium hotel offering comfortable accommodation with excellent amenities and services for a memorable stay.',
+                        amenities: urlParams.get('hotelAmenities') ? urlParams.get('hotelAmenities').split(',') : ['Free Wi-Fi', 'Business Center', 'Fitness Center', 'Spa & Wellness', 'Fine Dining', 'Room Service', 'Concierge', 'Valet Parking'],
+                        prices: {
+                            standard: inrPrice,
+                            deluxe: Math.round(inrPrice * 1.3),
+                            suite: Math.round(inrPrice * 2)
+                        },
+                        roomImages: {
+                            standard: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                            deluxe: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                            suite: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+                        },
+                        guestLimits: { standard: 2, deluxe: 3, suite: 4 },
+                        rating: urlParams.get('hotelRating') || '4.5/5 (Based on guest reviews)',
+                        reviews: [
+                            '<span class="star-rating" data-rating="4.8">⭐⭐⭐⭐⭐</span> - "Great experience! Highly recommended." - Guest Review',
+                            '<span class="star-rating" data-rating="4.2">⭐⭐⭐⭐</span> - "Excellent service and comfortable rooms." - Verified Guest',
+                            '<span class="star-rating" data-rating="4.5">⭐⭐⭐⭐</span> - "Perfect location with amazing amenities." - Happy Guest'
+                        ]
+                    };
+                } else {
+                    // Find hotel by ID from predefined hotels array
+                    hotel = hotels.find(h => h.id === hotelId);
+                }
+                
+                // Use first hotel as fallback only if no URL params and no matching hotel
+                if (!hotel) {
+                    console.log('Using fallback hotel');
+                    hotel = hotels[0];
+                }
+                
+                console.log('Final hotel object:', hotel);
+                
+                // Update page title
+                document.title = `Book ${hotel.name} - Ranthambhore 360`;
+                
+                // Update hotel information on page
+                const hotelNameEl = document.getElementById('hotel-name');
+                const hotelLocationEl = document.getElementById('hotel-location');
+                const hotelDescriptionEl = document.getElementById('hotel-description');
+                
+                if (hotelNameEl) hotelNameEl.textContent = hotel.name;
+                if (hotelLocationEl) hotelLocationEl.textContent = hotel.location;
+                if (hotelDescriptionEl) hotelDescriptionEl.textContent = hotel.description;
+                
+                // Update amenities display
+                const amenitiesContainer = document.querySelector('.hotel-details .grid.grid-cols-2');
+                if (amenitiesContainer && hotel.amenities) {
+                    amenitiesContainer.innerHTML = '';
+                    hotel.amenities.forEach(amenity => {
+                        const amenityDiv = document.createElement('div');
+                        amenityDiv.className = 'flex items-center gap-2 bg-gray-50 rounded-lg p-2.5 hover:bg-gray-100 transition-colors duration-200';
+                        
+                        // Get icon for amenity
+                        let iconClass = 'fas fa-check text-blue-600';
+                        if (amenity.toLowerCase().includes('wifi')) iconClass = 'fas fa-wifi text-blue-600';
+                        else if (amenity.toLowerCase().includes('pool')) iconClass = 'fas fa-swimming-pool text-cyan-600';
+                        else if (amenity.toLowerCase().includes('fitness') || amenity.toLowerCase().includes('gym')) iconClass = 'fas fa-dumbbell text-green-600';
+                        else if (amenity.toLowerCase().includes('spa')) iconClass = 'fas fa-spa text-pink-600';
+                        else if (amenity.toLowerCase().includes('restaurant') || amenity.toLowerCase().includes('dining')) iconClass = 'fas fa-utensils text-purple-600';
+                        else if (amenity.toLowerCase().includes('concierge')) iconClass = 'fas fa-concierge-bell text-amber-600';
+                        else if (amenity.toLowerCase().includes('parking')) iconClass = 'fas fa-parking text-gray-600';
+                        else if (amenity.toLowerCase().includes('business')) iconClass = 'fas fa-briefcase text-blue-600';
+                        else if (amenity.toLowerCase().includes('center')) iconClass = 'fas fa-building text-indigo-600';
+                        else if (amenity.toLowerCase().includes('valet')) iconClass = 'fas fa-car text-purple-600';
+                        
+                        amenityDiv.innerHTML = `
+                            <div class="w-6 h-6 bg-gray-100 rounded-md flex items-center justify-center">
+                                <i class="${iconClass} text-xs"></i>
+                            </div>
+                            <span class="text-xs font-medium text-gray-700">${amenity}</span>
+                        `;
+                        amenitiesContainer.appendChild(amenityDiv);
+                    });
+                }
+                
+                // Update pricing display - find the pricing section more specifically
+                const pricingSections = document.querySelectorAll('.hotel-details .bg-white.border');
+                let priceSection = null;
+                pricingSections.forEach(section => {
+                    if (section.textContent.includes('Room Rates') || section.querySelector('h3')?.textContent?.includes('Room Rates')) {
+                        priceSection = section;
+                    }
+                });
+                
+                if (priceSection && hotel.prices) {
+                    const priceContent = priceSection.querySelector('.space-y-3');
+                    if (priceContent) {
+                        priceContent.innerHTML = `
+                            <div class="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0">
+                                <div>
+                                    <span class="text-sm font-medium text-gray-900">Standard Room</span>
+                                    <p class="text-xs text-gray-500">Queen bed, city view</p>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-sm font-semibold text-gray-900">₹${hotel.prices.standard.toLocaleString('en-IN')}</div>
+                                    <div class="text-xs text-gray-500">per night</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0">
+                                <div>
+                                    <span class="text-sm font-medium text-gray-900">Deluxe Room</span>
+                                    <p class="text-xs text-gray-500">King bed, premium view</p>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-sm font-semibold text-gray-900">₹${hotel.prices.deluxe.toLocaleString('en-IN')}</div>
+                                    <div class="text-xs text-gray-500">per night</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-2">
+                                <div>
+                                    <span class="text-sm font-medium text-gray-900">Suite</span>
+                                    <p class="text-xs text-gray-500">Premium suite, best view</p>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-sm font-semibold text-gray-900">₹${hotel.prices.suite.toLocaleString('en-IN')}</div>
+                                    <div class="text-xs text-gray-500">per night</div>
+                                </div>
+                            </div>
+                        `;
+                    }
+                }
 
-                // Update Carousel Images
+                // Update Carousel Images with error handling
                 const carouselImages = document.querySelectorAll('.carousel-image');
                 carouselImages.forEach((img, index) => {
-                    img.src = hotel.images[index];
-                    img.alt = `${hotel.name} Image ${index + 1}`;
+                    if (hotel.images[index]) {
+                        img.src = hotel.images[index];
+                        img.alt = `${hotel.name} Image ${index + 1}`;
+                        
+                        // Add error handler for missing images
+                        img.onerror = function() {
+                            this.src = `https://via.placeholder.com/600x300?text=${encodeURIComponent(hotel.name)}+Image+${index + 1}`;
+                        };
+                    }
                 });
 
                 // Update Room Type Options
                 const roomTypeSelect = document.getElementById('room-type');
-                roomTypeSelect.innerHTML = `
-                <option value="standard">Standard Room (₹${hotel.prices.standard.toLocaleString('en-IN')}/night)</option>
-                <option value="deluxe">Deluxe Room (₹${hotel.prices.deluxe.toLocaleString('en-IN')}/night)</option>
-                <option value="suite">Suite (₹${hotel.prices.suite.toLocaleString('en-IN')}/night)</option>
-            `;
-                updateGuestLimit(hotel, roomTypeSelect.value);
-                updateRoomImage(hotel, roomTypeSelect.value);
+                if (roomTypeSelect && hotel.prices) {
+                    roomTypeSelect.innerHTML = `
+                        <option value="standard">Standard Room (₹${hotel.prices.standard.toLocaleString('en-IN')}/night)</option>
+                        <option value="deluxe">Deluxe Room (₹${hotel.prices.deluxe.toLocaleString('en-IN')}/night)</option>
+                        <option value="suite">Suite (₹${hotel.prices.suite.toLocaleString('en-IN')}/night)</option>
+                    `;
+                }
+                
+                // Update reviews
+                const reviewsElement = document.getElementById('hotel-reviews');
+                if (reviewsElement && hotel.reviews) {
+                    reviewsElement.innerHTML = hotel.reviews.join('<br>');
+                }
+                
+                // Store current hotel globally for other functions
+                window.currentHotel = hotel;
+                
+                // Update guest limits and room images
+                const roomTypeValue = roomTypeSelect ? roomTypeSelect.value : 'standard';
+                updateGuestLimit(hotel, roomTypeValue);
+                updateRoomImage(hotel, roomTypeValue);
                 updatePrice();
+                
+                console.log('Hotel data loaded successfully!');
             }
 
-            // Get Hotel ID from URL
+            // Get Hotel ID from URL Parameters
             const urlParams = new URLSearchParams(window.location.search);
             const hotelId = urlParams.get('hotelId');
+            const hotelName = urlParams.get('hotelName');
+            const hotelImage = urlParams.get('hotelImage');
+            const hotelLocation = urlParams.get('hotelLocation');
+            const hotelPrice = urlParams.get('hotelPrice');
+            
+            // Always try to load hotel data - function will handle URL params vs fallback
             loadHotelData(hotelId);
 
             // Smooth Scroll to Form
@@ -659,20 +2208,25 @@
             startAutoplay();
 
             // Collapsible Reviews
-            document.getElementById('toggle-reviews').addEventListener('click', () => {
-                const reviews = document.getElementById('hotel-reviews');
-                const isCollapsed = reviews.dataset.collapsed === 'true';
-                reviews.dataset.collapsed = !isCollapsed;
-                reviews.style.maxHeight = isCollapsed ? 'none' : '6rem';
-                document.getElementById('toggle-reviews').textContent = isCollapsed ? 'Show Less Reviews' : 'Show More Reviews';
-            });
+            const toggleReviewsBtn = document.getElementById('toggle-reviews');
+            if (toggleReviewsBtn) {
+                toggleReviewsBtn.addEventListener('click', () => {
+                    const reviews = document.getElementById('hotel-reviews');
+                    if (reviews) {
+                        const isCollapsed = reviews.dataset.collapsed === 'true';
+                        reviews.dataset.collapsed = !isCollapsed;
+                        reviews.style.maxHeight = isCollapsed ? 'none' : '6rem';
+                        toggleReviewsBtn.textContent = isCollapsed ? 'Show Less Reviews' : 'Show More Reviews';
+                    }
+                });
+            }
 
             // Date Restrictions and Improved Calendar
             const today = new Date();
             const checkInInput = document.getElementById('check-in');
             const checkOutInput = document.getElementById('check-out');
-            checkInInput.setAttribute('min', today.toISOString().split('T')[0]);
-            checkOutInput.setAttribute('min', today.toISOString().split('T')[0]);
+            if (checkInInput) checkInInput.setAttribute('min', today.toISOString().split('T')[0]);
+            if (checkOutInput) checkOutInput.setAttribute('min', today.toISOString().split('T')[0]);
 
             // Dummy unavailable dates
             const unavailableDates = ['2025-08-10', '2025-08-15', '2025-08-20'];
@@ -705,8 +2259,10 @@
                 for (let i = 1; i <= daysInMonth; i++) {
                     const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
                     const isDisabled = unavailableDates.includes(dateStr) || new Date(dateStr) < today;
-                    const isInRange = checkInInput.value && checkOutInput.value && dateStr > checkInInput.value && dateStr < checkOutInput.value;
-                    calendar.innerHTML += `<div class="calendar-day ${isDisabled ? 'disabled' : ''} ${checkInInput.value === dateStr || checkOutInput.value === dateStr ? 'selected' : ''} ${isInRange ? 'in-range' : ''}" data-date="${dateStr}">${i}</div>`;
+                    const checkInInputEl = document.getElementById('check-in');
+                    const checkOutInputEl = document.getElementById('check-out');
+                    const isInRange = checkInInputEl && checkOutInputEl && checkInInputEl.value && checkOutInputEl.value && dateStr > checkInInputEl.value && dateStr < checkOutInputEl.value;
+                    calendar.innerHTML += `<div class="calendar-day ${isDisabled ? 'disabled' : ''} ${(checkInInputEl && checkInInputEl.value === dateStr) || (checkOutInputEl && checkOutInputEl.value === dateStr) ? 'selected' : ''} ${isInRange ? 'in-range' : ''}" data-date="${dateStr}">${i}</div>`;
                 }
                 document.querySelectorAll(`#${calendarId} .calendar-day:not(.disabled):not(.font-medium)`).forEach(day => {
                     day.addEventListener('click', () => {
@@ -715,146 +2271,274 @@
                         updatePrice();
                         updateProgress();
                         if (inputId === 'check-in') {
-                            const checkInDate = new Date(checkInInput.value);
-                            const nextDay = new Date(checkInDate);
-                            nextDay.setDate(checkInDate.getDate() + 1);
-                            checkOutInput.setAttribute('min', nextDay.toISOString().split('T')[0]);
+                            const checkInInputEl = document.getElementById('check-in');
+                            const checkOutInputEl = document.getElementById('check-out');
+                            if (checkInInputEl && checkOutInputEl && checkInInputEl.value) {
+                                const checkInDate = new Date(checkInInputEl.value);
+                                const nextDay = new Date(checkInDate);
+                                nextDay.setDate(checkInDate.getDate() + 1);
+                                checkOutInputEl.setAttribute('min', nextDay.toISOString().split('T')[0]);
+                            }
                         }
                     });
                 });
             }
 
-            checkInInput.addEventListener('click', () => {
-                document.getElementById('calendar-check-in').classList.toggle('hidden');
-                generateCalendar('check-in', 'calendar-check-in');
-            });
+            if (checkInInput) {
+                checkInInput.addEventListener('click', () => {
+                    const calendar = document.getElementById('calendar-check-in');
+                    if (calendar) {
+                        calendar.classList.toggle('hidden');
+                        generateCalendar('check-in', 'calendar-check-in');
+                    }
+                });
+                checkInInput.addEventListener('change', updatePrice);
+            }
 
-            checkOutInput.addEventListener('click', () => {
-                document.getElementById('calendar-check-out').classList.toggle('hidden');
-                generateCalendar('check-out', 'calendar-check-out');
-            });
+            if (checkOutInput) {
+                checkOutInput.addEventListener('click', () => {
+                    const calendar = document.getElementById('calendar-check-out');
+                    if (calendar) {
+                        calendar.classList.toggle('hidden');
+                        generateCalendar('check-out', 'calendar-check-out');
+                    }
+                });
+                checkOutInput.addEventListener('change', updatePrice);
+            }
 
-            checkInInput.addEventListener('change', updatePrice);
-            checkOutInput.addEventListener('change', updatePrice);
-
-            // Guest Details and Dynamic Limit
+            // Guest Details and Dynamic Limit - with better error handling
             const guestsSelect = document.getElementById('guests');
             const guestDetails = document.getElementById('guest-details');
-            guestsSelect.addEventListener('change', () => {
-                const numGuests = parseInt(guestsSelect.value);
-                guestDetails.innerHTML = '';
-                for (let i = 1; i <= numGuests; i++) {
-                    const div = document.createElement('div');
-                    div.className = 'mb-4 animate-form';
-                    div.innerHTML = `
-                    <label for="guest-name-${i}" class="block text-sm font-medium text-gray-700">Guest ${i} Name:</label>
-                    <input type="text" id="guest-name-${i}" name="guest-name-${i}" placeholder="Enter guest name" list="name-suggestions" class="mt-1 p-2 w-full border rounded-md focus:ring-indigo-500 focus:border-indigo-500 focus:scale-105 transition-transform duration-200" required aria-describedby="guest-name-${i}-error" autocomplete="name">
-                    <p id="guest-name-${i}-error" class="text-red-500 text-sm hidden animate-pulse">Please enter a valid name</p>
-                `;
-                    guestDetails.appendChild(div);
-                    document.getElementById(`guest-name-${i}`).addEventListener('input', validateRealTime);
-                }
-                updatePrice();
-                updateProgress();
-            });
+            const roomTypeSelect = document.getElementById('room-type');
+            
+            // Don't return early, just log warnings and continue
+            if (!guestsSelect) console.warn('Guests select element not found');
+            if (!guestDetails) console.warn('Guest details container not found');
+            if (!roomTypeSelect) console.warn('Room type select not found');
+            
+            if (guestsSelect && guestDetails) {
+                guestsSelect.addEventListener('change', () => {
+                    const numGuests = parseInt(guestsSelect.value);
+                    guestDetails.innerHTML = '';
+                    for (let i = 1; i <= numGuests; i++) {
+                        const div = document.createElement('div');
+                        div.className = 'mb-4 animate-form';
+                        div.innerHTML = `
+                        <label for="guest-name-${i}" class="block text-sm font-medium text-gray-700">Guest ${i} Name:</label>
+                        <input type="text" id="guest-name-${i}" name="guest-name-${i}" placeholder="Enter guest name" list="name-suggestions" class="mt-1 p-2 w-full border rounded-md focus:ring-indigo-500 focus:border-indigo-500 focus:scale-105 transition-transform duration-200" required aria-describedby="guest-name-${i}-error" autocomplete="name">
+                        <p id="guest-name-${i}-error" class="text-red-500 text-sm hidden animate-pulse">Please enter a valid name</p>
+                    `;
+                        guestDetails.appendChild(div);
+                        const guestInput = document.getElementById(`guest-name-${i}`);
+                        if (guestInput) {
+                            guestInput.addEventListener('input', validateRealTime);
+                        }
+                    }
+                    updatePrice();
+                    updateProgress();
+                });
+            }
 
             // Dynamic Guest Limit
-            const roomTypeSelect = document.getElementById('room-type');
-            roomTypeSelect.addEventListener('change', () => {
-                const hotel = hotels.find(h => h.id === hotelId) || hotels[0];
-                updateGuestLimit(hotel, roomTypeSelect.value);
-                updateRoomImage(hotel, roomTypeSelect.value);
-                updatePrice();
-            });
+            if (roomTypeSelect) {
+                roomTypeSelect.addEventListener('change', () => {
+                    const hotel = window.currentHotel || hotels[0];
+                    updateGuestLimit(hotel, roomTypeSelect.value);
+                    updateRoomImage(hotel, roomTypeSelect.value);
+                    updatePrice();
+                });
+            }
 
             function updateGuestLimit(hotel, roomType) {
-                const maxGuests = hotel.guestLimits[roomType];
+                if (!guestsSelect || !hotel || !hotel.guestLimits) {
+                    console.warn('Missing elements for guest limit update');
+                    return;
+                }
+                
+                const maxGuests = hotel.guestLimits[roomType] || 2;
                 guestsSelect.innerHTML = '';
                 for (let i = 1; i <= maxGuests; i++) {
                     guestsSelect.innerHTML += `<option value="${i}">${i} Guest${i > 1 ? 's' : ''}</option>`;
                 }
                 if (parseInt(guestsSelect.value) > maxGuests) {
                     guestsSelect.value = maxGuests;
-                    guestsSelect.dispatchEvent(new Event('change'));
+                    if (guestsSelect.dispatchEvent) {
+                        guestsSelect.dispatchEvent(new Event('change'));
+                    }
                 }
             }
 
             // Room Image Update
             function updateRoomImage(hotel, roomType) {
                 const roomImage = document.getElementById('room-image');
-                roomImage.src = hotel.roomImages[roomType];
+                if (!roomImage || !hotel || !hotel.roomImages) {
+                    console.warn('Missing elements for room image update');
+                    return;
+                }
+                
+                const imageSrc = hotel.roomImages[roomType] || hotel.roomImages.standard || 'https://via.placeholder.com/150x100?text=Room+Image';
+                roomImage.src = imageSrc;
                 roomImage.alt = `${roomType.charAt(0).toUpperCase() + roomType.slice(1)} Room`;
+                
+                // Add error handling for room image
+                roomImage.onerror = function() {
+                    this.src = 'https://via.placeholder.com/150x100?text=Room+Image';
+                };
             }
 
-            // Price Calculator
+            // Enhanced Price Calculator with detailed breakdown
             function updatePrice() {
-                const hotel = hotels.find(h => h.id === hotelId) || hotels[0];
-                const checkIn = new Date(checkInInput.value);
-                const checkOut = new Date(checkOutInput.value);
-                const roomType = roomTypeSelect.value;
-                let total = 0;
-                if (checkIn && checkOut && checkOut > checkIn) {
-                    const nights = Math.ceil((checkOut - checkIn) / (1000 * 60 * 60 * 24));
-                    total = hotel.prices[roomType] * nights;
-                    const promoCode = document.getElementById('promo-code').value;
-                    if (promoCode === 'SAVE10' || promoCode === 'WELCOME5') total *= 0.9;
+                try {
+                    const hotel = window.currentHotel || hotels[0];
+                    const checkInInput = document.getElementById('check-in');
+                    const checkOutInput = document.getElementById('check-out');
+                    const roomTypeSelect = document.getElementById('room-type');
+                    const totalPriceEl = document.getElementById('total-price');
+                    const roomChargesEl = document.getElementById('room-charges');
+                    const taxesFeesEl = document.getElementById('taxes-fees');
+                    const discountAmountEl = document.getElementById('discount-amount');
+                    const savingsIndicator = document.getElementById('savings-indicator');
+                    const savingsAmountEl = document.getElementById('savings-amount');
+                    
+                    if (!checkInInput || !checkOutInput || !roomTypeSelect || !totalPriceEl) {
+                        console.warn('Price calculation elements not found');
+                        return;
+                    }
+                    
+                    const checkIn = new Date(checkInInput.value);
+                    const checkOut = new Date(checkOutInput.value);
+                    const roomType = roomTypeSelect.value;
+                    let roomCharges = 0;
+                    let taxesAndFees = 0;
+                    let discount = 0;
+                    let total = 0;
+                    
+                    if (checkIn && checkOut && checkOut > checkIn && hotel && hotel.prices && hotel.prices[roomType]) {
+                        const nights = Math.ceil((checkOut - checkIn) / (1000 * 60 * 60 * 24));
+                        roomCharges = hotel.prices[roomType] * nights;
+                        taxesAndFees = Math.round(roomCharges * 0.12); // 12% taxes
+                        
+                        const promoCodeInput = document.getElementById('promo-code');
+                        if (promoCodeInput && promoCodeInput.value) {
+                            if (promoCodeInput.value === 'SAVE10') {
+                                discount = Math.round(roomCharges * 0.10);
+                            } else if (promoCodeInput.value === 'WELCOME5') {
+                                discount = Math.round(roomCharges * 0.05);
+                            } else if (promoCodeInput.value === 'FIRST15') {
+                                discount = Math.round(roomCharges * 0.15);
+                            }
+                        }
+                        
+                        total = roomCharges + taxesAndFees - discount;
+                        
+                        // Show/hide savings indicator
+                        if (discount > 0) {
+                            savingsIndicator.classList.remove('hidden');
+                            if (savingsAmountEl) {
+                                savingsAmountEl.textContent = `₹${discount.toLocaleString('en-IN')}`;
+                            }
+                        } else {
+                            savingsIndicator.classList.add('hidden');
+                        }
+                    }
+                    
+                    // Update all price elements
+                    totalPriceEl.textContent = `₹${total.toLocaleString('en-IN')}`;
+                    if (roomChargesEl) roomChargesEl.textContent = `₹${roomCharges.toLocaleString('en-IN')}`;
+                    if (taxesFeesEl) taxesFeesEl.textContent = `₹${taxesAndFees.toLocaleString('en-IN')}`;
+                    if (discountAmountEl) discountAmountEl.textContent = `-₹${discount.toLocaleString('en-IN')}`;
+                    
+                    updateProgress();
+                } catch (error) {
+                    console.error('Error updating price:', error);
                 }
-                document.getElementById('total-price').textContent = `Total Price: ₹${total.toLocaleString('en-IN')}`;
-                updateProgress();
             }
 
             // Promo Code and Suggestions
-            document.getElementById('promo-code').addEventListener('input', () => {
-                const promoCode = document.getElementById('promo-code').value;
-                const promoError = document.getElementById('promo-error');
-                if (promoCode === 'SAVE10' || promoCode === 'WELCOME5') {
-                    promoError.classList.remove('hidden', 'text-red-500');
-                    promoError.classList.add('text-green-500');
-                    promoError.textContent = 'Promo code applied! 10% off';
-                } else if (promoCode) {
-                    promoError.classList.remove('hidden', 'text-green-500');
-                    promoError.classList.add('text-red-500');
-                    promoError.textContent = 'Invalid promo code';
-                } else {
-                    promoError.classList.add('hidden');
-                }
-                updatePrice();
-            });
+            const promoCodeInput = document.getElementById('promo-code');
+            if (promoCodeInput) {
+                promoCodeInput.addEventListener('input', () => {
+                    const promoCode = promoCodeInput.value;
+                    const promoError = document.getElementById('promo-error');
+                    if (promoError) {
+                        if (promoCode === 'SAVE10' || promoCode === 'WELCOME5') {
+                            promoError.classList.remove('hidden', 'text-red-500');
+                            promoError.classList.add('text-green-500');
+                            promoError.textContent = 'Promo code applied! 10% off';
+                        } else if (promoCode) {
+                            promoError.classList.remove('hidden', 'text-green-500');
+                            promoError.classList.add('text-red-500');
+                            promoError.textContent = 'Invalid promo code';
+                        } else {
+                            promoError.classList.add('hidden');
+                        }
+                    }
+                    updatePrice();
+                });
+            }
 
             document.querySelectorAll('.promo-suggestion').forEach(button => {
                 button.addEventListener('click', () => {
-                    document.getElementById('promo-code').value = button.textContent;
-                    document.getElementById('promo-code').dispatchEvent(new Event('input'));
+                    const promoCodeInput = document.getElementById('promo-code');
+                    if (promoCodeInput) {
+                        promoCodeInput.value = button.textContent;
+                        promoCodeInput.dispatchEvent(new Event('input'));
+                    }
                 });
             });
 
-            // Real-Time Validation
+            // Enhanced Real-Time Validation with Visual Feedback
             function validateRealTime(event) {
                 const input = event.target;
                 const errors = [];
+                
+                // Add visual feedback classes
+                const addValidClass = () => {
+                    input.classList.remove('border-red-300', 'bg-red-50');
+                    input.classList.add('border-green-300', 'bg-green-50');
+                    setTimeout(() => {
+                        input.classList.remove('border-green-300', 'bg-green-50');
+                        input.classList.add('border-gray-200');
+                    }, 2000);
+                };
+                
+                const addInvalidClass = () => {
+                    input.classList.remove('border-green-300', 'bg-green-50');
+                    input.classList.add('border-red-300', 'bg-red-50', 'animate-pulse');
+                    setTimeout(() => {
+                        input.classList.remove('animate-pulse');
+                    }, 1000);
+                };
+                
                 if (input.id === 'name' || input.id.startsWith('guest-name-')) {
                     const errorElement = document.getElementById(`${input.id}-error`);
                     if (!input.value || !/^[a-zA-Z\s]+$/.test(input.value)) {
                         errorElement.classList.remove('hidden');
+                        addInvalidClass();
                         errors.push(`Please enter a valid ${input.id.startsWith('guest-name-') ? 'guest ' : ''}name (letters only)`);
                     } else {
                         errorElement.classList.add('hidden');
+                        addValidClass();
                     }
                 } else if (input.id === 'email') {
                     const errorElement = document.getElementById('email-error');
                     if (!input.value || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) {
                         errorElement.classList.remove('hidden');
+                        addInvalidClass();
                         errors.push('Please enter a valid email');
                     } else {
                         errorElement.classList.add('hidden');
+                        addValidClass();
                     }
                 } else if (input.id === 'phone') {
                     const errorElement = document.getElementById('phone-error');
                     if (!input.value || !/^\d{10}$/.test(input.value)) {
                         errorElement.classList.remove('hidden');
+                        addInvalidClass();
                         errors.push('Please enter a valid 10-digit phone number');
                     } else {
                         errorElement.classList.add('hidden');
+                        addValidClass();
                     }
                 }
                 updateErrorSummary(errors);
@@ -867,6 +2551,10 @@
             // Progress Indicator
             function updateProgress() {
                 const steps = document.querySelectorAll('.progress-step');
+                const checkInInput = document.getElementById('check-in');
+                const checkOutInput = document.getElementById('check-out');
+                const guestsSelect = document.getElementById('guests');
+                
                 steps.forEach(step => step.classList.remove('active'));
                 if (checkInInput.value && checkOutInput.value) {
                     steps[0].classList.add('active');
@@ -883,44 +2571,348 @@
                 input.addEventListener('input', updateProgress);
             });
 
-            // Form Submission
+            // Enhanced Booking Confirmation System
+            function generateBookingConfirmation() {
+                const hotel = window.currentHotel || hotels[0];
+                const checkInInput = document.getElementById('check-in');
+                const checkOutInput = document.getElementById('check-out');
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const roomType = document.getElementById('room-type').value;
+                const guests = document.getElementById('guests').value;
+                const totalPrice = document.getElementById('total-price').textContent;
+                
+                // Generate realistic booking details
+                const bookingId = 'HTL' + Date.now().toString().slice(-8);
+                const confirmationNumber = 'CNF' + Math.random().toString(36).substr(2, 8).toUpperCase();
+                const bookingDate = new Date().toLocaleDateString('en-IN', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+                
+                const checkInFormatted = new Date(checkInInput.value).toLocaleDateString('en-IN', {
+                    weekday: 'long',
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric'
+                });
+                
+                const checkOutFormatted = new Date(checkOutInput.value).toLocaleDateString('en-IN', {
+                    weekday: 'long',
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric'
+                });
+                
+                const nights = Math.ceil((new Date(checkOutInput.value) - new Date(checkInInput.value)) / (1000 * 60 * 60 * 24));
+                
+                return {
+                    bookingId,
+                    confirmationNumber,
+                    bookingDate,
+                    hotel: hotel.name,
+                    hotelAddress: hotel.location,
+                    guestName: name,
+                    email,
+                    phone,
+                    checkIn: checkInFormatted,
+                    checkOut: checkOutFormatted,
+                    nights,
+                    roomType: roomType.charAt(0).toUpperCase() + roomType.slice(1) + ' Room',
+                    guests,
+                    totalAmount: totalPrice,
+                    status: 'CONFIRMED',
+                    paymentStatus: 'PAID'
+                };
+            }
+            
+            function showBookingSuccessModal(bookingData) {
+                // Create and show professional booking confirmation modal
+                const modalHTML = `
+                    <div id="booking-success-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+                        <div class="bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto animate__animated animate__bounceIn">
+                            <!-- Header Section -->
+                            <div class="bg-gradient-to-r from-green-500 to-emerald-600 text-white p-6 rounded-t-3xl text-center">
+                                <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
+                                    <i class="fas fa-check-circle text-4xl text-white"></i>
+                                </div>
+                                <h2 class="text-3xl font-bold mb-2">🎉 Booking Confirmed!</h2>
+                                <p class="text-green-100 font-medium">Your reservation has been successfully processed</p>
+                                <div class="mt-4 inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
+                                    <i class="fas fa-shield-check text-white"></i>
+                                    <span class="text-sm font-semibold">100% Secure Booking</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Booking Details Section -->
+                            <div class="p-6 space-y-6">
+                                <!-- Booking ID & Status -->
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="bg-blue-50 rounded-xl p-4 text-center">
+                                        <p class="text-sm text-gray-600 mb-1">Booking ID</p>
+                                        <p class="text-xl font-black text-blue-600">${bookingData.bookingId}</p>
+                                    </div>
+                                    <div class="bg-green-50 rounded-xl p-4 text-center">
+                                        <p class="text-sm text-gray-600 mb-1">Status</p>
+                                        <div class="inline-flex items-center gap-2">
+                                            <span class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
+                                            <p class="text-lg font-bold text-green-600">${bookingData.status}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Hotel Information -->
+                                <div class="bg-gradient-to-r from-gray-50 to-blue-50 rounded-xl p-6">
+                                    <h3 class="text-lg font-bold text-gray-800 mb-3 flex items-center gap-2">
+                                        <i class="fas fa-hotel text-blue-600"></i>
+                                        Hotel Details
+                                    </h3>
+                                    <div class="space-y-2">
+                                        <p class="text-xl font-bold text-gray-900">${bookingData.hotel}</p>
+                                        <p class="text-gray-600 flex items-start gap-2">
+                                            <i class="fas fa-map-marker-alt text-red-500 mt-1"></i>
+                                            ${bookingData.hotelAddress}
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Guest Information -->
+                                <div class="grid lg:grid-cols-2 gap-4">
+                                    <div class="bg-purple-50 rounded-xl p-4">
+                                        <h4 class="font-bold text-gray-800 mb-3 flex items-center gap-2">
+                                            <i class="fas fa-user text-purple-600"></i>
+                                            Guest Details
+                                        </h4>
+                                        <div class="space-y-2 text-sm">
+                                            <p><span class="font-semibold text-gray-700">Name:</span> ${bookingData.guestName}</p>
+                                            <p><span class="font-semibold text-gray-700">Email:</span> ${bookingData.email}</p>
+                                            <p><span class="font-semibold text-gray-700">Phone:</span> ${bookingData.phone}</p>
+                                            <p><span class="font-semibold text-gray-700">Guests:</span> ${bookingData.guests} Person(s)</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="bg-amber-50 rounded-xl p-4">
+                                        <h4 class="font-bold text-gray-800 mb-3 flex items-center gap-2">
+                                            <i class="fas fa-bed text-amber-600"></i>
+                                            Room Details
+                                        </h4>
+                                        <div class="space-y-2 text-sm">
+                                            <p><span class="font-semibold text-gray-700">Room Type:</span> ${bookingData.roomType}</p>
+                                            <p><span class="font-semibold text-gray-700">Duration:</span> ${bookingData.nights} Night(s)</p>
+                                            <p class="text-2xl font-black text-amber-600 mt-2">${bookingData.totalAmount}</p>
+                                            <p class="text-xs text-gray-500">All taxes included</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Check-in/Check-out Timeline -->
+                                <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-6">
+                                    <h4 class="font-bold text-gray-800 mb-4 flex items-center gap-2">
+                                        <i class="fas fa-calendar-check text-indigo-600"></i>
+                                        Stay Timeline
+                                    </h4>
+                                    <div class="grid lg:grid-cols-2 gap-6">
+                                        <div class="text-center">
+                                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                                <i class="fas fa-sign-in-alt text-2xl text-green-600"></i>
+                                            </div>
+                                            <p class="text-sm text-gray-600 mb-1">Check-in</p>
+                                            <p class="font-bold text-gray-900">${bookingData.checkIn}</p>
+                                            <p class="text-xs text-gray-500 mt-1">After 2:00 PM</p>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                                <i class="fas fa-sign-out-alt text-2xl text-red-600"></i>
+                                            </div>
+                                            <p class="text-sm text-gray-600 mb-1">Check-out</p>
+                                            <p class="font-bold text-gray-900">${bookingData.checkOut}</p>
+                                            <p class="text-xs text-gray-500 mt-1">Before 12:00 PM</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Payment Information -->
+                                <div class="bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-xl p-4">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                                <i class="fas fa-credit-card text-green-600"></i>
+                                            </div>
+                                            <div>
+                                                <p class="font-bold text-gray-800">Payment Status</p>
+                                                <p class="text-sm text-gray-600">Transaction completed securely</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-right">
+                                            <span class="inline-flex items-center gap-2 bg-green-100 text-green-800 text-sm font-bold px-3 py-1 rounded-full">
+                                                <i class="fas fa-check-circle"></i>
+                                                ${bookingData.paymentStatus}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Booking Date -->
+                                <div class="text-center text-sm text-gray-500 bg-gray-50 rounded-lg p-3">
+                                    <p>Booking made on: <span class="font-semibold text-gray-700">${bookingData.bookingDate}</span></p>
+                                    <p class="mt-1">Confirmation Number: <span class="font-mono font-bold text-blue-600">${bookingData.confirmationNumber}</span></p>
+                                </div>
+                                
+                                <!-- Action Buttons -->
+                                <div class="flex flex-col gap-3 pt-4 border-t border-gray-200">
+                                    <button id="download-confirmation" class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-4 px-6 rounded-xl font-bold text-lg hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
+                                        <i class="fas fa-download"></i>
+                                        Download Confirmation PDF
+                                    </button>
+                                    
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <button id="share-booking-details" class="bg-blue-500 text-white py-3 px-4 rounded-xl font-semibold hover:bg-blue-600 transition-colors flex items-center justify-center gap-2">
+                                            <i class="fas fa-share-alt"></i>
+                                            Share Details
+                                        </button>
+                                        <button id="close-booking-modal" class="bg-gray-500 text-white py-3 px-4 rounded-xl font-semibold hover:bg-gray-600 transition-colors flex items-center justify-center gap-2">
+                                            <i class="fas fa-times"></i>
+                                            Close
+                                        </button>
+                                    </div>
+                                    
+                                    <!-- Contact Support -->
+                                    <div class="text-center mt-4 p-4 bg-blue-50 rounded-xl">
+                                        <p class="text-sm text-gray-600 mb-2">Need help with your booking?</p>
+                                        <div class="flex justify-center gap-4 text-sm">
+                                            <a href="tel:8076438491" class="flex items-center gap-1 text-blue-600 hover:text-blue-800 font-semibold">
+                                                <i class="fas fa-phone"></i>
+                                                8076438491
+                                            </a>
+                                            <a href="mailto:ranthambore360@gmail.com" class="flex items-center gap-1 text-blue-600 hover:text-blue-800 font-semibold">
+                                                <i class="fas fa-envelope"></i>
+                                                Support Email
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                // Add modal to page
+                document.body.insertAdjacentHTML('beforeend', modalHTML);
+                
+                // Add event listeners
+                setTimeout(() => {
+                    document.getElementById('close-booking-modal').addEventListener('click', () => {
+                        document.getElementById('booking-success-modal').remove();
+                    });
+                    
+                    document.getElementById('download-confirmation').addEventListener('click', () => {
+                        // Simulate PDF download
+                        const link = document.createElement('a');
+                        link.href = 'data:text/plain;charset=utf-8,Booking Confirmation\n' + 
+                                   'Booking ID: ' + bookingData.bookingId + '\n' +
+                                   'Hotel: ' + bookingData.hotel + '\n' +
+                                   'Guest: ' + bookingData.guestName + '\n' +
+                                   'Check-in: ' + bookingData.checkIn + '\n' +
+                                   'Check-out: ' + bookingData.checkOut + '\n' +
+                                   'Total: ' + bookingData.totalAmount;
+                        link.download = `Hotel_Booking_${bookingData.bookingId}.txt`;
+                        link.click();
+                        
+                        // Show success message
+                        const successMsg = document.createElement('div');
+                        successMsg.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-pulse';
+                        successMsg.innerHTML = '<i class="fas fa-download mr-2"></i>Confirmation downloaded!';
+                        document.body.appendChild(successMsg);
+                        setTimeout(() => successMsg.remove(), 3000);
+                    });
+                    
+                    document.getElementById('share-booking-details').addEventListener('click', () => {
+                        const shareText = `🏨 Hotel Booking Confirmed!\n\n` +
+                                        `📋 Booking ID: ${bookingData.bookingId}\n` +
+                                        `🏩 Hotel: ${bookingData.hotel}\n` +
+                                        `👤 Guest: ${bookingData.guestName}\n` +
+                                        `📅 Check-in: ${bookingData.checkIn}\n` +
+                                        `📅 Check-out: ${bookingData.checkOut}\n` +
+                                        `💰 Total: ${bookingData.totalAmount}\n\n` +
+                                        `✅ Status: ${bookingData.status}\n` +
+                                        `Booked via Ranthambore 360`;
+                        
+                        if (navigator.share) {
+                            navigator.share({
+                                title: 'Hotel Booking Confirmed',
+                                text: shareText
+                            });
+                        } else {
+                            navigator.clipboard.writeText(shareText).then(() => {
+                                const successMsg = document.createElement('div');
+                                successMsg.className = 'fixed top-4 right-4 bg-blue-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-pulse';
+                                successMsg.innerHTML = '<i class="fas fa-copy mr-2"></i>Booking details copied!';
+                                document.body.appendChild(successMsg);
+                                setTimeout(() => successMsg.remove(), 3000);
+                            });
+                        }
+                    });
+                    
+                    // Auto-close modal after 30 seconds
+                    setTimeout(() => {
+                        const modal = document.getElementById('booking-success-modal');
+                        if (modal) {
+                            modal.style.animation = 'fadeOut 0.5s ease-out';
+                            setTimeout(() => modal.remove(), 500);
+                        }
+                    }, 30000);
+                }, 100);
+            }
+
+            // Form Submission with Professional Confirmation
             function handleSubmit(event) {
                 event.preventDefault();
                 let isValid = true;
                 const errors = [];
+                
+                const checkInInput = document.getElementById('check-in');
+                const checkOutInput = document.getElementById('check-out');
+                const guestsSelect = document.getElementById('guests');
+                const guestDetails = document.getElementById('guest-details');
+                const today = new Date();
+                const unavailableDates = ['2025-08-10', '2025-08-15', '2025-08-20'];
 
+                // Enhanced Form Validation with Animation
+                const validateField = (fieldId, value, validator, errorMsg) => {
+                    const errorElement = document.getElementById(`${fieldId}-error`);
+                    const inputElement = document.getElementById(fieldId);
+                    
+                    if (!validator(value)) {
+                        errorElement.classList.remove('hidden');
+                        inputElement.classList.add('border-red-300', 'bg-red-50', 'animate-shake');
+                        setTimeout(() => inputElement.classList.remove('animate-shake'), 500);
+                        errors.push(errorMsg);
+                        isValid = false;
+                    } else {
+                        errorElement.classList.add('hidden');
+                        inputElement.classList.remove('border-red-300', 'bg-red-50');
+                        inputElement.classList.add('border-green-300', 'bg-green-50');
+                        setTimeout(() => {
+                            inputElement.classList.remove('border-green-300', 'bg-green-50');
+                        }, 1000);
+                    }
+                };
+                
                 // Validate Name
                 const name = document.getElementById('name').value;
-                const nameError = document.getElementById('name-error');
-                if (!name || !/^[a-zA-Z\s]+$/.test(name)) {
-                    nameError.classList.remove('hidden');
-                    errors.push('Please enter a valid name (letters only)');
-                    isValid = false;
-                } else {
-                    nameError.classList.add('hidden');
-                }
+                validateField('name', name, (val) => val && /^[a-zA-Z\s]+$/.test(val), 'Please enter a valid name (letters only)');
 
                 // Validate Email
                 const email = document.getElementById('email').value;
-                const emailError = document.getElementById('email-error');
-                if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                    emailError.classList.remove('hidden');
-                    errors.push('Please enter a valid email');
-                    isValid = false;
-                } else {
-                    emailError.classList.add('hidden');
-                }
+                validateField('email', email, (val) => val && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val), 'Please enter a valid email');
 
                 // Validate Phone
                 const phone = document.getElementById('phone').value;
-                const phoneError = document.getElementById('phone-error');
-                if (!phone || !/^\d{10}$/.test(phone)) {
-                    phoneError.classList.remove('hidden');
-                    errors.push('Please enter a valid 10-digit phone number');
-                    isValid = false;
-                } else {
-                    phoneError.classList.add('hidden');
-                }
+                validateField('phone', phone, (val) => val && /^\d{10}$/.test(val), 'Please enter a valid 10-digit phone number');
 
                 // Validate Dates
                 const checkIn = new Date(checkInInput.value);
@@ -967,16 +2959,25 @@
                     btnText.classList.add('hidden');
                     spinner.classList.remove('hidden');
 
+                    // Simulate realistic booking processing time
                     setTimeout(() => {
-                        alert('Booking submitted successfully!');
                         btn.disabled = false;
                         btnText.classList.remove('hidden');
                         spinner.classList.add('hidden');
-                        document.getElementById('booking-form').reset();
-                        guestDetails.innerHTML = '';
-                        document.getElementById('total-price').textContent = 'Total Price: ₹0';
-                        updateProgress();
-                    }, 2000);
+                        
+                        // Generate and show professional booking confirmation
+                        const bookingData = generateBookingConfirmation();
+                        showBookingSuccessModal(bookingData);
+                        
+                        // Reset form after showing confirmation
+                        setTimeout(() => {
+                            document.getElementById('booking-form').reset();
+                            guestDetails.innerHTML = '';
+                            document.getElementById('total-price').textContent = '₹0';
+                            updateProgress();
+                        }, 1000);
+                        
+                    }, 2500); // 2.5 seconds processing time for realism
                 }
             }
 
@@ -1157,7 +3158,208 @@
                 </div>
             </div>
         </footer>
-        <script src="/JS/app.js"></script>
+    <!-- Scroll to Top Button -->
+    <div class="fixed right-6 bottom-6 z-50">
+        <button id="scroll-to-top" class="premium-float-btn w-16 h-16 rounded-full text-slate-600 hover:text-white hover:bg-slate-600 transition-all duration-500 transform hover:scale-110 opacity-0 invisible group">
+            <i class="fas fa-arrow-up text-2xl"></i>
+            <span class="absolute right-20 top-1/2 transform -translate-y-1/2 luxury-glass text-gray-800 px-4 py-2 rounded-xl text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-xl border border-white/20">Back to Top</span>
+        </button>
+    </div>
+    
+    
+    
+    <!-- Booking Confirmation Modal -->
+    <div id="booking-confirmation-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-lg w-full p-8 text-center animate__animated animate__bounceIn">
+            <div class="mb-6">
+                <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-check-circle text-4xl text-green-500"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Booking Confirmed!</h2>
+                <p class="text-gray-600">Your reservation has been successfully processed</p>
+            </div>
+            
+            <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 mb-6">
+                <div class="grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                        <p class="text-gray-500 mb-1">Booking ID</p>
+                        <p id="confirmation-booking-id" class="font-bold text-blue-600">HTL12345678</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 mb-1">Total Amount</p>
+                        <p id="confirmation-amount" class="font-bold text-green-600">₹0</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 mb-1">Check-in</p>
+                        <p id="confirmation-checkin" class="font-semibold">-</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 mb-1">Check-out</p>
+                        <p id="confirmation-checkout" class="font-semibold">-</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex flex-col gap-3">
+                <button id="download-receipt" class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-3 px-6 rounded-xl font-semibold hover:from-indigo-700 hover:to-purple-700 transition-all duration-300">
+                    <i class="fas fa-download mr-2"></i>
+                    Download Receipt
+                </button>
+                <div class="flex gap-2">
+                    <button id="share-booking" class="flex-1 bg-blue-500 text-white py-3 px-4 rounded-xl font-medium hover:bg-blue-600 transition-colors">
+                        <i class="fas fa-share-alt mr-2"></i>
+                        Share
+                    </button>
+                    <button id="close-confirmation" class="flex-1 bg-gray-500 text-white py-3 px-4 rounded-xl font-medium hover:bg-gray-600 transition-colors">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Payment Modal -->
+    <div id="payment-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-2xl font-bold text-gray-800">Complete Payment</h2>
+                    <button id="close-payment-modal" class="p-2 rounded-full hover:bg-gray-100">
+                        <i class="fas fa-times text-gray-600"></i>
+                    </button>
+                </div>
+                
+                <!-- Payment Summary -->
+                <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-4 mb-6">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-gray-600">Total Amount:</span>
+                        <span id="payment-total" class="text-2xl font-bold text-indigo-600">₹0</span>
+                    </div>
+                    <p class="text-sm text-gray-500">Includes all taxes and fees</p>
+                </div>
+                
+                <!-- Payment Methods -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-4">Select Payment Method</h3>
+                    <div class="grid grid-cols-3 gap-3 mb-4">
+                        <button class="payment-method-card border-2 border-gray-200 rounded-xl p-4 text-center hover:border-indigo-500 hover:bg-indigo-50 transition-all" data-method="card">
+                            <i class="fas fa-credit-card text-2xl text-gray-600 mb-2"></i>
+                            <p class="text-sm font-medium">Card</p>
+                        </button>
+                        <button class="payment-method-card border-2 border-gray-200 rounded-xl p-4 text-center hover:border-indigo-500 hover:bg-indigo-50 transition-all" data-method="upi">
+                            <i class="fas fa-mobile-alt text-2xl text-gray-600 mb-2"></i>
+                            <p class="text-sm font-medium">UPI</p>
+                        </button>
+                        <button class="payment-method-card border-2 border-gray-200 rounded-xl p-4 text-center hover:border-indigo-500 hover:bg-indigo-50 transition-all" data-method="wallet">
+                            <i class="fas fa-wallet text-2xl text-gray-600 mb-2"></i>
+                            <p class="text-sm font-medium">Wallet</p>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Card Payment Form -->
+                <div id="card-payment-form" class="hidden mb-6">
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Card Number</label>
+                            <input type="text" placeholder="1234 5678 9012 3456" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Expiry Date</label>
+                                <input type="text" placeholder="MM/YY" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">CVV</label>
+                                <input type="text" placeholder="123" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Cardholder Name</label>
+                            <input type="text" placeholder="John Doe" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- UPI Payment Form -->
+                <div id="upi-payment-form" class="hidden mb-6">
+                    <div class="text-center p-8 border-2 border-dashed border-gray-300 rounded-xl">
+                        <i class="fas fa-qrcode text-6xl text-gray-400 mb-4"></i>
+                        <p class="text-lg font-semibold mb-2">Scan QR Code</p>
+                        <p class="text-gray-600 mb-4">Use any UPI app to scan and pay</p>
+                        <div class="flex justify-center gap-4">
+                            <img src="https://via.placeholder.com/40x40?text=GPay" alt="Google Pay" class="w-10 h-10 rounded">
+                            <img src="https://via.placeholder.com/40x40?text=PPe" alt="PhonePe" class="w-10 h-10 rounded">
+                            <img src="https://via.placeholder.com/40x40?text=Ptm" alt="Paytm" class="w-10 h-10 rounded">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Wallet Payment Form -->
+                <div id="wallet-payment-form" class="hidden mb-6">
+                    <div class="grid grid-cols-2 gap-3">
+                        <button class="wallet-option border-2 border-gray-200 rounded-xl p-4 hover:border-indigo-500 hover:bg-indigo-50 transition-all">
+                            <img src="https://via.placeholder.com/60x30?text=Paytm" alt="Paytm" class="w-full h-8 object-contain mb-2">
+                            <p class="text-sm">Paytm</p>
+                        </button>
+                        <button class="wallet-option border-2 border-gray-200 rounded-xl p-4 hover:border-indigo-500 hover:bg-indigo-50 transition-all">
+                            <img src="https://via.placeholder.com/60x30?text=Mobikwik" alt="MobiKwik" class="w-full h-8 object-contain mb-2">
+                            <p class="text-sm">MobiKwik</p>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Pay Button -->
+                <button id="process-payment" class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-4 rounded-xl font-semibold text-lg hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
+                    <i class="fas fa-lock mr-2"></i>
+                    Pay Securely
+                </button>
+                
+                <!-- Security Info -->
+                <div class="flex items-center justify-center gap-2 mt-4 text-sm text-gray-500">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>256-bit SSL encrypted</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Image Lightbox -->
+    <div id="image-lightbox" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-4">
+        <div class="relative max-w-4xl w-full">
+            <button id="close-lightbox" class="absolute top-4 right-4 text-white text-2xl hover:text-gray-300 z-10">
+                <i class="fas fa-times"></i>
+            </button>
+            <img id="lightbox-image" src="" alt="" class="w-full h-auto max-h-[80vh] object-contain rounded-lg">
+            <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+                <button id="lightbox-prev" class="bg-white/20 text-white p-2 rounded-full hover:bg-white/30 transition-colors">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="lightbox-next" class="bg-white/20 text-white p-2 rounded-full hover:bg-white/30 transition-colors">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="fixed top-4 right-4 z-50 space-y-2"></div>
+    
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="fixed inset-0 bg-white/80 backdrop-blur-sm z-50 hidden flex items-center justify-center">
+        <div class="text-center">
+            <div class="animate-spin rounded-full h-16 w-16 border-b-2 border-indigo-600 mx-auto mb-4"></div>
+            <p class="text-lg font-semibold text-gray-800">Processing your booking...</p>
+        </div>
+    </div>
+    
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    
+   <script src="../JS/hotel-booking-page.js"></script>    
+    <script src="/JS/app.js"></script>
 </body>
 
 </html>
