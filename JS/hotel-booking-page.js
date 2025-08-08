@@ -217,19 +217,10 @@ setTimeout(() => {
 function loadHotelData(hotelId) {
   // Get URL parameters inside the function
   const urlParams = new URLSearchParams(window.location.search);
-
-  console.log("Loading hotel data for:", hotelId);
-  console.log("URL Params:", urlParams.toString());
-  console.log("All URL params:");
-  for (const [key, value] of urlParams) {
-    console.log(`${key}: ${value}`);
-  }
-
   let hotel = null;
 
   // Always use URL parameters if available (prioritize dynamic data)
   if (urlParams.get("hotelName") || urlParams.get("hotelImage")) {
-    console.log("Creating dynamic hotel from URL params");
     // Convert USD price to INR (approximate conversion)
     const usdPrice = parseInt(urlParams.get("hotelPrice")) || 199;
     const inrPrice = Math.round(usdPrice * 75); // Approximate conversion rate
@@ -283,12 +274,8 @@ function loadHotelData(hotelId) {
 
   // Use first hotel as fallback only if no URL params and no matching hotel
   if (!hotel) {
-    console.log("Using fallback hotel");
     hotel = hotels[0];
   }
-
-  console.log("Final hotel object:", hotel);
-
   // Update page title
   document.title = `Book ${hotel.name} - Ranthambhore 360`;
 
@@ -440,17 +427,6 @@ function loadHotelData(hotelId) {
                         )}/night)</option>
                     `;
   }
-
-  // Store current hotel globally for other functions
-  window.currentHotel = hotel;
-
-  // Update guest limits and room images
-  const roomTypeValue = roomTypeSelect ? roomTypeSelect.value : "standard";
-//   updateGuestLimit(hotel, roomTypeValue);
-  updateRoomImage(hotel, roomTypeValue);
-  updatePrice();
-
-  console.log("Hotel data loaded successfully!");
 }
 
 // Get Hotel ID from URL Parameters
