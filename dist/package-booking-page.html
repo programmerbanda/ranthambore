@@ -109,13 +109,16 @@
                     <ul class="flex space-x-8 text-lg font-medium items-center">
                         <li><a href="/dist/index.html" id="home-btn"
                                 class="text-[#604019] hover:text-amber-600 transition-colors">Home</a></li>
-                        <li><a href="safari.html" class="text-[#604019] hover:text-amber-600 transition-colors">Safari</a></li>
-                        <li><a href="chambal.html" class="chambalBtn text-[#604019] hover:text-amber-600 transition-colors">Chambal
+                        <li><a href="safari.html"
+                                class="text-[#604019] hover:text-amber-600 transition-colors">Safari</a></li>
+                        <li><a href="chambal.html"
+                                class="chambalBtn text-[#604019] hover:text-amber-600 transition-colors">Chambal
                                 Safari</a>
                         </li>
                         <li><a href="hotel.html"
                                 class="hotelBtn text-[#604019] hover:text-amber-600 transition-colors">Hotels</a></li>
-                        <li><a href="package-booking.html" class="tourBtn text-amber-600 transition-colors">Packages</a></li>
+                        <li><a href="package-booking.html" class="tourBtn text-amber-600 transition-colors">Packages</a>
+                        </li>
                         <li><a href="contact.html" id="contact-btn"
                                 class="text-[#604019] hover:text-amber-600 transition-colors">Contact</a></li>
                     </ul>
@@ -138,7 +141,78 @@
         </div>
     </nav>
     <!-- Main Body -->
-     
+    <main>
+        <section>
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="mb-4">
+                    <p class="text-[#604019] font-bold font-sans text-center my-4">
+                        Select Your Hotel Room Category
+                    </p>
+                    <div class="flex gap-2 justify-center">
+                        <button
+                            class="cursor-pointer font-sans px-2 py-1 sm:px-3 sm:text-lg bg-[#ff7518] text-[#fff] rounded-sm">Luxury</button>
+                        <button
+                            class="cursor-pointer font-sans px-2 py-1 sm:px-3 sm:text-lg bg-[#ff7518] text-[#fff] rounded-sm">Premium</button>
+                        <button
+                            class="cursor-pointer font-sans px-2 py-1 sm:px-3 sm:text-lg bg-[#ff7518] text-[#fff] rounded-sm">Deluxe</button>
+                        <button
+                            class="cursor-pointer font-sans px-2 py-1 sm:px-3 sm:text-lg bg-[#ff7518] text-[#fff] rounded-sm">Standard</button>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center p-4 bg-gray-100">
+                    <div class="flex justify-around items-center gap-3">
+                        <div class="flex flex-col items-center">
+                            <img src="/Images/2_Chambal Package 2.jpg" alt="Nahargarh Ranthambhore"
+                                class="w-64 h-48 object-cover">
+                            <p class="mt-2 text-gray-700">Nahargarh Ranthambhore</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <img src="/Images/Background Safari.jpg" alt="Bookmark Resorts"
+                                class="w-64 h-48 object-cover">
+                            <p class="mt-2 text-gray-700">Bookmark Resorts</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <img src="/Images/Chambal Boating.jpg" alt="Bookmark Resorts"
+                                class="w-64 h-48 object-cover">
+                            <p class="mt-2 text-gray-700">Bookmark Resorts</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-center mt-4 space-x-2">
+                        <span class="w-2 h-2 bg-gray-600 rounded-full"></span> <!-- Current image -->
+                        <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                        <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                        <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                        <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                        <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                        <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                        <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                        <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                        <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                        <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                        <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="w-full bg-[#f05108] py-2 fixed bottom-0 left-0 z-10">
+            <div class="px-4 sm:px-12 flex justify-between">
+                <div>
+                    <button
+                        class="text-[#fff] px-2 py-1 sm:px-4 sm:py-2 border-2 border-[#fff] rounded-lg font-bold font-sans cursor-pointer">1</button>
+                    <button
+                        class="text-[#fff] px-2 py-1 sm:px-4 sm:py-2 border-2 border-[#fff] rounded-lg font-bold font-sans mx-1.5 cursor-pointer">2</button>
+                    <button
+                        class="text-[#fff] px-2 py-1 sm:px-4 sm:py-2 border-2 border-[#fff] rounded-lg font-bold font-sans cursor-pointer">3</button>
+                </div>
+                <div>
+                    <button
+                        class="bg-[#FFA500] text-[#fff] px-2 py-1 sm:px-4 sm:py-2 border-2 border-[#fff] rounded-lg font-bold font-sans mx-1.5 cursor-pointer">Previous</button>
+                    <button
+                        class="bg-[#1AB01A] text-[#fff] px-2 py-1 sm:px-4 sm:py-2 border-2 border-[#fff] rounded-lg font-bold font-sans cursor-pointer">Next</button>
+                </div>
+            </div>
+        </section>
+    </main>
     <!-- Footer Section -->
     <footer class="bg-[#604019] text-white pt-8 pb-6">
         <div class="container mx-auto px-4 max-w-6xl">
