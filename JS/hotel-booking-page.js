@@ -1,6 +1,3 @@
-// Service Worker removed to prevent errors
-// Will be implemented later with proper file-based approach
-
 // Enhanced Hotel Data with Real Hotel Information
 const hotels = [
   {
@@ -29,13 +26,6 @@ const hotels = [
       deluxe: "/Images/deluxe-room-1.jpg",
       suite: "/Images/suite-room-1.jpg",
     },
-    guestLimits: { standard: 2, deluxe: 3, suite: 4 },
-    rating: "4.8/5 (Based on 1,450 reviews)",
-    reviews: [
-      '<span class="star-rating" data-rating="5.0">⭐⭐⭐⭐⭐</span> - "Incredible tiger sighting experience! Staff was amazing." - Rajesh Kumar',
-      '<span class="star-rating" data-rating="4.8">⭐⭐⭐⭐⭐</span> - "Best safari resort in Ranthambhore. Highly recommended!" - Priya Sharma',
-      '<span class="star-rating" data-rating="4.5">⭐⭐⭐⭐</span> - "Beautiful rooms with nature views. Great food!" - Amit Singh',
-    ],
   },
   {
     id: "ranthambhore-regency",
@@ -63,13 +53,6 @@ const hotels = [
       deluxe: "/Images/deluxe-room-2.jpg",
       suite: "/Images/suite-room-2.jpg",
     },
-    guestLimits: { standard: 2, deluxe: 3, suite: 6 },
-    rating: "4.9/5 (Based on 950 reviews)",
-    reviews: [
-      '<span class="star-rating" data-rating="5.0">⭐⭐⭐⭐⭐</span> - "Royal treatment and unforgettable tiger safari!" - Neha Gupta',
-      '<span class="star-rating" data-rating="4.9">⭐⭐⭐⭐⭐</span> - "Heritage charm with luxury comfort. Perfect!" - Vikram Patel',
-      '<span class="star-rating" data-rating="4.7">⭐⭐⭐⭐⭐</span> - "Authentic Rajasthani experience. Loved every moment!" - Sarah Johnson',
-    ],
   },
   {
     id: "jungle-retreat",
@@ -98,13 +81,6 @@ const hotels = [
       deluxe: "/Images/deluxe-room-3.jpg",
       suite: "/Images/suite-room-3.jpg",
     },
-    guestLimits: { standard: 2, deluxe: 3, suite: 4 },
-    rating: "4.6/5 (Based on 800 reviews)",
-    reviews: [
-      '<span class="star-rating" data-rating="4.8">⭐⭐⭐⭐⭐</span> - "Perfect eco-retreat experience. Very peaceful!" - Maya Reddy',
-      '<span class="star-rating" data-rating="4.5">⭐⭐⭐⭐</span> - "Great for nature lovers. Excellent bird watching!" - Ravi Kumar',
-      '<span class="star-rating" data-rating="4.6">⭐⭐⭐⭐⭐</span> - "Sustainable luxury at its best. Loved the experience!" - Lisa Chen',
-    ],
   },
   {
     id: "royal-tiger-palace",
@@ -132,13 +108,6 @@ const hotels = [
       deluxe: "/Images/deluxe-room-4.jpg",
       suite: "/Images/suite-room-4.jpg",
     },
-    guestLimits: { standard: 2, deluxe: 4, suite: 6 },
-    rating: "5.0/5 (Based on 1,200 reviews)",
-    reviews: [
-      '<span class="star-rating" data-rating="5.0">⭐⭐⭐⭐⭐</span> - "True royal experience! Every detail is perfect." - Arjun Malhotra',
-      '<span class="star-rating" data-rating="5.0">⭐⭐⭐⭐⭐</span> - "Palace luxury with modern comfort. Extraordinary!" - Jennifer Smith',
-      '<span class="star-rating" data-rating="4.9">⭐⭐⭐⭐⭐</span> - "Unforgettable stay in a real palace. Magical!" - David Wilson',
-    ],
   },
   // Hotels from hotel.html page
   {
@@ -171,13 +140,6 @@ const hotels = [
       suite:
         "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     },
-    guestLimits: { standard: 2, deluxe: 3, suite: 4 },
-    rating: "4.8/5 (128 reviews)",
-    reviews: [
-      '<span class="star-rating" data-rating="4.8">⭐⭐⭐⭐⭐</span> - "Amazing stay in the heart of NYC! Great service." - John Smith',
-      '<span class="star-rating" data-rating="4.7">⭐⭐⭐⭐⭐</span> - "Excellent location and beautiful rooms." - Sarah Johnson',
-      '<span class="star-rating" data-rating="4.9">⭐⭐⭐⭐⭐</span> - "Perfect for business trips. Highly recommended!" - Michael Chen',
-    ],
   },
   {
     id: "paradise-beach-resort",
@@ -209,13 +171,6 @@ const hotels = [
       suite:
         "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     },
-    guestLimits: { standard: 2, deluxe: 3, suite: 4 },
-    rating: "4.7/5 (94 reviews)",
-    reviews: [
-      '<span class="star-rating" data-rating="4.8">⭐⭐⭐⭐⭐</span> - "Paradise on earth! Crystal clear waters and amazing service." - Emma Wilson',
-      '<span class="star-rating" data-rating="4.6">⭐⭐⭐⭐⭐</span> - "Perfect honeymoon destination. So romantic!" - David Miller',
-      '<span class="star-rating" data-rating="4.7">⭐⭐⭐⭐⭐</span> - "Eco-friendly luxury at its finest. Loved every moment." - Lisa Chen',
-    ],
   },
   {
     id: "alpine-retreat",
@@ -247,13 +202,6 @@ const hotels = [
       suite:
         "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     },
-    guestLimits: { standard: 2, deluxe: 3, suite: 4 },
-    rating: "4.9/5 (156 reviews)",
-    reviews: [
-      '<span class="star-rating" data-rating="4.9">⭐⭐⭐⭐⭐</span> - "Breathtaking mountain views and exceptional service!" - Robert Johnson',
-      '<span class="star-rating" data-rating="4.8">⭐⭐⭐⭐⭐</span> - "Perfect winter getaway. Skiing was amazing!" - Maria Garcia',
-      '<span class="star-rating" data-rating="5.0">⭐⭐⭐⭐⭐</span> - "Luxury spa treatments with stunning alpine views. Perfect!" - Thomas Anderson',
-    ],
   },
 ];
 
@@ -327,13 +275,6 @@ function loadHotelData(hotelId) {
         suite:
           "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       },
-      guestLimits: { standard: 2, deluxe: 3, suite: 4 },
-      rating: urlParams.get("hotelRating") || "4.5/5 (Based on guest reviews)",
-      reviews: [
-        '<span class="star-rating" data-rating="4.8">⭐⭐⭐⭐⭐</span> - "Great experience! Highly recommended." - Guest Review',
-        '<span class="star-rating" data-rating="4.2">⭐⭐⭐⭐</span> - "Excellent service and comfortable rooms." - Verified Guest',
-        '<span class="star-rating" data-rating="4.5">⭐⭐⭐⭐</span> - "Perfect location with amazing amenities." - Happy Guest',
-      ],
     };
   } else {
     // Find hotel by ID from predefined hotels array
@@ -500,12 +441,6 @@ function loadHotelData(hotelId) {
                     `;
   }
 
-  // Update reviews
-  const reviewsElement = document.getElementById("hotel-reviews");
-  if (reviewsElement && hotel.reviews) {
-    reviewsElement.innerHTML = hotel.reviews.join("<br>");
-  }
-
   // Store current hotel globally for other functions
   window.currentHotel = hotel;
 
@@ -587,22 +522,6 @@ document
   .getElementById("carousel")
   .addEventListener("mouseleave", startAutoplay);
 startAutoplay();
-
-// Collapsible Reviews
-const toggleReviewsBtn = document.getElementById("toggle-reviews");
-if (toggleReviewsBtn) {
-  toggleReviewsBtn.addEventListener("click", () => {
-    const reviews = document.getElementById("hotel-reviews");
-    if (reviews) {
-      const isCollapsed = reviews.dataset.collapsed === "true";
-      reviews.dataset.collapsed = !isCollapsed;
-      reviews.style.maxHeight = isCollapsed ? "none" : "6rem";
-      toggleReviewsBtn.textContent = isCollapsed
-        ? "Show Less Reviews"
-        : "Show More Reviews";
-    }
-  });
-}
 
 // Date Restrictions and Improved Calendar
 const today = new Date();
@@ -763,28 +682,6 @@ if (roomTypeSelect) {
     updatePrice();
   });
 }
-
-// function updateGuestLimit(hotel, roomType) {
-//   if (!guestsSelect || !hotel || !hotel.guestLimits) {
-//     console.warn("Missing elements for guest limit update");
-//     return;
-//   }
-
-//   const maxGuests = hotel.guestLimits[roomType] || 2;
-//   guestsSelect.innerHTML = "";
-//   for (let i = 1; i <= maxGuests; i++) {
-//     guestsSelect.innerHTML += `<option value="${i}">${i} Guest${
-//       i > 1 ? "s" : ""
-//     }</option>`;
-//   }
-//   if (parseInt(guestsSelect.value) > maxGuests) {
-//     guestsSelect.value = maxGuests;
-//     if (guestsSelect.dispatchEvent) {
-//       guestsSelect.dispatchEvent(new Event("change"));
-//     }
-//   }
-// }
-
 // Room Image Update
 function updateRoomImage(hotel, roomType) {
   const roomImage = document.getElementById("room-image");
@@ -885,40 +782,6 @@ function updatePrice() {
     console.error("Error updating price:", error);
   }
 }
-
-// Promo Code and Suggestions
-const promoCodeInput = document.getElementById("promo-code");
-if (promoCodeInput) {
-  promoCodeInput.addEventListener("input", () => {
-    const promoCode = promoCodeInput.value;
-    const promoError = document.getElementById("promo-error");
-    if (promoError) {
-      if (promoCode === "SAVE10" || promoCode === "WELCOME5") {
-        promoError.classList.remove("hidden", "text-red-500");
-        promoError.classList.add("text-green-500");
-        promoError.textContent = "Promo code applied! 10% off";
-      } else if (promoCode) {
-        promoError.classList.remove("hidden", "text-green-500");
-        promoError.classList.add("text-red-500");
-        promoError.textContent = "Invalid promo code";
-      } else {
-        promoError.classList.add("hidden");
-      }
-    }
-    updatePrice();
-  });
-}
-
-document.querySelectorAll(".promo-suggestion").forEach((button) => {
-  button.addEventListener("click", () => {
-    const promoCodeInput = document.getElementById("promo-code");
-    if (promoCodeInput) {
-      promoCodeInput.value = button.textContent;
-      promoCodeInput.dispatchEvent(new Event("input"));
-    }
-  });
-});
-
 // Enhanced Real-Time Validation with Visual Feedback
 function validateRealTime(event) {
   const input = event.target;
@@ -985,32 +848,6 @@ document
   .forEach((input) => {
     input.addEventListener("input", validateRealTime);
   });
-
-// Progress Indicator
-function updateProgress() {
-  const steps = document.querySelectorAll(".progress-step");
-  const checkInInput = document.getElementById("check-in");
-  const checkOutInput = document.getElementById("check-out");
-  const guestsSelect = document.getElementById("guests");
-
-  steps.forEach((step) => step.classList.remove("active"));
-  if (checkInInput.value && checkOutInput.value) {
-    steps[0].classList.add("active");
-    if (
-      guestsSelect.value &&
-      document.querySelectorAll("#guest-details input").length > 0
-    ) {
-      steps[1].classList.add("active");
-      if (
-        document.getElementById("name").value &&
-        document.getElementById("email").value &&
-        document.getElementById("phone").value
-      ) {
-        steps[2].classList.add("active");
-      }
-    }
-  }
-}
 
 document
   .querySelectorAll("#booking-form input, #booking-form select")
@@ -1479,7 +1316,7 @@ function handleSubmit(event) {
         document.getElementById("total-price").textContent = "₹0";
         updateProgress();
       }, 1000);
-    }, 2500); // 2.5 seconds processing time for realism
+    }, 1500); // 2.5 seconds processing time for realism
   }
 }
 
@@ -1611,61 +1448,6 @@ document.addEventListener("DOMContentLoaded", function () {
     lightbox.classList.add("hidden");
   });
 
-  // Progress Bar
-//   function updateProgressBar() {
-//     const scrollTop = window.pageYOffset;
-//     const docHeight = document.body.scrollHeight - window.innerHeight;
-//     const scrollPercent = (scrollTop / docHeight) * 100;
-//     document.getElementById("progress-bar").style.width = scrollPercent + "%";
-//   }
-
-//   window.addEventListener("scroll", updateProgressBar);
-
-  // PWA Installation
-  let deferredPrompt;
-  window.addEventListener("beforeinstallprompt", (e) => {
-    e.preventDefault();
-    deferredPrompt = e;
-
-    // Show install button
-    const installBtn = document.createElement("button");
-    installBtn.innerHTML = '<i class="fas fa-download mr-2"></i>Install App';
-    installBtn.className =
-      "fixed bottom-4 right-4 bg-indigo-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-indigo-700 transition-colors z-50";
-    installBtn.addEventListener("click", () => {
-      deferredPrompt.prompt();
-      deferredPrompt.userChoice.then((choiceResult) => {
-        if (choiceResult.outcome === "accepted") {
-          notyf.success("App installed successfully!");
-        }
-        deferredPrompt = null;
-        installBtn.remove();
-      });
-    });
-    document.body.appendChild(installBtn);
-  });
-
-  // Keyboard Shortcuts
-  document.addEventListener("keydown", (e) => {
-    if (e.ctrlKey || e.metaKey) {
-      switch (e.key) {
-        case "f":
-          e.preventDefault();
-          document.getElementById("toggle-filter-panel").click();
-          break;
-        case "d":
-          e.preventDefault();
-          themeToggle.click();
-          break;
-      }
-    }
-    if (e.key === "Escape") {
-      paymentModal.classList.add("hidden");
-      lightbox.classList.add("hidden");
-      filterPanel.style.transform = "translateX(-100%)";
-    }
-  });
-
   // Initialize tooltips
   const tooltips = document.querySelectorAll("[data-tooltip]");
   tooltips.forEach((tooltip) => {
@@ -1689,26 +1471,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (savedValue) {
       input.value = savedValue;
     }
-  });
-
-  // Scroll to Top
-  const scrollToTopBtn = document.getElementById("scroll-to-top");
-
-  window.addEventListener("scroll", () => {
-    if (window.pageYOffset > 300) {
-      scrollToTopBtn.style.opacity = "1";
-      scrollToTopBtn.style.visibility = "visible";
-    } else {
-      scrollToTopBtn.style.opacity = "0";
-      scrollToTopBtn.style.visibility = "hidden";
-    }
-  });
-
-  scrollToTopBtn.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
   });
 
   // Booking Confirmation Modal
@@ -1757,7 +1519,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Remove Quick Actions Toolbar code (no longer needed)
 
   // Enhanced Form Submission with Confirmation Modal
   const originalHandleSubmit = window.handleSubmit;

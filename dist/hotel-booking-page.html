@@ -75,7 +75,8 @@
             box-sizing: border-box;
         }
 
-        html, body {
+        html,
+        body {
             overflow-x: hidden;
             max-width: 100%;
         }
@@ -89,13 +90,25 @@
 
         /* Essential animations only */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(200%); }
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(200%);
+            }
         }
 
         .animate-form {
@@ -237,16 +250,23 @@
                     <div class="hidden lg:flex items-center space-x-6">
                         <ul class="flex space-x-6 text-sm font-medium items-center">
                             <li><a href="/dist/index.html"
-                                    class="text-amber-900 hover:text-amber-600 transition-colors px-3 py-2 rounded-md hover:bg-amber-50">Home</a></li>
+                                    class="text-amber-900 hover:text-amber-600 transition-colors px-3 py-2 rounded-md hover:bg-amber-50">Home</a>
+                            </li>
                             <li><a href="safari.html"
-                                    class="text-amber-900 hover:text-amber-600 transition-colors px-3 py-2 rounded-md hover:bg-amber-50">Safari</a></li>
+                                    class="text-amber-900 hover:text-amber-600 transition-colors px-3 py-2 rounded-md hover:bg-amber-50">Safari</a>
+                            </li>
                             <li><a href="chambal.html"
-                                    class="chambalBtn text-amber-900 hover:text-amber-600 transition-colors px-3 py-2 rounded-md hover:bg-amber-50">Chambal Safari</a></li>
+                                    class="chambalBtn text-amber-900 hover:text-amber-600 transition-colors px-3 py-2 rounded-md hover:bg-amber-50">Chambal
+                                    Safari</a></li>
                             <li><a href="hotel.html"
-                                    class="hotelBtn text-amber-700 font-semibold px-3 py-2 rounded-md bg-amber-50 border border-amber-200">Hotels</a></li>
+                                    class="hotelBtn text-amber-700 font-semibold px-3 py-2 rounded-md bg-amber-50 border border-amber-200">Hotels</a>
+                            </li>
                             <li><a href="package-booking.html"
-                                    class="tourBtn text-amber-900 hover:text-amber-600 transition-colors px-3 py-2 rounded-md hover:bg-amber-50">Packages</a></li>
-                            <li><a href="contact.html" class="text-amber-900 hover:text-amber-600 transition-colors px-3 py-2 rounded-md hover:bg-amber-50">Contact</a></li>
+                                    class="tourBtn text-amber-900 hover:text-amber-600 transition-colors px-3 py-2 rounded-md hover:bg-amber-50">Packages</a>
+                            </li>
+                            <li><a href="contact.html"
+                                    class="text-amber-900 hover:text-amber-600 transition-colors px-3 py-2 rounded-md hover:bg-amber-50">Contact</a>
+                            </li>
                         </ul>
                         <button
                             class="safariBtn ml-4 bg-amber-700 hover:bg-amber-600 text-white font-medium py-2 px-4 rounded-lg transition-colors shadow-md cursor-pointer">
@@ -256,7 +276,8 @@
 
                     <!-- Mobile menu button -->
                     <div class="lg:hidden">
-                        <button id="mobile-menu-btn" class="text-amber-900 focus:outline-none cursor-pointer p-2 rounded-md hover:bg-gray-100">
+                        <button id="mobile-menu-btn"
+                            class="text-amber-900 focus:outline-none cursor-pointer p-2 rounded-md hover:bg-gray-100">
                             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M4 6h16M4 12h16M4 18h16" />
@@ -270,13 +291,21 @@
         <!-- Mobile Navigation Menu -->
         <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-200 shadow-lg">
             <div class="px-4 py-3 space-y-1">
-                <a href="/dist/index.html" class="block text-amber-900 hover:text-amber-600 transition-colors py-2 px-3 rounded-md hover:bg-amber-50">Home</a>
-                <a href="safari.html" class="block text-amber-900 hover:text-amber-600 transition-colors py-2 px-3 rounded-md hover:bg-amber-50">Safari</a>
-                <a href="chambal.html" class="block text-amber-900 hover:text-amber-600 transition-colors py-2 px-3 rounded-md hover:bg-amber-50">Chambal Safari</a>
-                <a href="hotel.html" class="block text-amber-700 font-semibold py-2 px-3 rounded-md bg-amber-50 border border-amber-200">Hotels</a>
-                <a href="package-booking.html" class="block text-amber-900 hover:text-amber-600 transition-colors py-2 px-3 rounded-md hover:bg-amber-50">Packages</a>
-                <a href="contact.html" class="block text-amber-900 hover:text-amber-600 transition-colors py-2 px-3 rounded-md hover:bg-amber-50">Contact</a>
-                <button class="w-full mt-3 bg-amber-700 hover:bg-amber-600 text-white font-medium py-2 px-4 rounded-lg transition-colors shadow-md">
+                <a href="/dist/index.html"
+                    class="block text-amber-900 hover:text-amber-600 transition-colors py-2 px-3 rounded-md hover:bg-amber-50">Home</a>
+                <a href="safari.html"
+                    class="block text-amber-900 hover:text-amber-600 transition-colors py-2 px-3 rounded-md hover:bg-amber-50">Safari</a>
+                <a href="chambal.html"
+                    class="block text-amber-900 hover:text-amber-600 transition-colors py-2 px-3 rounded-md hover:bg-amber-50">Chambal
+                    Safari</a>
+                <a href="hotel.html"
+                    class="block text-amber-700 font-semibold py-2 px-3 rounded-md bg-amber-50 border border-amber-200">Hotels</a>
+                <a href="package-booking.html"
+                    class="block text-amber-900 hover:text-amber-600 transition-colors py-2 px-3 rounded-md hover:bg-amber-50">Packages</a>
+                <a href="contact.html"
+                    class="block text-amber-900 hover:text-amber-600 transition-colors py-2 px-3 rounded-md hover:bg-amber-50">Contact</a>
+                <button
+                    class="w-full mt-3 bg-amber-700 hover:bg-amber-600 text-white font-medium py-2 px-4 rounded-lg transition-colors shadow-md">
                     Book Now
                 </button>
             </div>
@@ -497,30 +526,34 @@
 
                 <!-- Simple Booking Form -->
                 <div class="booking-form bg-white rounded-lg shadow-lg p-6 lg:p-8">
-                <!-- Professional Header -->
+                    <!-- Professional Header -->
                     <div class="text-center mb-8">
                         <h1 class="text-3xl font-bold text-gray-900 mb-2">Complete Your Booking</h1>
-                        <p class="text-gray-600 max-w-md mx-auto">Secure your reservation with our streamlined booking process</p>
-                        
+                        <p class="text-gray-600 max-w-md mx-auto">Secure your reservation with our streamlined booking
+                            process</p>
+
                         <!-- Form Progress Indicator -->
                         <div id="form-progress" class="mt-6">
                             <div class="flex items-center justify-center space-x-4">
                                 <div class="flex items-center">
-                                    <div class="w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center text-sm font-medium">
+                                    <div
+                                        class="w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center text-sm font-medium">
                                         1
                                     </div>
                                     <span class="ml-2 text-sm font-medium text-indigo-600">Booking Details</span>
                                 </div>
                                 <div class="w-16 h-1 bg-gray-200 rounded"></div>
                                 <div class="flex items-center">
-                                    <div class="w-8 h-8 bg-gray-200 text-gray-500 rounded-full flex items-center justify-center text-sm font-medium">
+                                    <div
+                                        class="w-8 h-8 bg-gray-200 text-gray-500 rounded-full flex items-center justify-center text-sm font-medium">
                                         2
                                     </div>
                                     <span class="ml-2 text-sm font-medium text-gray-500">Payment</span>
                                 </div>
                                 <div class="w-16 h-1 bg-gray-200 rounded"></div>
                                 <div class="flex items-center">
-                                    <div class="w-8 h-8 bg-gray-200 text-gray-500 rounded-full flex items-center justify-center text-sm font-medium">
+                                    <div
+                                        class="w-8 h-8 bg-gray-200 text-gray-500 rounded-full flex items-center justify-center text-sm font-medium">
                                         3
                                     </div>
                                     <span class="ml-2 text-sm font-medium text-gray-500">Confirmation</span>
@@ -712,38 +745,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="mb-6 animate-form">
-                            <label for="promo-code"
-                                class="block text-sm font-semibold text-gray-800 mb-2 flex items-center gap-2">
-                                <i class="fas fa-tag text-indigo-600"></i>
-                                Promo Code (Optional)
-                            </label>
-                            <input type="text" id="promo-code" name="promo-code"
-                                placeholder="Enter promo code for discounts"
-                                class="premium-input mt-1 p-4 w-full rounded-xl border-2 border-gray-200 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 transition-all duration-400 text-gray-700"
-                                aria-describedby="promo-error">
-                            <div id="promo-suggestions" class="mt-3 flex flex-wrap gap-2">
-                                <button type="button"
-                                    class="promo-suggestion bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-200 text-indigo-700 hover:text-indigo-900 hover:bg-indigo-100 text-sm px-3 py-1.5 rounded-lg transition-all duration-200 cursor-pointer font-medium">
-                                    <i class="fas fa-percent mr-1"></i>SAVE10
-                                </button>
-                                <button type="button"
-                                    class="promo-suggestion bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 text-green-700 hover:text-green-900 hover:bg-green-100 text-sm px-3 py-1.5 rounded-lg transition-all duration-200 cursor-pointer font-medium">
-                                    <i class="fas fa-gift mr-1"></i>WELCOME5
-                                </button>
-                                <button type="button"
-                                    class="promo-suggestion bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-200 text-orange-700 hover:text-orange-900 hover:bg-orange-100 text-sm px-3 py-1.5 rounded-lg transition-all duration-200 cursor-pointer font-medium">
-                                    <i class="fas fa-star mr-1"></i>FIRST15
-                                </button>
-                            </div>
-                            <p id="promo-error"
-                                class="text-green-600 text-sm hidden animate-pulse mt-2 flex items-center">
-                                <i class="fas fa-check-circle mr-1"></i>
-                                Promo code applied successfully!
-                            </p>
-                        </div>
-
                         <div class="mb-4 lg:col-span-2 animate-form">
                             <div id="guest-details"></div>
                         </div>
@@ -754,7 +755,7 @@
                                     <i class="fas fa-calculator text-indigo-600"></i>
                                     Booking Summary
                                 </h3>
-                                
+
                                 <div class="space-y-3">
                                     <div class="flex justify-between items-center py-2 border-b border-gray-100">
                                         <span class="text-sm text-gray-600">Room Charges:</span>
@@ -764,7 +765,8 @@
                                         <span class="text-sm text-gray-600">Taxes & Fees:</span>
                                         <span id="taxes-fees" class="font-medium text-gray-900">₹0</span>
                                     </div>
-                                    <div id="savings-indicator" class="flex justify-between items-center py-2 border-b border-gray-100 hidden">
+                                    <div id="savings-indicator"
+                                        class="flex justify-between items-center py-2 border-b border-gray-100 hidden">
                                         <span class="text-sm text-green-600">Discount Applied:</span>
                                         <span id="discount-amount" class="font-medium text-green-600">-₹0</span>
                                     </div>
@@ -773,9 +775,11 @@
                                         <span id="total-price" class="text-2xl font-bold text-indigo-600">₹0</span>
                                     </div>
                                 </div>
-                                
-                                <div id="savings-amount-display" class="hidden mt-3 p-3 bg-green-50 rounded-lg text-center">
-                                    <p class="text-sm text-green-700">You saved <span id="savings-amount" class="font-bold">₹0</span>!</p>
+
+                                <div id="savings-amount-display"
+                                    class="hidden mt-3 p-3 bg-green-50 rounded-lg text-center">
+                                    <p class="text-sm text-green-700">You saved <span id="savings-amount"
+                                            class="font-bold">₹0</span>!</p>
                                 </div>
                             </div>
                         </div>
@@ -783,31 +787,16 @@
                         <div class="lg:col-span-2 animate-form">
                             <button type="submit" id="book-now-btn" class="ultra-premium-submit-btn">
                                 Complete Booking
-                                
+
                                 <!-- Simple Loading Spinner -->
-                                <div id="loading-spinner" class="absolute inset-0 bg-blue-600 rounded-lg flex items-center justify-center hidden">
-                                    <div class="animate-spin rounded-full h-6 w-6 border-2 border-white border-t-transparent mr-2"></div>
+                                <div id="loading-spinner"
+                                    class="absolute inset-0 bg-blue-600 rounded-lg flex items-center justify-center hidden">
+                                    <div
+                                        class="animate-spin rounded-full h-6 w-6 border-2 border-white border-t-transparent mr-2">
+                                    </div>
                                     <span>Processing...</span>
                                 </div>
                             </button>
-
-                            <!-- Additional Premium Features -->
-                            <div class="mt-6 text-center">
-                                <div class="flex justify-center items-center gap-6 text-sm text-gray-600">
-                                    <div class="flex items-center gap-2">
-                                        <i class="fas fa-lock text-green-500"></i>
-                                        <span>SSL Encrypted</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <i class="fas fa-clock text-blue-500"></i>
-                                        <span>Instant Confirmation</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <i class="fas fa-medal text-yellow-500"></i>
-                                        <span>Best Price Guarantee</span>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </form>
                 </div>
@@ -979,19 +968,6 @@
                 </div>
             </div>
         </footer>
-        <!-- Scroll to Top Button -->
-        <div class="fixed right-6 bottom-6 z-50">
-            <button id="scroll-to-top"
-                class="premium-float-btn w-16 h-16 rounded-full text-slate-600 hover:text-white hover:bg-slate-600 transition-all duration-500 transform hover:scale-110 opacity-0 invisible group">
-                <i class="fas fa-arrow-up text-2xl"></i>
-                <span
-                    class="absolute right-20 top-1/2 transform -translate-y-1/2 luxury-glass text-gray-800 px-4 py-2 rounded-xl text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-xl border border-white/20">Back
-                    to Top</span>
-            </button>
-        </div>
-
-
-
         <!-- Booking Confirmation Modal -->
         <div id="booking-confirmation-modal"
             class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
@@ -1204,66 +1180,23 @@
                 <p class="text-lg font-semibold text-gray-800">Processing your booking...</p>
             </div>
         </div>
-
-        <!-- Custom Calendar Modal -->
-        <div id="calendar-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-            <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6">
-                <div class="flex items-center justify-between mb-6">
-                    <h3 class="text-xl font-bold text-gray-800">Select Date</h3>
-                    <button id="close-calendar" class="p-2 rounded-full hover:bg-gray-100">
-                        <i class="fas fa-times text-gray-600"></i>
-                    </button>
-                </div>
-                
-                <div id="calendar-container">
-                    <div class="flex items-center justify-between mb-4">
-                        <button id="prev-month" class="p-2 rounded-lg hover:bg-gray-100">
-                            <i class="fas fa-chevron-left text-gray-600"></i>
-                        </button>
-                        <h4 id="calendar-month-year" class="text-lg font-semibold text-gray-800">January 2024</h4>
-                        <button id="next-month" class="p-2 rounded-lg hover:bg-gray-100">
-                            <i class="fas fa-chevron-right text-gray-600"></i>
-                        </button>
-                    </div>
-                    
-                    <div class="grid grid-cols-7 gap-1 mb-2">
-                        <div class="text-center text-xs font-medium text-gray-500 p-2">Sun</div>
-                        <div class="text-center text-xs font-medium text-gray-500 p-2">Mon</div>
-                        <div class="text-center text-xs font-medium text-gray-500 p-2">Tue</div>
-                        <div class="text-center text-xs font-medium text-gray-500 p-2">Wed</div>
-                        <div class="text-center text-xs font-medium text-gray-500 p-2">Thu</div>
-                        <div class="text-center text-xs font-medium text-gray-500 p-2">Fri</div>
-                        <div class="text-center text-xs font-medium text-gray-500 p-2">Sat</div>
-                    </div>
-                    
-                    <div id="calendar-days" class="grid grid-cols-7 gap-1">
-                        <!-- Days will be populated by JavaScript -->
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- JavaScript Libraries -->
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
-
         <script src="../JS/hotel-booking-page.js"></script>
         <script src="/JS/app.js"></script>
-        
+
         <!-- Mobile Menu Script -->
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('DOMContentLoaded', function () {
                 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
                 const mobileMenu = document.getElementById('mobile-menu');
-                
+
                 if (mobileMenuBtn && mobileMenu) {
-                    mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenuBtn.addEventListener('click', function () {
                         mobileMenu.classList.toggle('hidden');
                     });
                 }
-                
+
                 // Close mobile menu when clicking outside
-                document.addEventListener('click', function(event) {
+                document.addEventListener('click', function (event) {
                     if (mobileMenu && !mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
                         mobileMenu.classList.add('hidden');
                     }
