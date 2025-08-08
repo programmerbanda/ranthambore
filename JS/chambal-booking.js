@@ -253,7 +253,6 @@ function updateCalculator() {
   ).textContent = `₹${total.toLocaleString()}`;
 }
 
-// Back to top functionality
 function handleBackToTop() {
   const button = document.getElementById("back-to-top-btn");
   window.addEventListener("scroll", () => {
@@ -790,23 +789,6 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("calc-foreign")
     ?.addEventListener("input", updateCalculator);
 
-  // Enhanced floating buttons
-  const floatingWhatsAppBtn = document.getElementById('floating-whatsapp-btn');
-  if (floatingWhatsAppBtn) {
-    floatingWhatsAppBtn.addEventListener('click', function() {
-      const message = `🌊 Hi! I'm interested in Chambal Safari booking. Can you help me?`;
-      const whatsappURL = `https://wa.me/918076438491?text=${encodeURIComponent(message)}`;
-      window.open(whatsappURL, '_blank');
-    });
-  }
-  
-  // Floating Call button functionality
-  const floatingCallBtn = document.getElementById('floating-call-btn');
-  if (floatingCallBtn) {
-    floatingCallBtn.addEventListener('click', function() {
-      window.location.href = 'tel:+918076438491';
-    });
-  }
 
   // New advanced modal listeners
   document
