@@ -362,7 +362,7 @@
                                 </div>
                                 <div class="flex flex-col items-end">
                                     <button
-                                        class="cursor-pointer px-5 py-2 bg-gradient-to-r from-amber-500 to-amber-700 hover:from-amber-600 hover:to-amber-800 text-white rounded-lg font-semibold transition-all transform hover:scale-105 shadow-md hover:shadow-lg focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
+                                        class="bookNowBtn cursor-pointer px-5 py-2 bg-gradient-to-r from-amber-500 to-amber-700 hover:from-amber-600 hover:to-amber-800 text-white rounded-lg font-semibold transition-all transform hover:scale-105 shadow-md hover:shadow-lg focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
                                         aria-label="Book Royal Tiger Experience now">
                                         Book Now
                                     </button>
@@ -525,7 +525,7 @@
                                 </div>
                                 <div class="flex flex-col items-end">
                                     <button
-                                        class="cursor-pointer px-5 py-2 bg-gradient-to-r from-amber-500 to-amber-700 hover:from-amber-600 hover:to-amber-800 text-white rounded-lg font-semibold transition-all transform hover:scale-105 shadow-md hover:shadow-lg focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
+                                        class="bookNowBtn cursor-pointer px-5 py-2 bg-gradient-to-r from-amber-500 to-amber-700 hover:from-amber-600 hover:to-amber-800 text-white rounded-lg font-semibold transition-all transform hover:scale-105 shadow-md hover:shadow-lg focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
                                         aria-label="Book Wildlife Explorer now">
                                         Book Now
                                     </button>
@@ -685,7 +685,7 @@
                                 </div>
                                 <div class="flex flex-col items-end">
                                     <button
-                                        class="cursor-pointer px-5 py-2 bg-gradient-to-r from-amber-500 to-amber-700 hover:from-amber-600 hover:to-amber-800 text-white rounded-lg font-semibold transition-all transform hover:scale-105 shadow-md hover:shadow-lg focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
+                                        class="bookNowBtn cursor-pointer px-5 py-2 bg-gradient-to-r from-amber-500 to-amber-700 hover:from-amber-600 hover:to-amber-800 text-white rounded-lg font-semibold transition-all transform hover:scale-105 shadow-md hover:shadow-lg focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
                                         aria-label="Book Tiger Trail Express now">
                                         Book Now
                                     </button>
@@ -858,7 +858,7 @@
                                         </div>
                                     </div>
                                     <button
-                                        class="cursor-pointer px-4 py-2 bg-gradient-to-r from-emerald-600 to-emerald-800 text-white text-sm font-semibold rounded-lg hover:from-emerald-700 hover:to-emerald-900 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 shadow-sm hover:shadow-md"
+                                        class="bookNowBtn cursor-pointer px-4 py-2 bg-gradient-to-r from-emerald-600 to-emerald-800 text-white text-sm font-semibold rounded-lg hover:from-emerald-700 hover:to-emerald-900 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 shadow-sm hover:shadow-md"
                                         aria-label="Book Premium Jungle Safari package">
                                         Book Now
                                     </button>
@@ -1026,7 +1026,7 @@
                                         </div>
                                     </div>
                                     <button
-                                        class="cursor-pointer px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-800 text-white text-sm font-semibold rounded-lg hover:from-blue-700 hover:to-blue-900 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 shadow-sm hover:shadow-md"
+                                        class="bookNowBtn cursor-pointer px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-800 text-white text-sm font-semibold rounded-lg hover:from-blue-700 hover:to-blue-900 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 shadow-sm hover:shadow-md"
                                         aria-label="Book Maldives luxury package">
                                         Book Now
                                     </button>
@@ -1047,7 +1047,7 @@
                 <!-- View All Button with Total Packages -->
                 <div class="text-center mt-12">
                     <button
-                        class="cursor-pointer px-10 py-3 bg-gradient-to-r from-amber-500 to-amber-700 hover:from-amber-600 hover:to-amber-800 text-white rounded-lg font-semibold text-lg transition-all transform hover:scale-105 shadow-lg hover:shadow-xl focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 flex items-center mx-auto"
+                        class="bookNowBtn cursor-pointer px-10 py-3 bg-gradient-to-r from-amber-500 to-amber-700 hover:from-amber-600 hover:to-amber-800 text-white rounded-lg font-semibold text-lg transition-all transform hover:scale-105 shadow-lg hover:shadow-xl focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 flex items-center mx-auto"
                         aria-label="View all safari packages">
                         Explore All 12 Packages
                         <svg class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" role="img"
@@ -1528,6 +1528,14 @@
         </div>
     </footer>
     <script src="/JS/app.js"></script>
+    <script>
+        const booknowBtn = document.querySelectorAll('.bookNowBtn');
+        booknowBtn.forEach(btn => {
+            btn.addEventListener('click', ()=> {
+                window.location.href = 'package-booking-page.html'
+            })
+        })
+    </script>
 </body>
 
 </html>

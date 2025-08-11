@@ -150,13 +150,13 @@
                     </p>
                     <div class="flex gap-2 justify-center">
                         <button
-                            class="cursor-pointer font-sans px-2 py-1 sm:px-3 sm:text-lg bg-[#ff7518] text-[#fff] rounded-sm">Luxury</button>
+                            class="hotel-type cursor-pointer font-sans px-2 py-1 sm:px-3 sm:text-lg bg-[#ff7518] text-[#fff] rounded-sm">Luxury</button>
                         <button
-                            class="cursor-pointer font-sans px-2 py-1 sm:px-3 sm:text-lg bg-[#ff7518] text-[#fff] rounded-sm">Premium</button>
+                            class="hotel-type cursor-pointer font-sans px-2 py-1 sm:px-3 sm:text-lg bg-[#ff7518] text-[#fff] rounded-sm">Premium</button>
                         <button
-                            class="cursor-pointer font-sans px-2 py-1 sm:px-3 sm:text-lg bg-[#ff7518] text-[#fff] rounded-sm">Deluxe</button>
+                            class="hotel-type cursor-pointer font-sans px-2 py-1 sm:px-3 sm:text-lg bg-[#ff7518] text-[#fff] rounded-sm">Deluxe</button>
                         <button
-                            class="cursor-pointer font-sans px-2 py-1 sm:px-3 sm:text-lg bg-[#ff7518] text-[#fff] rounded-sm">Standard</button>
+                            class="hotel-type cursor-pointer font-sans px-2 py-1 sm:px-3 sm:text-lg bg-[#ff7518] text-[#fff] rounded-sm">Standard</button>
                     </div>
                 </div>
                 <div class="flex flex-col items-center p-4 bg-gray-100">
@@ -515,6 +515,14 @@
         notAllowedBtn.addEventListener('click', ()=> {
             alert('Coming soon! This feature will be updated in the future.');
             window.location.href = 'index.html';
+        })
+
+        const hoteltype = document.querySelectorAll('.hotel-type');
+        hoteltype.forEach(btn => {
+            btn.addEventListener('click', (e)=> {
+                const text = e.target.textContent;
+                alert(`${text} ! This feature will be updated in the future.`);
+            })
         })
     </script>
 </body>
