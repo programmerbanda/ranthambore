@@ -253,20 +253,20 @@ function updateCalculator() {
   ).textContent = `₹${total.toLocaleString()}`;
 }
 
-function handleBackToTop() {
-  const button = document.getElementById("back-to-top-btn");
-  window.addEventListener("scroll", () => {
-    if (window.pageYOffset > 300) {
-      button.style.opacity = "1";
-    } else {
-      button.style.opacity = "0";
-    }
-  });
+// function handleBackToTop() {
+//   const button = document.getElementById("back-to-top-btn");
+//   window.addEventListener("scroll", () => {
+//     if (window.pageYOffset > 300) {
+//       button.style.opacity = "1";
+//     } else {
+//       button.style.opacity = "0";
+//     }
+//   });
 
-  button.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-}
+//   button.addEventListener("click", () => {
+//     window.scrollTo({ top: 0, behavior: "smooth" });
+//   });
+// }
 
 // Show live booking counter
 function showLiveBookings() {
@@ -708,7 +708,7 @@ document.addEventListener("DOMContentLoaded", function () {
   setMinDate();
   showLiveBookings();
   animateCounters();
-  handleBackToTop();
+  // handleBackToTop();
   showLiveNotifications();
   updateDynamicPricing();
 
@@ -717,12 +717,14 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("compare-packages-btn")
     .addEventListener("click", function () {
       document.getElementById("comparison-modal").classList.remove("hidden");
+      document.body.style.overflow = "hidden";
     });
 
   document
     .getElementById("close-comparison-modal")
     .addEventListener("click", function () {
       document.getElementById("comparison-modal").classList.add("hidden");
+       document.body.style.overflow = "";
     });
 
     // Close Modal from escape button
@@ -734,6 +736,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("calculator-modal").classList.add("hidden");
             document.getElementById("availability-modal").classList.add("hidden");
             document.getElementById("safari-map-modal").classList.add("hidden");
+             document.body.style.overflow = "";
         }
     })
 
@@ -741,12 +744,14 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("view-gallery-btn")
     .addEventListener("click", function () {
       document.getElementById("gallery-modal").classList.remove("hidden");
+      document.body.style.overflow = "hidden";
     });
 
   document
     .getElementById("close-gallery-modal")
     .addEventListener("click", function () {
       document.getElementById("gallery-modal").classList.add("hidden");
+      document.body.style.overflow = "";
     });
 
   // New modal listeners
@@ -754,6 +759,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("pricing-calculator-btn")
     .addEventListener("click", function () {
       document.getElementById("calculator-modal").classList.remove("hidden");
+      document.body.style.overflow = "hidden";
       updateCalculator();
     });
 
@@ -761,12 +767,14 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("close-calculator-modal")
     .addEventListener("click", function () {
       document.getElementById("calculator-modal").classList.add("hidden");
+      document.body.style.overflow = "";
     });
 
   document
     .getElementById("availability-checker-btn")
     .addEventListener("click", function () {
       document.getElementById("availability-modal").classList.remove("hidden");
+      document.body.style.overflow = "hidden";
       // Set today's date as default
       const today = new Date().toISOString().split("T")[0];
       document.getElementById("availability-date").value = today;
@@ -776,6 +784,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("close-availability-modal")
     .addEventListener("click", function () {
       document.getElementById("availability-modal").classList.add("hidden");
+      document.body.style.overflow = "";
     });
 
   // Calculator inputs
@@ -795,12 +804,14 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("safari-map-btn")
     .addEventListener("click", function () {
       document.getElementById("safari-map-modal").classList.remove("hidden");
+      document.body.style.overflow = "hidden";
     });
 
   document
     .getElementById("close-safari-map-modal")
     .addEventListener("click", function () {
       document.getElementById("safari-map-modal").classList.add("hidden");
+      document.body.style.overflow = "";
     });
 
   // Smart recommendation

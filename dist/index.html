@@ -110,15 +110,19 @@
                             <ul class="flex space-x-8 text-lg font-medium items-center">
                                 <li><a href="/dist/index.html" id="home-btn"
                                         class="text-[#604019] hover:text-amber-600 transition-colors">Home</a></li>
-                                <li><a href="/dist/safari.html" class="text-[#604019] hover:text-amber-600 transition-colors">Safari</a>
+                                <li><a href="/dist/safari.html"
+                                        class="safariBtn text-[#604019] hover:text-amber-600 transition-colors">Safari</a>
                                 </li>
                                 <li><a href="chambal.html"
-                                        class="chambalBtn text-[#604019] hover:text-amber-600 transition-colors">Chambal Safari</a>
+                                        class="chambalBtn text-[#604019] hover:text-amber-600 transition-colors">Chambal
+                                        Safari</a>
                                 </li>
                                 <li><a href="hotel.html"
-                                        class="hotelBtn text-[#604019] hover:text-amber-600 transition-colors">Hotels</a></li>
+                                        class="hotelBtn text-[#604019] hover:text-amber-600 transition-colors">Hotels</a>
+                                </li>
                                 <li><a href="/dist/package-booking.html"
-                                        class="tourBtn text-[#604019] hover:text-amber-600 transition-colors">Packages</a></li>
+                                        class="tourBtn text-[#604019] hover:text-amber-600 transition-colors">Packages</a>
+                                </li>
                                 <li><a href="/dist/contact.html" id="contact-btn"
                                         class="text-[#604019] hover:text-amber-600 transition-colors">Contact</a></li>
                             </ul>
@@ -138,7 +142,8 @@
                             <ul class="flex space-x-6 text-[16px] font-medium items-center">
                                 <li><a href="/dist/index.html" id="home-btn"
                                         class="text-[#604019] hover:text-amber-600 transition-colors">Home</a></li>
-                                <li><a href="safari.html" class="text-[#604019] hover:text-amber-600 transition-colors">Safari</a>
+                                <li><a href="safari.html"
+                                        class="text-[#604019] hover:text-amber-600 transition-colors">Safari</a>
                                 </li>
                                 <li><a href="chambal.html"
                                         class="text-[#604019] hover:text-amber-600 transition-colors">Chambal Safari</a>
@@ -229,11 +234,11 @@
                             area.
                         </p>
                         <div class="flex justify-center">
-                            <button
+                            <a href="#"
                                 class="safariBtn bg-amber-700 hover:bg-amber-600 text-white font-medium py-1.5 px-6 rounded-lg transition-transform transform hover:scale-105 text-sm sm:text-base cursor-pointer"
                                 aria-label="Book Gypsy Safari">
                                 Book Now
-                            </button>
+                            </a>
                         </div>
                     </div>
 
@@ -983,7 +988,7 @@
                 </div>
                 <!-- View All Button -->
                 <div class="text-center mt-10">
-                    <a href="#"
+                    <a href="./blogs.html"
                         class="inline-block bg-[#604019] hover:bg-amber-600 text-white font-medium py-2 px-6 rounded-lg transition-colors shadow-md">
                         View All Blogs
                     </a>
@@ -1158,6 +1163,39 @@
     </footer>
     <script src="../JS/app.js"></script>
     <script src="/JS/mobile-menu.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const chambalBtns = document.querySelectorAll(".chambalBtn");
+            const hotelBtns = document.querySelectorAll(".hotelBtn");
+            const tourBtns = document.querySelectorAll(".tourBtn");
+            const safariBtns = document.querySelectorAll(".safariBtn");
+
+            chambalBtns.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    window.location.href = "chambal.html";
+                });
+            });
+
+            hotelBtns.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    window.location.href = "hotel.html";
+                });
+            });
+
+            tourBtns.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    window.location.href = "package-booking.html";
+                });
+            });
+
+            safariBtns.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    window.location.href = "./safari.html";
+                    console.log("safari Button clicked");  // Keep this for debugging if needed
+                });
+            });
+        });        
+    </script>
 </body>
 
 </html>
