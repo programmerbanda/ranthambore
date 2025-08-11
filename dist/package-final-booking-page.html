@@ -315,7 +315,7 @@
                     <button
                         class="text-[#fff] bg-[#0d6efd] px-2 py-1 sm:px-4 sm:py-2 border-2 border-[#fff] rounded-lg font-bold font-sans mx-1.5 cursor-pointer">2</button>
                     <button
-                        class="text-[#fff] px-2 py-1 sm:px-4 sm:py-2 border-2 border-[#fff] rounded-lg font-bold font-sans cursor-pointer">3</button>
+                        class="text-[#fff] not-allowed-btn px-2 py-1 sm:px-4 sm:py-2 border-2 border-[#fff] rounded-lg font-bold font-sans cursor-pointer">3</button>
                 </div>
                 <div>
                     <button
@@ -504,6 +504,11 @@
         const form = document.getElementById("booking-form");
         const externalBtn = document.getElementById("external-submit");
         externalBtn.addEventListener('click', ()=> {
+            alert('Coming soon! This feature will be updated in the future.');
+            window.location.href = 'index.html';
+        })
+        const notAllowedBtn = document.querySelector('.not-allowed-btn');
+        notAllowedBtn.addEventListener('click', ()=> {
             alert('Coming soon! This feature will be updated in the future.');
             window.location.href = 'index.html';
         })
