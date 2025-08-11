@@ -1461,6 +1461,15 @@
   .border-l-transparent {
     border-left-color: transparent;
   }
+  .bg-\[\#0d6\] {
+    background-color: #0d6;
+  }
+  .bg-\[\#0d6efd\] {
+    background-color: #0d6efd;
+  }
+  .bg-\[\#0d\] {
+    background-color: #0d;
+  }
   .bg-\[\#1AB01A\] {
     background-color: #1AB01A;
   }
@@ -3495,6 +3504,26 @@
       scale: var(--tw-scale-x) var(--tw-scale-y);
     }
   }
+  .focus\:scale-\[0\.95\] {
+    &:focus {
+      scale: 0.95;
+    }
+  }
+  .focus\:scale-\[1\.1\] {
+    &:focus {
+      scale: 1.1;
+    }
+  }
+  .focus\:scale-\[1\.02\] {
+    &:focus {
+      scale: 1.02;
+    }
+  }
+  .focus\:scale-\[1\] {
+    &:focus {
+      scale: 1;
+    }
+  }
   .focus\:border-blue-500 {
     &:focus {
       border-color: var(--color-blue-500);
@@ -3600,6 +3629,31 @@
       --tw-scale-y: 97%;
       --tw-scale-z: 97%;
       scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+  }
+  .active\:scale-\[0\.95\] {
+    &:active {
+      scale: 0.95;
+    }
+  }
+  .active\:scale-\[0\.98\] {
+    &:active {
+      scale: 0.98;
+    }
+  }
+  .active\:scale-\[0\.99\] {
+    &:active {
+      scale: 0.99;
+    }
+  }
+  .active\:scale-\[1\.04\] {
+    &:active {
+      scale: 1.04;
+    }
+  }
+  .active\:scale-\[1\.\] {
+    &:active {
+      scale: 1.;
     }
   }
   .aria-pressed\:border-amber-600 {

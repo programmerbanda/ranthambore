@@ -198,9 +198,9 @@
             <div class="px-4 sm:px-12 flex justify-between">
                 <div>
                     <button
-                        class="text-[#fff] px-2 py-1 sm:px-4 sm:py-2 border-2 border-[#fff] rounded-lg font-bold font-sans cursor-pointer">1</button>
+                        class="text-[#fff] bg-[#0d6efd] px-2 py-1 sm:px-4 sm:py-2 border-2 border-[#fff] rounded-lg font-bold font-sans cursor-pointer">1</button>
                     <button
-                        class="text-[#fff] px-2 py-1 sm:px-4 sm:py-2 border-2 border-[#fff] rounded-lg font-bold font-sans mx-1.5 cursor-pointer">2</button>
+                        class="text-[#fff] firstNext px-2 py-1 sm:px-4 sm:py-2 border-2 border-[#fff] rounded-lg font-bold font-sans mx-1.5 cursor-pointer">2</button>
                     <button
                         class="text-[#fff] px-2 py-1 sm:px-4 sm:py-2 border-2 border-[#fff] rounded-lg font-bold font-sans cursor-pointer">3</button>
                 </div>
@@ -208,7 +208,7 @@
                     <button
                         class="bg-[#FFA500] text-[#fff] px-2 py-1 sm:px-4 sm:py-2 border-2 border-[#fff] rounded-lg font-bold font-sans mx-1.5 cursor-pointer">Previous</button>
                     <button
-                        class="bg-[#1AB01A] text-[#fff] px-2 py-1 sm:px-4 sm:py-2 border-2 border-[#fff] rounded-lg font-bold font-sans cursor-pointer">Next</button>
+                        class="bg-[#1AB01A] firstNext text-[#fff] px-2 py-1 sm:px-4 sm:py-2 border-2 border-[#fff] rounded-lg font-bold font-sans cursor-pointer active:scale-[0.98] transform transition duration-200">Next</button>
                 </div>
             </div>
         </section>
@@ -379,6 +379,14 @@
         </div>
     </footer>
     <script src="/JS/app.js"></script>
+    <script>
+        const nextButton = document.querySelectorAll('.firstNext');
+        nextButton.forEach(btn => {
+            btn.addEventListener('click', ()=> {
+                window.location.href = 'package-final-booking-page.html'
+            })
+        })
+    </script>
 </body>
 
 </html>
