@@ -328,6 +328,9 @@
   .pointer-events-none {
     pointer-events: none;
   }
+  .invisible {
+    visibility: hidden;
+  }
   .visible {
     visibility: visible;
   }
@@ -1106,6 +1109,12 @@
   .appearance-none {
     appearance: none;
   }
+  .auto-cols-\[minmax\(300px\,1fr\)\] {
+    grid-auto-columns: minmax(300px,1fr);
+  }
+  .grid-flow-col {
+    grid-auto-flow: column;
+  }
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
@@ -1634,6 +1643,9 @@
   }
   .bg-\[\#dcb499\] {
     background-color: #dcb499;
+  }
+  .bg-\[\#f0f0f0\] {
+    background-color: #f0f0f0;
   }
   .bg-\[\#f2\] {
     background-color: #f2;
@@ -2312,6 +2324,9 @@
   .fill-blue-600 {
     fill: var(--color-blue-600);
   }
+  .fill-current {
+    fill: currentcolor;
+  }
   .object-contain {
     object-fit: contain;
   }
@@ -2489,6 +2504,9 @@
   .font-sans {
     font-family: var(--font-sans);
   }
+  .font-serif {
+    font-family: var(--font-serif);
+  }
   .text-2xl {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
@@ -2595,6 +2613,12 @@
   }
   .text-\[\#000000\] {
     color: #000000;
+  }
+  .text-\[\#3a2a1a\] {
+    color: #3a2a1a;
+  }
+  .text-\[\#6b5643\] {
+    color: #6b5643;
   }
   .text-\[\#471503\] {
     color: #471503;
@@ -2849,6 +2873,9 @@
   }
   .opacity-90 {
     opacity: 90%;
+  }
+  .opacity-100 {
+    opacity: 100%;
   }
   .shadow {
     --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
@@ -3465,6 +3492,13 @@
     &:hover {
       @media (hover: hover) {
         background-color: #604019;
+      }
+    }
+  }
+  .hover\:bg-\[\#e65c00\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #e65c00;
       }
     }
   }
@@ -4207,6 +4241,11 @@
       padding-inline: calc(var(--spacing) * 4);
     }
   }
+  .sm\:px-5 {
+    @media (width >= 40rem) {
+      padding-inline: calc(var(--spacing) * 5);
+    }
+  }
   .sm\:px-6 {
     @media (width >= 40rem) {
       padding-inline: calc(var(--spacing) * 6);
@@ -4470,6 +4509,11 @@
       padding-inline: calc(var(--spacing) * 5);
     }
   }
+  .md\:px-6 {
+    @media (width >= 48rem) {
+      padding-inline: calc(var(--spacing) * 6);
+    }
+  }
   .md\:px-8 {
     @media (width >= 48rem) {
       padding-inline: calc(var(--spacing) * 8);
@@ -4641,6 +4685,16 @@
   .lg\:text-left {
     @media (width >= 64rem) {
       text-align: left;
+    }
+  }
+  .\32 xl\:w-1\/4 {
+    @media (width >= 96rem) {
+      width: calc(1/4 * 100%);
+    }
+  }
+  .\32 xl\:grid-cols-4 {
+    @media (width >= 96rem) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
   }
   .dark\:text-gray-300 {
