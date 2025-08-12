@@ -146,7 +146,7 @@
             <h2 class="text-xl md:text-3xl font-semibold text-amber-600 text-center mb-2">
                 Booking Form
             </h2>
-            <div class="container mx-auto px-4 max-w-6xl bg-[#ffd580]">
+            <div class="container mx-auto px-4 max-w-6xl bg-[#ffd580] rounded-md mb-4">
                 <div class="w-full flex flex-col items-center my-2">
                     <p class="mb-4 text-[#604019] font-sans mt-2">
                         Select Your Nationality
@@ -154,9 +154,11 @@
                     <label class="relative cursor-pointer">
                         <input type="checkbox" class="sr-only peer" />
                         <div
-                            class="w-[290px] h-10 flex items-center bg-gradient-to-r from-[#ff7518] to-[#604019] rounded-full text-[16px] peer-checked:text-[#000] text-[#000] font-extrabold after:flex after:items-center after:justify-center peer after:content-['Indian'] peer-checked:after:content-['Foreigner'] peer-checked:after:translate-x-full after:absolute after:left-[5px] peer-checked:after:border-white after:bg-white after:border after:border-gray-300 after:rounded-full after:h-8 after:w-[140px] after:transition-all peer-checked:bg-[#007bff]">
+                            class="w-[290px] h-10 flex items-center bg-gradient-to-r from-[#ff7518] to-[#604019] rounded-full text-[16px] font-extrabold relative peer-checked:bg-[#007bff]
+    after:flex after:items-center after:justify-center after:content-['Indian'] peer-checked:after:content-['Foreigner'] after:absolute after:left-[5px] after:bg-white after:border after:border-gray-300 after:rounded-full after:h-8 after:w-[140px] after:transition-all after:duration-300 peer-checked:after:translate-x-[145px]">
                         </div>
                     </label>
+
                 </div>
                 <hr class="border border-gray-600 mb-2" />
                 <div class="mx-auto p-6 rounded-xl">
@@ -503,12 +505,12 @@
         })
         const form = document.getElementById("booking-form");
         const externalBtn = document.getElementById("external-submit");
-        externalBtn.addEventListener('click', ()=> {
+        externalBtn.addEventListener('click', () => {
             alert('Coming soon! This feature will be updated in the future.');
             window.location.href = 'index.html';
         })
         const notAllowedBtn = document.querySelector('.not-allowed-btn');
-        notAllowedBtn.addEventListener('click', ()=> {
+        notAllowedBtn.addEventListener('click', () => {
             alert('Coming soon! This feature will be updated in the future.');
             window.location.href = 'index.html';
         })
