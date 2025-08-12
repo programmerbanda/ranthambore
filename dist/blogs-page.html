@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranthambore National Park Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/output.css">
+    <link rel="shortcut icon" href="/Images/favicon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="w-full sticky top-0 z-50 shadow-md">
+        <!-- Top Contact Bar -->
+        <div class="w-full bg-[#604019] text-white h-12 sm:h-8 flex items-center">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col justify-between items-center px-8 sm:flex-row">
+                    <!-- Changed to justify-around -->
+                    <div class="flex items-center cursor-pointer">
+                        <div class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            <span>8076438491 | 7982193537</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center cursor-pointer">
+                        <div class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <span>ranthambore360@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <div class="w-full bg-white flex justify-between">
+            <div class="container mx-auto px-4 py-1 lg:px-16 flex md:flex-col lg:flex-row justify-between items-center">
+                <div>
+                    <img class="logo h-16 cursor-pointer" src="/Images/logo.svg" alt="Ranthambore 360 Logo">
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <ul class="flex space-x-8 text-lg font-medium items-center">
+                        <li><a href="/dist/index.html" id="home-btn"
+                                class="text-[#604019] hover:text-amber-600 transition-colors">Home</a></li>
+                        <li><a href="safari.html"
+                                class="text-[#604019] hover:text-amber-600 transition-colors">Safari</a></li>
+                        <li><a href="chambal.html"
+                                class="chambalBtn text-[#604019] hover:text-amber-600 transition-colors">Chambal
+                                Safari</a>
+                        </li>
+                        <li><a href="hotel.html"
+                                class="hotelBtn text-[#604019] hover:text-amber-600 transition-colors">Hotels</a></li>
+                        <li><a href="package-booking.html"
+                                class="tourBtn text-[#604019] hover:text-amber-600 transition-colors">Packages</a></li>
+                        <li><a href="contact.html" id="contact-btn"
+                                class="text-[#604019] hover:text-amber-600 transition-colors">Contact</a></li>
+                    </ul>
+                    <button
+                        class="safariBtn ml-6 bg-amber-700 hover:bg-amber-600 text-white font-medium py-1 px-6 rounded-lg transition-colors shadow-md cursor-pointer">
+                        Book Now
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button class="text-amber-900 focus:outline-none cursor-pointer">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <!-- Blog Section -->
+            <!-- Hero Section -->
+    <section class="relative h-96 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1597698994405-b352f48b0db2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+            <div class="text-center px-4">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Best Zones for Tiger Sightings in Ranthambore</h2>
+                <p class="text-xl text-yellow-200">Your Complete Guide to Spotting the Majestic Bengal Tiger</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12 max-w-6xl">
+        <!-- Author & Date -->
+        <div class="flex items-center mb-8">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Author" class="w-12 h-12 rounded-full mr-4">
+            <div>
+                <p class="font-semibold text-gray-800">Rahul Sharma</p>
+                <p class="text-gray-500">Updated: June 15, 2023 · 8 min read</p>
+            </div>
+        </div>
+
+        <!-- Introduction -->
+        <section class="mb-12">
+            <p class="text-lg text-gray-700 mb-4">Ranthambore National Park in Rajasthan is one of India's premier tiger reserves, famous for its relatively easy tiger sightings. The park is divided into 10 zones, each with unique terrain and tiger sighting probabilities. In this guide, we'll explore the best zones to maximize your chances of spotting the majestic Bengal tiger in its natural habitat.</p>
+            
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-6">
+                <p class="font-semibold text-yellow-800">Pro Tip:</p>
+                <p class="text-yellow-700">Morning safaris (6:00-9:30 AM) generally offer better tiger sighting opportunities as tigers are more active during cooler hours.</p>
+            </div>
+        </section>
+
+        <!-- Zones Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 border-b-2 border-green-200 pb-2">Top Zones for Tiger Sightings</h2>
+
+            <!-- Zone 1 -->
+            <div class="mb-12 bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1581866333710-0a35f25a0f24?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Zone 3" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="md:w-2/3 p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Zone 3 - The Most Popular</h3>
+                        <div class="flex items-center mb-3">
+                            <span class="bg-green-100 text-green-800 text-sm font-semibold px-3 py-1 rounded-full mr-3">Best Chance</span>
+                            <span class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </span>
+                        </div>
+                        <p class="text-gray-700 mb-4">Zone 3 is considered the prime tiger territory in Ranthambore, known for its high density of tigers including famous tigresses like Arrowhead and Noor. The terrain features lakes, dense forests, and open grasslands that make tiger sightings relatively easier.</p>
+                        <ul class="text-gray-600 mb-4 pl-5 list-disc">
+                            <li class="mb-1">Home to several resident tigers</li>
+                            <li class="mb-1">Contains Raj Bagh ruins and Padam Talao (largest lake)</li>
+                            <li class="mb-1">Good network of safari tracks</li>
+                        </ul>
+                        <p class="text-sm text-gray-500"><i class="fas fa-info-circle mr-1"></i> Best time: October to April | Morning safaris preferred</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Zone 2 -->
+            <div class="mb-12 bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="md:flex md:flex-row-reverse">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Zone 4" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="md:w-2/3 p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Zone 4 - The Scenic Route</h3>
+                        <div class="flex items-center mb-3">
+                            <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full mr-3">High Chance</span>
+                            <span class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </span>
+                        </div>
+                        <p class="text-gray-700 mb-4">Zone 4 offers a beautiful mix of landscapes including lakes, hills, and dense forest areas. This zone is known for sightings of male tigers and has several water bodies that attract wildlife during the summer months.</p>
+                        <ul class="text-gray-600 mb-4 pl-5 list-disc">
+                            <li class="mb-1">Malik Talao - a favorite watering hole</li>
+                            <li class="mb-1">Home to dominant male tigers</li>
+                            <li class="mb-1">Excellent birdwatching opportunities</li>
+                        </ul>
+                        <p class="text-sm text-gray-500"><i class="fas fa-info-circle mr-1"></i> Best time: March to June when animals congregate near water sources</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Zone 3 -->
+            <div class="mb-12 bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1561731216-c3a4a99437bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Zone 5" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="md:w-2/3 p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Zone 5 - The Wild Frontier</h3>
+                        <div class="flex items-center mb-3">
+                            <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full mr-3">Good Chance</span>
+                            <span class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                            </span>
+                        </div>
+                        <p class="text-gray-700 mb-4">Zone 5 is the largest zone in Ranthambore with diverse terrain including hills, valleys, and dense forests. While sightings might be less frequent than Zones 3 and 4, the experience feels more wild and untouched.</p>
+                        <ul class="text-gray-600 mb-4 pl-5 list-disc">
+                            <li class="mb-1">Less crowded than core zones</li>
+                            <li class="mb-1">Higher chance of seeing cubs</li>
+                            <li class="mb-1">Excellent for photography with varied landscapes</li>
+                        </ul>
+                        <p class="text-sm text-gray-500"><i class="fas fa-info-circle mr-1"></i> Best time: Early morning when tigers are most active in this expansive zone</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Other Zones Section -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Other Notable Zones</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Zone 6 -->
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Zone 6</h3>
+                    <div class="flex items-center mb-3">
+                        <span class="bg-orange-100 text-orange-800 text-sm font-semibold px-3 py-1 rounded-full mr-3">Moderate Chance</span>
+                        <span class="text-yellow-500">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </span>
+                    </div>
+                    <p class="text-gray-700 mb-3">Known for its beautiful landscapes and occasional tiger sightings. The area is more rugged with fewer jeep tracks.</p>
+                    <p class="text-sm text-gray-500"><i class="fas fa-map-marker-alt mr-1"></i> Bordering Zone 5, near Lahpur area</p>
+                </div>
+
+                <!-- Zone 2 -->
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Zone 2</h3>
+                    <div class="flex items-center mb-3">
+                        <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full mr-3">Good Chance</span>
+                        <span class="text-yellow-500">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                        </span>
+                    </div>
+                    <p class="text-gray-700 mb-3">Contains the famous Jogi Mahal and the second-largest lake in Ranthambore. Good for seeing tigers near water sources.</p>
+                    <p class="text-sm text-gray-500"><i class="fas fa-map-marker-alt mr-1"></i> Near Ranthambore Fort area</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips Section -->
+        <section class="mb-12 bg-green-50 p-6 rounded-lg">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Tips for Better Tiger Sightings</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-lg font-semibold text-green-800 mb-2 flex items-center">
+                        <i class="fas fa-binoculars mr-2"></i> Safari Tips
+                    </h3>
+                    <ul class="text-gray-700 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Book safaris in multiple zones to increase chances</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Morning safaris (6-9:30 AM) have better sightings than afternoon</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Listen to alarm calls of deer and monkeys - they indicate tiger presence</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-green-800 mb-2 flex items-center">
+                        <i class="fas fa-calendar-alt mr-2"></i> Seasonal Advice
+                    </h3>
+                    <ul class="text-gray-700 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Summer (April-June): Best for sightings near water holes</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Winter (Nov-Feb): Pleasant weather but vegetation reduces visibility</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Monsoon (July-Sep): Park is closed (check exact dates)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Final Thoughts</h2>
+            <p class="text-gray-700 mb-4">While Zones 3, 4, and 5 offer the highest probability of tiger sightings, remember that wildlife viewing always involves an element of luck. Each zone in Ranthambore has its unique charm and ecosystem. Even if you don't spot a tiger, the park's beautiful landscapes, rich birdlife, and other wildlife like leopards, sloth bears, and crocodiles make every safari worthwhile.</p>
+            <p class="text-gray-700">We recommend booking safaris in multiple zones across different times of day to maximize your chances and experience the diversity of Ranthambore National Park.</p>
+        </section>
+
+        <!-- CTA -->
+        <div class="bg-yellow-100 border-l-4 border-yellow-400 p-6 rounded-lg">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold text-gray-800">Ready for Your Ranthambore Adventure?</h3>
+                    <p class="text-gray-700">Book your safari with our recommended tour operators</p>
+                </div>
+                <button class="bg-green-700 hover:bg-green-800 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                    Book Safari Now
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-[#604019] text-white pt-8 pb-6">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="flex flex-col lg:flex-row justify-between gap-8">
+                <!-- About Section -->
+                <div class="w-full lg:w-1/3 flex flex-col items-center lg:items-start">
+                    <img class="h-16 cursor-pointer mb-4" src="/Images/logo.svg" alt="Ranthambore 360 Logo">
+                    <p class="mb-4 text-sm text-gray-200 font-sans font-medium text-center lg:text-left">
+                        This is not an official website of "Ranthambhore National Park". This is a Registered under the
+                        Private Travel Agency name Daily Tour and Travel. We organize Hotel, Safari and Tour Package
+                        bookings in Ranthambhore National Park.
+                    </p>
+                    <div class="mb-2">
+                        <p class="flex items-center mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-amber-400" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            Phone: 8076438491, 7982193537
+                        </p>
+                        <p class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-amber-400" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            Email: ranthambore360@gmail.com
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Links Sections -->
+                <div class="w-full flex flex-col md:flex-row gap-8">
+                    <!-- Useful Links -->
+                    <div class="w-full md:w-1/3">
+                        <h4 class="text-lg font-semibold mb-4 text-amber-400">Useful Links</h4>
+                        <ul class="space-y-2">
+                            <li>
+                                <a href="/dist/index.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    Home
+                                </a>
+                            </li>
+                            <li>
+                                <a href="safari.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    Safari Booking
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chambal.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    Chambal Safari Booking
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dist/package-booking.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    Package Booking
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dist/contact.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    Contact Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dist/blogs.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    Blogs
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="w-full md:w-1/3">
+                        <h4 class="text-lg font-semibold mb-4 text-amber-400">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li>
+                                <a href="/dist/privacy-policy.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    Privacy Policy
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dist/Cancellatiion-Policy.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    Cancellation Policy
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dist/term-condition.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    Terms & Condition
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dist/how-to-reach.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    How To Reach
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dist/about.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    About Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dist/support.html"
+                                    class="inline-flex items-center text-gray-200 hover:text-amber-400 transition-colors">
+                                    <i class="fa-solid fa-angles-right text-amber-500 text-xs mr-2"></i>
+                                    Support
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Gallery Section -->
+                    <div class="w-full md:w-1/3">
+                        <h4 class="text-lg font-semibold mb-4 text-amber-400">Our Gallery</h4>
+                        <div class="grid grid-cols-3 gap-2">
+                            <img src="/Images/Sanbar Deer.jpg" alt="Gallery Image 1"
+                                class="rounded-lg h-20 w-full object-cover border-2 border-amber-400 hover:border-amber-500 transition-all cursor-pointer">
+                            <img src="/Images/Black Buck Sighting.jpg" alt="Gallery Image 2"
+                                class="rounded-lg h-20 w-full object-cover border-2 border-amber-400 hover:border-amber-500 transition-all cursor-pointer">
+                            <img src="/Images/Tiger and cub.jpg" alt="Gallery Image 3"
+                                class="rounded-lg h-20 w-full object-cover border-2 border-amber-400 hover:border-amber-500 transition-all cursor-pointer">
+                            <img src="/Images/Crocodile in River.jpg" alt="Gallery Image 4"
+                                class="rounded-lg h-20 w-full object-cover border-2 border-amber-400 hover:border-amber-500 transition-all cursor-pointer">
+                            <img src="/Images/Chambal Boating.jpg" alt="Gallery Image 5"
+                                class="rounded-lg h-20 w-full object-cover border-2 border-amber-400 hover:border-amber-500 transition-all cursor-pointer">
+                            <img src="/Images/Birds Paradise.jpg" alt="Gallery Image 6"
+                                class="rounded-lg h-20 w-full object-cover border-2 border-amber-400 hover:border-amber-500 transition-all cursor-pointer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Address and Copyright -->
+            <div class="mt-8 pt-6 border-t border-[#fff]">
+                <p class="text-center mb-2 text-[#fff]">
+                    <span class="font-bold bg-amber-400 px-2 py-1 text-gray-900 rounded">Daily Tour and Travel Delhi
+                        110092 Address</span> : A-2 Second Floor Ganesh Nagar, Pandav Nagar, Delhi 110092
+                </p>
+                <p class="text-center text-[#fff] text-sm">
+                    © Copyright Ranthambore. All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script src="/JS/app.js"></script>
+</body>
+
+</html>
