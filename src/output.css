@@ -3798,6 +3798,13 @@
       }
     }
   }
+  .hover\:text-\[\#ff7518\] {
+    &:hover {
+      @media (hover: hover) {
+        color: #ff7518;
+      }
+    }
+  }
   .hover\:text-amber-200 {
     &:hover {
       @media (hover: hover) {
