@@ -63,6 +63,58 @@
         .animate-fade-in {
             animation: fade-in 0.5s ease-out forwards;
         }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes modalFadeOut {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            to {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+        }
+
+        @keyframes backdropFadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes backdropFadeOut {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+
+        .modal-fade-in {
+            animation: modalFadeIn 0.5s ease-out forwards;
+        }
+
+        .backdrop-fade-in {
+            animation: backdropFadeIn 0.5s ease-out forwards;
+        }
     </style>
 </head>
 
@@ -349,7 +401,8 @@
                                 <div>
                                     <p class="text-xs text-gray-600">Starting from</p>
                                     <div class="flex items-end gap-2">
-                                        <p class="text-2xl md:text-3xl font-extrabold text-amber-600">₹14,999</p>
+                                        <p class="price-tag text-2xl md:text-3xl font-extrabold text-amber-600">₹14,999
+                                        </p>
                                         <span class="text-xs text-gray-600 mb-1">/person</span>
                                         <span class="text-xs text-green-600 font-medium">10% OFF</span>
                                     </div>
@@ -511,7 +564,8 @@
                                 <div>
                                     <p class="text-xs text-gray-600">Starting from</p>
                                     <div class="flex items-end gap-2">
-                                        <p class="text-2xl md:text-3xl font-extrabold text-amber-600">₹9,999</p>
+                                        <p class="price-tag text-2xl md:text-3xl font-extrabold text-amber-600">₹9,999
+                                        </p>
                                         <span class="text-xs text-gray-600 mb-1">/person</span>
                                         <span class="text-xs text-gray-400 line-through mb-1">₹11,499</span>
                                         <span class="text-xs text-green-600 font-medium">15% OFF</span>
@@ -672,7 +726,8 @@
                                 <div>
                                     <p class="text-xs text-gray-600">Starting from</p>
                                     <div class="flex items-end gap-2">
-                                        <p class="text-2xl md:text-3xl font-extrabold text-amber-600">₹6,499</p>
+                                        <p class="price-tag text-2xl md:text-3xl font-extrabold text-amber-600">₹6,499
+                                        </p>
                                         <span class="text-xs text-gray-600 mb-1">/person</span>
                                     </div>
                                     <p class="text-xs text-green-600 mt-2 flex items-center">
@@ -806,7 +861,7 @@
                                     <div class="flex items-end gap-2">
                                         <p class="text-2xl md:text-3xl font-extrabold text-emerald-600">₹24,999</p>
                                         <span class="text-xs text-gray-600 mb-1">/person</span>
-                                        <span class="text-xs text-gray-400 line-through mb-1">₹29,999</span>
+                                        <span class="price-tag text-xs text-gray-400 line-through mb-1">₹29,999</span>
                                         <span class="text-xs text-green-600 font-medium">17% OFF</span>
                                     </div>
                                     <p class="text-xs text-green-600 mt-2 flex items-center">
@@ -946,7 +1001,7 @@
                                     <div class="flex items-end gap-2">
                                         <p class="text-2xl md:text-3xl font-extrabold text-blue-600">₹1,24,999</p>
                                         <span class="text-xs text-gray-600 mb-1">/person</span>
-                                        <span class="text-xs text-gray-400 line-through mb-1">₹1,49,999</span>
+                                        <span class="price-tag text-xs text-gray-400 line-through mb-1">₹1,49,999</span>
                                         <span class="text-xs text-green-600 font-medium">17% OFF</span>
                                     </div>
                                     <p class="text-xs text-green-600 mt-2 flex items-center">
@@ -1505,71 +1560,79 @@
                 const packageTitle = card.querySelector('h3').textContent;
                 const packageImage = card.querySelector('img').src;
                 const highlights = Array.from(card.querySelectorAll('ul li')).map(li => li.textContent);
-                const price = card.querySelector('[class*="text-2xl"]').textContent;
+                const prices = [...card.querySelectorAll('.price-tag')]
+                    .map(p => p.textContent)
                 const duration = card.querySelector('[class*="font-semibold"]').textContent;
                 const location = card.querySelector('.flex.items-center.text-gray-600').textContent.trim();
-
+                console.log(prices)
                 // Create modal HTML
+                // Create modal HTML with animation classes
                 const modalHTML = `
-            <div class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4" id="package-modal">
-                <div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-2xl font-bold text-gray-900">${packageTitle}</h3>
-                            <button class="close-modal text-gray-500 hover:text-gray-700 focus:outline-none">
-                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            </button>
-                        </div>
-                        
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <img src="${packageImage}" 
-                                     alt="${packageTitle}" class="w-full h-64 object-cover rounded-lg shadow-md">
-                            </div>
-                            <div>
-                                <div class="mb-4">
-                                    <h4 class="font-semibold text-lg text-gray-800 mb-2">Package Highlights</h4>
-                                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                                        ${highlights.map(item => `<li>${item}</li>`).join('')}
-                                    </ul>
-                                </div>
-                                
-                                <div class="space-y-4">
-                                    <div>
-                                        <p class="font-medium text-gray-800">Duration</p>
-                                        <p class="text-sm text-gray-600">${duration}</p>
-                                    </div>
-                                    <div>
-                                        <p class="font-medium text-gray-800">Location</p>
-                                        <p class="text-sm text-gray-600">${location}</p>
-                                    </div>
-                                    <div>
-                                        <p class="font-medium text-gray-800">Price</p>
-                                        <p class="text-2xl font-bold text-amber-600">${price}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-6 pt-4 border-t border-gray-200">
-                            <button class="book-now w-full bg-gradient-to-r from-amber-500 to-amber-700 hover:from-amber-600 hover:to-amber-800 text-white px-6 py-3 rounded-lg font-medium shadow-md hover:shadow-lg transition-all">
-                                Book Now
-                            </button>
-                        </div>
-                    </div>
+    <div class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 backdrop-fade-in" id="package-modal">
+        <div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto modal-fade-in">
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-2xl font-bold text-gray-900">${packageTitle}</h3>
+                    <button class="close-modal text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
                 </div>
-            </div>
-        `;
-
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <img src="${packageImage}" 
+                             alt="${packageTitle}" class="w-full h-64 object-cover rounded-lg shadow-md">
+                    </div>
+                    <div>
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-lg text-gray-800 mb-2">Package Highlights</h4>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                ${highlights.map(item => `<li>${item}</li>`).join('')}
+                            </ul>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <p class="font-medium text-gray-800">Duration</p>
+                                <p class="text-sm text-gray-600">${duration}</p>
+                            </div>
+                            <div>
+                                <p class="font-medium text-gray-800">Location</p>
+                                <p class="text-sm text-gray-600">${location}</p>
+                            </div>
+                            <div>
+                                <p class="font-medium text-gray-800">Price</p>
+                                <p class="text-2xl font-bold text-amber-600">${prices}</p>
+                            </div>
+                        </div>
+                            </div>
+                                </div>
+                                    <div class="mt-6 pt-4 border-t border-gray-200">
+                                        <button class="book-now w-full bg-gradient-to-r from-amber-500 to-amber-700 hover:from-amber-600 hover:to-amber-800 text-white px-6 py-3 rounded-lg font-medium shadow-md hover:shadow-lg transition-all">
+                                            Book Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
                 // Insert modal into DOM
                 document.body.insertAdjacentHTML('beforeend', modalHTML);
 
                 // Add event listeners for the modal
+                // Add event listeners after inserting modal
                 document.querySelector('.close-modal').addEventListener('click', closeModal);
                 document.querySelector('.book-now').addEventListener('click', function () {
                     window.location.href = 'package-booking-page.html';
+                });
+
+                // Close modal when clicking on backdrop
+                document.getElementById('package-modal').addEventListener('click', function (e) {
+                    if (e.target === this) {
+                        closeModal();
+                    }
                 });
             }
 
@@ -1582,7 +1645,18 @@
         function closeModal() {
             const modal = document.getElementById('package-modal');
             if (modal) {
-                modal.remove();
+                // Add fade-out animations
+                modal.classList.remove('backdrop-fade-in');
+                modal.classList.add('backdrop-fade-out');
+
+                const modalContent = modal.querySelector('.modal-fade-in');
+                modalContent.classList.remove('modal-fade-in');
+                modalContent.classList.add('modal-fade-out');
+
+                // Remove modal after animations complete
+                setTimeout(() => {
+                    modal.remove();
+                }, 300); // Match this duration with your animation time
             }
         }
     </script>
