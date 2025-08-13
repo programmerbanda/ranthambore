@@ -115,6 +115,22 @@
         .backdrop-fade-in {
             animation: backdropFadeIn 0.5s ease-out forwards;
         }
+
+        /* Like animation */
+        .like-box {
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+
+        /* Click feedback */
+        .like-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Optional: Pre-defined liked state */
+        .like-btn.liked .like-box {
+            fill: #f43f5e;
+            stroke: #f43f5e;
+        }
     </style>
 </head>
 
@@ -273,7 +289,7 @@
                 </div>
 
                 <!-- Packages Grid -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-4">
                     <!-- Premium Package Card -->
                     <div
                         class="relative bg-white rounded-2xl shadow-xl overflow-hidden border border-amber-200 hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 min-h-[24rem] group">
@@ -297,10 +313,10 @@
                                 class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent flex flex-col justify-between p-4">
                                 <div class="flex justify-end">
                                     <button
-                                        class="cursor-pointer bg-white/90 text-amber-700 p-2 rounded-full hover:bg-white transition-all"
+                                        class="like-btn cursor-pointer bg-white/90 text-amber-700 p-2 rounded-full hover:bg-white transition-all"
                                         aria-label="Add to favorites">
-                                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                            role="img" aria-hidden="true">
+                                        <svg class="like-box h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                            stroke="currentColor" role="img" aria-hidden="true">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
                                             </path>
@@ -460,10 +476,10 @@
                                 class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent flex flex-col justify-between p-4">
                                 <div class="flex justify-end">
                                     <button
-                                        class="cursor-pointer bg-white/90 text-amber-700 p-2 rounded-full hover:bg-white transition-all"
+                                        class="like-btn cursor-pointer bg-white/90 text-amber-700 p-2 rounded-full hover:bg-white transition-all"
                                         aria-label="Add Wildlife Explorer to favorites">
-                                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                            role="img" aria-hidden="true">
+                                        <svg class="like-box h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                            stroke="currentColor" role="img" aria-hidden="true">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
                                             </path>
@@ -623,10 +639,10 @@
                                 class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent flex flex-col justify-between p-4">
                                 <div class="flex justify-end">
                                     <button
-                                        class="cursor-pointer bg-white/90 text-amber-700 p-2 rounded-full hover:bg-white transition-all"
+                                        class="like-btn cursor-pointer bg-white/90 text-amber-700 p-2 rounded-full hover:bg-white transition-all"
                                         aria-label="Add Tiger Trail Express to favorites">
-                                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                            role="img" aria-hidden="true">
+                                        <svg class="like-box h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                            stroke="currentColor" role="img" aria-hidden="true">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
                                             </path>
@@ -779,9 +795,10 @@
                                 class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent flex flex-col justify-between p-4">
                                 <div class="flex justify-end">
                                     <button
-                                        class="cursor-pointer bg-white/90 text-emerald-700 p-2 rounded-full hover:bg-white transition-all"
+                                        class="like-btn cursor-pointer bg-white/90 text-emerald-700 p-2 rounded-full hover:bg-white transition-all"
                                         aria-label="Add to favorites">
-                                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <svg class="like-box h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                            stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                                         </svg>
@@ -919,9 +936,10 @@
                                         Trending
                                     </span>
                                     <button
-                                        class="cursor-pointer bg-white/90 text-blue-700 p-2 rounded-full hover:bg-white transition-all"
+                                        class="like-btn cursor-pointer bg-white/90 text-blue-700 p-2 rounded-full hover:bg-white transition-all"
                                         aria-label="Add to favorites">
-                                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <svg class="like-box h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                            stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                                         </svg>
@@ -1569,14 +1587,14 @@
                 // Create modal HTML
                 // Create modal HTML with animation classes
                 const modalHTML = `
-    <div class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 backdrop-fade-in" id="package-modal">
-        <div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto modal-fade-in">
-            <div class="p-6">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-bold text-gray-900">${packageTitle}</h3>
-                    <button class="close-modal cursor-pointer text-gray-500 hover:text-gray-700 focus:outline-none">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                    <div class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 backdrop-fade-in" id="package-modal">
+                                    <div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto modal-fade-in">
+                                        <div class="p-6">
+                                    <div class="flex justify-between items-start mb-4">
+                                    <h3 class="text-2xl font-bold text-gray-900">${packageTitle}</h3>
+                                    <button class="close-modal cursor-pointer text-gray-500 hover:text-gray-700 focus:outline-none">
+                                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
                 </div>
@@ -1643,8 +1661,8 @@
             }
         });
 
-        document.addEventListener('keydown', (e)=> {
-            if(e.key === "Escape"){
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Escape") {
                 document.getElementById('package-modal').remove();
                 document.body.style.overflow = "";
             }
@@ -1668,6 +1686,28 @@
                 }, 300); // Match this duration with your animation time
             }
         }
+
+        // Select all like buttons
+        document.querySelectorAll('.like-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                const icon = this.querySelector('.like-box');
+
+                this.classList.toggle('liked');
+
+                if (this.classList.contains('liked')) {
+                    icon.style.fill = '#f43f5e'; // Instagram-like pink
+                    icon.style.stroke = '#f43f5e';
+
+                    icon.style.transform = 'scale(1.2)';
+                    setTimeout(() => {
+                        icon.style.transform = 'scale(1)';
+                    }, 300);
+                } else {
+                    icon.style.fill = 'none';
+                    icon.style.stroke = 'currentColor';
+                }
+            });
+        });
     </script>
 </body>
 
